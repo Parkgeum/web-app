@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title login
+    meta(name='viewport' charset="UTF-8")
+    script(type="text/javascript" src="javascripts/jquery.min.js")
+    script(type="text/javascript" src="javascripts/locallogin.js")
+    script(type="text/javascript" src="javascripts/tokenAPI.js")
+  body
+    section(class="signup")
+      h3 Signup
+      form(action="/member/signup" method="post")
+        div(class="input")
+          label(for="id") ID
+          input(type="text" id="id" name="id")
+        div(class="input")
+          label(for="password") Password
+          input(type="text" id="password" name="password")
+        div
+          button(type="submit") Signup 
+       
+    section(class="login")
+      h3 Login
+      form(action="/member/login" method="post")
+        div(class="input")
+          label(for="id") ID
+          input(type="text" id="id" name="id")
+        div(class="input")
+          label(for="password") Password
+          input(type="text" id="password" name="password")
+        div
+          button(type="submit") login    
+
+    section(class="delete")
+      h3 Delete Data
+      form(action="/member/delete" method="post")
+        div(class="input")
+          label(for="id") ID
+          input(type="text" id="id" name="id")
+        div(class="input")
+          label(for="password") Password
+          input(type="text" id="password" name="password")
+        button(type="submit") DELETE
+        
+    section(class="logout")
+      form(action="/member/login/logout" method="post")
+        button(type="submit") LOGOUT
