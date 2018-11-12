@@ -1,4 +1,15 @@
-<header>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Profile</title>
+   
 <style>
 /*
 
@@ -34,10 +45,70 @@ img {
     display: block;
 }
 
+ .btns {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #3897f0;
+      border: 1px solid #3897f0;
+      padding: 5px 12px;
+      margin-left: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+        .header {
+            height: 80px;
+            background-color: white;
+            border-bottom: 1px solid slategray;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+
+        }
+
+        #lg1 {
+            margin: 5px;
+            float: left;
+        }
+
+        #lg2 {
+            border-left: 1px solid black;
+            padding-left: 40px;
+            margin: 20px;
+            float: left;
+        }
+
+        #lg3 {
+            margin: 30px;
+            float: right;
+        }
+
+        #searchbox {
+
+            margin-top: 30px;
+            margin-left: 100px;
+            float: left;
+
+        }
+
 .container {
     max-width: 93.5rem;
     margin: 0 auto;
+    /*margin-top : 200px;*/
     padding: 0 2rem;
+
+}
+
+.container2 {
+    max-width: 93.5rem;
+    margin: 0 auto;
+    margin-top : 250px;
+    padding: 0 2rem;
+
 }
 
 .btn {
@@ -49,6 +120,12 @@ img {
     padding: 0;
     cursor: pointer;
 }
+
+#searchbtn {
+            margin-top: 25px;
+            float: center;
+
+        }
 
 .btn:focus {
     outline: 0.5rem auto #4d90fe;
@@ -380,9 +457,62 @@ Remove or comment-out the code block below to see how the browser will fall-back
     }
 }
 
+     .btn1 {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #a9a9a9;
+      border: 1px solid #a9a9a9;
+      padding: 5px 12px;
+      margin-left: 45%;
+      /*margin-right: : 100px;*/
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .btn2 {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #a9a9a9;
+      border: 1px solid #a9a9a9;
+      padding: 5px 12px;
+      /*margin-left: 45%;*/
+      /*margin-right: : 100px;*/
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
 
 
 </style>
+</head>
+
+<body>
+
+    <div class="header">
+
+        <img id="lg1" src="camera.JPG" style="width: 120px; height:80px;">
+        <img id="lg2" src="logom.PNG" style="width: 140px; height:50px;">
+        <div id="searchbox">
+            <input type="search" placeholder="">
+        </div>
+          <div id="searchbtn">
+             <input type="submit" value="검색" class="btns">
+			<button type="button" class="btn1">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <!-- a href="Main_Page.html"> Main </a> --> Main
+			</button>
+			<button type="button" class="btn2">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span><!--  <a href="Profile_Page.html"> Profile </a> --> Profile
+			</button>
+			<button type="button" class="btn2">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span><!--  <a href="Login_Page.html"> Logout </a> --> Logout
+			</button>
+        </div>
+        </div>
+    </div>
+    <br><br><br><br>
 
 	<div class="container">
 
@@ -390,13 +520,13 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			<div class="profile-image">
 
-				<img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
+				<img src="mains.JPG" alt="">
 
 			</div>
 
 			<div class="profile-user-settings">
 
-				<h1 class="profile-user-name">janedoe_</h1>
+				<h1 class="profile-user-name">seulgiredvelvet</h1>
 
 				<button class="btn profile-edit-btn">Edit Profile</button>
 
@@ -407,16 +537,16 @@ Remove or comment-out the code block below to see how the browser will fall-back
 			<div class="profile-stats">
 
 				<ul>
-					<li><span class="profile-stat-count">164</span> posts</li>
-					<li><span class="profile-stat-count">188</span> followers</li>
-					<li><span class="profile-stat-count">206</span> following</li>
+					<li><span class="profile-stat-count">164</span> 게시물</li>
+					<li><span class="profile-stat-count">188</span> 팔로워</li>
+					<li><span class="profile-stat-count">206</span> 팔로잉</li>
 				</ul>
 
 			</div>
 
 			<div class="profile-bio">
 
-				<p><span class="profile-real-name">Jane Doe</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit ???????</p>
+				<p><span class="profile-real-name">seulgiredvelvet</span> </p>
 
 			</div>
 
@@ -434,7 +564,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 		<div class="gallery">
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">1
 
 				<img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -447,7 +577,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">2
 
 				<img src="https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -462,7 +592,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">3
 
 				<img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -483,7 +613,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">4
 
 				<img src="https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -504,7 +634,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">5
 
 				<img src="https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -525,7 +655,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">6
 
 				<img src="https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -540,7 +670,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">7
 
 				<img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -561,7 +691,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">8
 
 				<img src="https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -576,7 +706,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">9
 
 				<img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -586,7 +716,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 				</div>
 
-				<div class="gallery-item-info">
+				<div class="gallery-item-info">10
 
 					<ul>
 						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 45</li>
@@ -597,7 +727,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">11
 
 				<img src="https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -612,7 +742,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">12
 
 				<img src="https://images.unsplash.com/photo-1505058707965-09a4469a87e4?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -627,7 +757,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 			</div>
 
-			<div class="gallery-item" tabindex="0">
+			<div class="gallery-item" tabindex="0">13
 
 				<img src="https://images.unsplash.com/photo-1423012373122-fff0a5d28cc9?w=500&h=500&fit=crop" class="gallery-image" alt="">
 
@@ -657,3 +787,5 @@ Remove or comment-out the code block below to see how the browser will fall-back
 	<!-- End of container -->
 
 </main>
+</body>
+</html>

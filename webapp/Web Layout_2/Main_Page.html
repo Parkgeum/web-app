@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"><!-- 
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Hind+Madurai" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>제목</title>
+
+    <style>
+
+    .btn {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #3897f0;
+      border: 1px solid #3897f0;
+      padding: 5px 12px;
+      margin-left: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+     .btn1 {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #a9a9a9;
+      border: 1px solid #a9a9a9;
+      padding: 5px 12px;
+      margin-left: 45%;
+      /*margin-right: : 100px;*/
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .btn2 {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #a9a9a9;
+      border: 1px solid #a9a9a9;
+      padding: 5px 12px;
+      /*margin-left: 45%;*/
+      /*margin-right: : 100px;*/
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+
+
+
+
+
+        .header {
+            height: 90px;
+            background-color: white;
+            border-bottom: 1px solid slategray;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+        }
+
+        #lg1 {
+            margin: 5px;
+            float: left;
+        }
+
+        #lg2 {
+            border-left: 1px solid black;
+            padding-left: 40px;
+            margin: 20px;
+            float: left;
+        }
+
+        #lg3 {
+            margin: 30px;
+            float: ;
+        }
+
+        #searchbox {
+
+            margin-top: 30px;
+            margin-left: 100px;
+            float: left;
+
+        }
+
+        #searchbtn {
+            margin-top: 25px;
+            float: center;
+
+        }
+
+        .content {
+            margin: 0 auto;
+            height: auto;
+            width: 700px;
+            margin-top : 150px;
+            border-left : 1px solid black; 
+            border-right : 1px solid black; 
+            border-top : 1px solid black; 
+            font-family: 'Hind Madurai', sans-serif;
+            font-weight: bold;
+        }
+        #userimg {
+          border-radius: 100px;
+          width: 150px;
+          height: 150px;
+          border : 2px solid red;
+          margin : 10px;
+          float:left;
+        }
+        .user {
+           margin-top: 7%;
+           font-size: 50px;
+           float:left;
+        }
+        #userphoto {
+            width:100%;
+        }
+        #instaicon {
+            width:100%;
+        }
+        .like {
+           margin-left : 10px;
+        }
+        .comment {
+            margin-left: 10px;
+            font-size: 13px;
+        }
+        #commentin{
+            border : none;
+            width: 70%;
+            height : 40px;
+            font-size : 15px;
+            margin-left : 10px;
+        }
+      
+        #commentin::-webkit-input-placeholder {
+            
+            font-size : 15px;
+        }
+        #menuimg {
+          
+            width:50px;
+            height:40px;
+            margin-left : 10px;
+           
+        }
+        .comment2 {
+            width: 99%;
+            margin : 20px;
+            float: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+
+        <img id="lg1" src="camera.JPG" style="width: 120px; height:80px;">
+        <img id="lg2" src="logom.PNG" style="width: 140px; height:50px;">
+        <div id="searchbox">
+            <input type="search" placeholder="">
+        </div>
+        <div id="searchbtn">
+            <input type="submit" value="검색" class="btn">
+			<button type="button" class="btn1">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <!-- a href="Main_Page.html"> Main </a> --> Main
+			</button>
+			<button type="button" class="btn2">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span><!--  <a href="Profile_Page.html"> Profile </a> --> Profile
+			</button>
+			<button type="button" class="btn2">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span><!--  <a href="Login_Page.html"> Logout </a> --> Logout
+			</button>
+        </div>
+
+        
+    </div>
+    <div class="content">
+        <img id="userimg" src="mains.JPG">
+        <p class = "user">  seulgiredvelvet  </p>
+        <img id="userphoto" src="img1.JPG">
+        <img id="instaicon" src="img2.JPG">
+        <p class = "like">좋아요 293개</p>
+        <div class="comment">
+	        <p>seulgiredvelvet 제목 내용 </p>
+	        <p style="font-size:10px; color:slategray">13시간 전 </p>
+    	</div>
+	    <!-- <div class="comment2"> -->
+	    <div class="searchbox">
+	    <input id="commentin" type="text" placeholder="  댓글을 입력해주세요.. "> 
+	    <input type="submit" value="확인" class="btn">
+		</div>
+
+   	</div>
+
+</body>
+
+</html>

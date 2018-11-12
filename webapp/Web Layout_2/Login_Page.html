@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Hind+Madurai" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Login Page</title>
+    <title>맛집통</title>
 
     <style>
           * {
@@ -31,8 +31,8 @@
 
     .main-content {
       width: 250px;
-      height: 40%;
-      margin: 10px auto;
+      height: 80%;
+      margin: 5px auto;
       background-color: #fff;
       border: 2px solid #e6e6e6;
       padding: 40px 50px;
@@ -44,8 +44,8 @@
     }
 
     .header img {
-      height: 50px;
-      width: 175px;
+      height: 80px;
+      width: 180px;
       margin: auto;
       position: relative;
       left: 40px;
@@ -53,7 +53,8 @@
 
     .input-1,
     .input-2 {
-      width: 100%;
+      width: 105%;
+      height: 40px;
       margin-bottom: 5px;
       padding: 8px 12px;
       border: 1px solid #dbdbdb;
@@ -77,7 +78,8 @@
     }
 
     .btn {
-      width: 100%;
+      width: 105%;
+      height: 40px;
       background-color: #3897f0;
       border: 1px solid #3897f0;
       padding: 5px 12px;
@@ -118,24 +120,6 @@
         background-color: yellow;
     }
 
-    /* youtube link */
-    .youtube{
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 160px;
-      text-align: center;
-      padding: 15px 10px;
-      background: #bb0000;
-      border-radius: 5px;
-    }
-
-    .youtube a{
-      text-decoration: none;
-      color: #fff;
-      text-transform: capitalize;
-      letter-spacing: 1px;
-    }
     </style>
 </head>
 
@@ -143,25 +127,24 @@
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass+Mono" rel="stylesheet">
 
 <!-- add filtering -->
-<form action="csstest.html" method="get">
-  <a href="csstest.html"> go to csstest </a>
+<form action="Main_Page.html" method="POST">
 <div id="wrapper">
   <div class="main-content">
     <div class="header">
-      <img src="https://i.imgur.com/zqpwkLQ.png" />
+      <img src="logom.PNG" />
     </div>
     <div class="l-part">
-      <input type="text" placeholder="Username" class="input-1" />
+      <input type="text" placeholder="이메일 입력" class="input-1" />
       <div class="overlap-text">
-        <input type="password" placeholder="Password" class="input-2" />
-        <a href="#">Forgot?</a>
+        <input type="password" placeholder="비밀번호 입력" class="input-2" />
+        <a href="#">찾기</a>
       </div>
       <input type="submit" value="Log in" class="btn" />
     </div>
   </div>
   <div class="sub-content">
     <div class="s-part">
-      Don't have an account?<a href="#">Sign up</a>
+      계정이 없으신가요? <a href="SignUp_Page.html">회원가입</a>
     </div>
   </div>
 </div>

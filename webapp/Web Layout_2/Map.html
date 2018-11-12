@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>검색</title>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>  
+    <script>
+    function initialize() {
+
+      /*
+        http://openapi.map.naver.com/api/geocode.php?key=f32441ebcd3cc9de474f8081df1e54e3&encoding=euc-kr&coord=LatLng&query=서울특별시 강남구 강남대로 456
+                위와같이 링크에서 뒤에 주소를 적으면 x,y 값을 구할수 있습니다.
+      */
+      var Y_point     = 37.588787;    // Y 좌표
+      var X_point     = 127.00432;   // X 좌표
+
+
+      var zoomLevel   = 16;           // 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+
+      var markerTitle   = "식샤";        // 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+      var markerMaxWidth  = 300;            // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+
+      // 말풍선 내용
+      var contentString = '<div>' +
+      '<h2>식샤</h2>'+
+      '<p>성북동에서 찾은 일본가정식 맛집</p>' +
+      //'<a href="http://www.daegu.go.kr" target="_blank">http://www.daegu.go.kr</a>'+ //링크도 넣을 수 있음
+      '</div>';
+
+      var myLatlng = new google.maps.LatLng(Y_point, X_point);
+      var mapOptions = {
+                zoom: zoomLevel,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+      var marker = new google.maps.Marker({
+                          position: myLatlng,
+                          map: map,
+                          title: markerTitle
+      });
+
+      var infowindow = new google.maps.InfoWindow(
+                            {
+                              content: contentString,
+                              maxWidth: markerMaxWidth
+                            }
+      );
+
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+      });
+    }
+  </script>
+</head>
+
+    <style>
+
+    .btn {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #3897f0;
+      border: 1px solid #3897f0;
+      padding: 5px 12px;
+      margin-left: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+     .btn1 {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #a9a9a9;
+      border: 1px solid #a9a9a9;
+      padding: 5px 12px;
+      margin-left: 45%;
+      /*margin-right: : 100px;*/
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .btn2 {
+      /*width: 3%;*/
+      /*height: 20px;*/
+      background-color: #a9a9a9;
+      border: 1px solid #a9a9a9;
+      padding: 5px 12px;
+      /*margin-left: 45%;*/
+      /*margin-right: : 100px;*/
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+
+
+
+
+
+        .header {
+            height: 90px;
+            background-color: white;
+            border-bottom: 1px solid slategray;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+        }
+
+        #lg1 {
+            margin: 5px;
+            float: left;
+        }
+
+        #lg2 {
+            border-left: 1px solid black;
+            padding-left: 40px;
+            margin: 20px;
+            float: left;
+        }
+
+        #lg3 {
+            margin: 30px;
+            float: ;
+        }
+
+        #searchbox {
+
+            margin-top: 30px;
+            margin-left: 100px;
+            float: left;
+
+        }
+
+        #searchbtn {
+            margin-top: 25px;
+            float: center;
+
+        }
+
+        .content {
+            margin: 0 auto;
+            height: auto;
+            width: 680px;
+            margin-top : 150px;
+            border-left : 1px solid black; 
+            border-right : 1px solid black; 
+            border-top : 1px solid black; 
+            font-family: 'Hind Madurai', sans-serif;
+            font-weight: bold;
+        }
+        #userimg {
+          border-radius: 100px;
+          width: 150px;
+          height: 150px;
+          border : 2px solid red;
+          margin : 10px;
+          float:left;
+        }
+        .user {
+           margin-top: 7%;
+           font-size: 50px;
+           float:left;
+        }
+        #userphoto {
+            width:100%;
+        }
+        #instaicon {
+            width:100%;
+        }
+        .like {
+           margin-left : 10px;
+        }
+        .comment {
+            margin-left: 10px;
+            font-size: 13px;
+        }
+        #commentin{
+            border : none;
+            width: 70%;
+            height : 40px;
+            font-size : 15px;
+            margin-left : 10px;
+        }
+      
+        #commentin::-webkit-input-placeholder {
+            
+            font-size : 15px;
+        }
+        #menuimg {
+          
+            width:50px;
+            height:40px;
+            margin-left : 10px;
+           
+        }
+        .comment2 {
+            width: 99%;
+            margin : 20px;
+            float: left;
+        }
+
+    </style>
+</head>
+
+<body onload="initialize()">
+    <div class="header">
+
+        <img id="lg1" src="camera.JPG" style="width: 120px; height:80px;">
+        <img id="lg2" src="logom.PNG" style="width: 140px; height:50px;">
+        <div id="searchbox">
+            <input type="search" placeholder="">
+        </div>
+        <div id="searchbtn">
+            <input type="submit" value="검색" class="btn">
+			<button type="button" class="btn1">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <!-- <a href="Main_Page.html"> Main </a> --> Main
+			</button>
+			<button type="button" class="btn2">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <!-- <a href="Profile_Page.html"> Profile </a> --> Profile
+			</button>
+			<button type="button" class="btn2">
+			  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <!-- <a href="Login_Page.html"> Logout </a> --> Logout
+      </button>
+        </div>
+
+        
+    </div>
+    <div class="content">
+      <div id="map_view" style="width:100%; height:600px;"></div>
+   	</div>
+
+</body>
+
+</html>
