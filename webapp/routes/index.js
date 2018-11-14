@@ -27,7 +27,7 @@ router.post('/member/signup', function(req, res) {
       console.err(err);
       throw err;
     } 
-    else if (user===null) User.create(signup, function() {res.send('회원정보 등록.')});
+    else if (user===null) User.create(signup, function() {res.send({success: true, type: "signup"})});
     else res.send('이미 존재하는 id입니다.');
   })
   //res.redirect('/member');
@@ -44,7 +44,12 @@ router.post('/member/login', function(req, res) {
     else {
       User.updateOne(user, {$set:{'login': true}}, function() {
         this.userid = user._id;
-        res.redirect('/member');})
+        res.send({
+          success: true,
+          type: "login"
+        })
+        //res.redirect('/member');
+      })
     }
   })
 });
