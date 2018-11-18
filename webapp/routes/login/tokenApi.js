@@ -16,6 +16,6 @@ function getId() {
 function clenaId() {
     document.getElementById('loginid').innerHTML = ''; 
 }
-function logout() {
+function logout(res) {
     localStorage.removeItem("token");
 }

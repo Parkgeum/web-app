@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var User = require('./../models/user')
+var User = require('./../../models/user')
 var mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 var jwtSecret = 'secret';
+var crypto = require('crypto');
 var userid;
 
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
@@ -129,6 +130,10 @@ router.post('/member/delete', function(req, res) {
     else User.remove(user, function() {res.send('회원정보가 삭제되었습니다.');})
   })
 });
+
+router.post('/member/login/logout'), function(req, res) {
+  res.send('로그아웃 됨')
+}
 
 
 module.exports = router;

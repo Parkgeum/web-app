@@ -6,7 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
 
-var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login/login');
 var usersRouter = require('./routes/users');
 
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', indexRouter);
+app.use('/', loginRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

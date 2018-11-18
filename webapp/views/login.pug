@@ -5,8 +5,8 @@ html
     meta(name='viewport' charset="UTF-8")
     script(type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js")
     script
-      include ./../routes/localLogin.js
-      include ./../routes/tokenAPI.js
+      include ./../routes/login/localLogin.js
+      include ./../routes/login/tokenAPI.js
   body
     section(class="signup")
       h3 Signup
@@ -50,7 +50,6 @@ html
         button(type="submit") DELETE
         
     section(class="logout")
-      form(action="/member/login/logout" method="post")
         button(onclick="logout()") LOGOUT
     
     section(class="getId")
