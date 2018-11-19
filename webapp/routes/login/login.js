@@ -35,7 +35,8 @@ router.post('/member/signup', function(req, res) {
     } else if (user) {
       res.send({
         success: false,
-        type: "ID already exists"
+        //type: "ID already exists"
+        type: "signup"
       });
     } else if (!user) {
       localSignUp(signup, function(err, savedUser){
@@ -44,7 +45,8 @@ router.post('/member/signup', function(req, res) {
         } else {
           res.send({
             success: true,
-            type: savedUser,
+            //type: savedUser,
+            type: "signup",
             token: savedUser.jsonWebToken
           });
         }
@@ -79,12 +81,14 @@ router.post('/member/login', function(req, res) {
     } else if(!user) {
       res.send({
         success: false,
-        type: "Incorrect id/password"
+        //type: "Incorrect id/password"
+        type: "login"
       });
     } else if(user) {
       res.send({
         success:true,
-        type: user,
+        //type: user,
+        type: "login",
         token: user.jsonWebToken
       });
     }
@@ -110,7 +114,8 @@ function ensureAuthorized(req, res, next) {
   console.log(bearerHeader);
   if (typeof bearerHeader !== "undefined") {
     var bearer = bearerHeader.split(" ");
-    bearerToken = bearer[1];
+    //bearerToken = bearer[1];
+    bearerToken = bearer[0];
     req.token = bearerToken;
     next();
   } else{
