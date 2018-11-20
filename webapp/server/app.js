@@ -9,7 +9,10 @@ var bodyParser = require('body-parser')
 var loginRouter = require('./routes/login/login');
 var usersRouter = require('./routes/users');
 
-mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true}, (err) => {
+  if(!err) { console.log('MongoDB connection succeeded'); }
+  else { console.log('MongoDB connection is error'+ JSON.stringify(err, undefined, 2)); }
+});
 var app = express();
 
 // view engine setup
