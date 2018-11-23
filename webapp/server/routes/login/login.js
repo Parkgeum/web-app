@@ -102,7 +102,10 @@ router.get('/me', ensureAuthorized, function(req, res, next){
   User.findOne(findConditionToken, function(err, user){
     if(err) {res.send({success:false, type:"Error Occured"+err});}
     else {
-      console.log("me: "+user)
+      console.log("id: "+user.id)
+      console.log("following: "+user.following)
+      console.log("follower: "+user.follower)
+      console.log("images: "+user.image)
       res.send({success:true, data:user});
     }
   })
