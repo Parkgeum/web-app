@@ -8,8 +8,11 @@ function getId() {
             xhr.setRequestHeader("Authorization","Bearer " + token);
         },
         success: function (res) {
-            console.log(res);
-            document.getElementById('loginid').innerHTML = res.type.id;
+            document.getElementById('loginid').innerHTML = res.data.id;
+            console.log(res.data.id);
+            console.log(res.data.following);
+            console.log(res.data.follower);
+            console.log(res.data.image);
         }
     });
 }
@@ -17,5 +20,6 @@ function clenaId() {
     document.getElementById('loginid').innerHTML = ''; 
 }
 function logout(res) {
+    localStorage.removeItem("id");
     localStorage.removeItem("token");
 }

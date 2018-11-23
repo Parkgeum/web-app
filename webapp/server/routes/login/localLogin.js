@@ -2,8 +2,6 @@
 function localLogin() {
     var localid = $("#loginid").val();
     var localPassword = $("#loginpassword").val();
-    console.log(localid);
-    console.log(localPassword);
     var postUserInformation = {
         id: localid,
         password: localPassword
@@ -11,9 +9,9 @@ function localLogin() {
     $.post('/member/login', postUserInformation, 
         function(response){
             if (response.success == true){
+                localStorage.setItem("id", response.data.id);
                 localStorage.setItem("token", response.token);
-                console.log(response.token);
-
+                console.log(response.data.id);
             }
          });
     $("#loginid").val("");
@@ -32,6 +30,7 @@ function localSignup() {
         function(response){
             console.log(response);
             if (response.success == true){
+                localStorage.setItem("id", response.data.id);
                 localStorage.setItem("token", response.token);
             }
          });

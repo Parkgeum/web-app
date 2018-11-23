@@ -35,7 +35,7 @@ router.post('/member/signup', function(req, res) {
     } else if (user) {
       res.send({
         success: false,
-        //type: "ID already exists"
+        data: "ID already exists",
         type: "signup"
       });
     } else if (!user) {
@@ -45,7 +45,7 @@ router.post('/member/signup', function(req, res) {
         } else {
           res.send({
             success: true,
-            //type: savedUser,
+            data: savedUser,
             type: "signup",
             token: savedUser.jsonWebToken
           });
@@ -81,13 +81,13 @@ router.post('/member/login', function(req, res) {
     } else if(!user) {
       res.send({
         success: false,
-        //type: "Incorrect id/password"
+        data: "Incorrect id/password",
         type: "login"
       });
     } else if(user) {
       res.send({
         success:true,
-        //type: user,
+        data: user,
         type: "login",
         token: user.jsonWebToken
       });
@@ -103,7 +103,7 @@ router.get('/me', ensureAuthorized, function(req, res, next){
     if(err) {res.send({success:false, type:"Error Occured"+err});}
     else {
       console.log("me: "+user)
-      res.send({success:true, type:user});
+      res.send({success:true, data:user});
     }
   })
 });
@@ -114,8 +114,8 @@ function ensureAuthorized(req, res, next) {
   console.log(bearerHeader);
   if (typeof bearerHeader !== "undefined") {
     var bearer = bearerHeader.split(" ");
-    //bearerToken = bearer[1];
-    bearerToken = bearer[0];
+    bearerToken = bearer[1];
+    //bearerToken = bearer[0];
     req.token = bearerToken;
     next();
   } else{

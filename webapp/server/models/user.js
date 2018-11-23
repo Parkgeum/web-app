@@ -9,6 +9,13 @@ var userSchema = new mongoose.Schema({
     password: String,
     username: String,
     email: String,
+    following: {type:Number, default:0}, //팔로잉 목록 볼 수 있게 수정해야 함
+    follower: {type:Number, default:0},
+    image : {
+        type: Number, default:0,
+        data : Buffer,
+        contentsType : String
+   },
     // password: {
     //     type: String,
     //     required: 'Password can not be empty',
