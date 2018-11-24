@@ -117,8 +117,7 @@ function ensureAuthorized(req, res, next) {
   console.log(bearerHeader);
   if (typeof bearerHeader !== "undefined") {
     var bearer = bearerHeader.split(" ");
-    bearerToken = bearer[1];
-    //bearerToken = bearer[0];
+    bearerToken = bearer[0];
     req.token = bearerToken;
     next();
   } else{
