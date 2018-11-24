@@ -4,6 +4,7 @@ var User = require('./../../models/user')
 var mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 var jwtSecret = 'secret';
+var fs = require('fs');
 var crypto = require('crypto');
 var userid;
 
@@ -58,6 +59,9 @@ router.post('/member/signup', function(req, res) {
 function localSignUp(User, next) {
 
   User.save(function(err, newUser) {
+    newUser.image.contentsType='image/jpg';
+    var buffer = fs.readFileSync('./routes/login/profile.jpg');  //이미지부분, 추후 수정!
+    newUser.image.data = buffer;
     newUser.jsonWebToken = jwt.sign(newUser.toJSON(), jwtSecret);
     newUser.save(function(err, saveUser) {
       next(err, saveUser);
@@ -102,10 +106,11 @@ router.get('/me', ensureAuthorized, function(req, res, next){
   User.findOne(findConditionToken, function(err, user){
     if(err) {res.send({success:false, type:"Error Occured"+err});}
     else {
-      console.log("id: "+user.id)
+      console.log("username: "+user.username)
       console.log("following: "+user.following)
       console.log("follower: "+user.follower)
-      console.log("images: "+user.image)
+      console.log("posts: "+user.posts)
+      console.log("image: "+image.data)
       res.send({success:true, data:user});
     }
   })

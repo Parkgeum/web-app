@@ -21,10 +21,14 @@ function localLogin() {
 function localSignup() {
     var localid = $("#signupid").val();
     var localPassword = $("#signuppassword").val();
+    var localusername =  $("#username").val(); 
+    var localemail = $("#email").val();
    
     var postUserInformation = {
         id: localid,
-        password: localPassword
+        password: localPassword,
+        username: localusername,
+        email: localemail
     };
     $.post('/member/signup', postUserInformation, 
         function(response){
