@@ -6,7 +6,6 @@ html
     script(type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js")
     script
       include ./../routes/login/localLogin.js
-      include ./../routes/login/tokenAPI.js
   body
     section(class="signup")
       h3 Signup
@@ -24,7 +23,7 @@ html
           label(for="email") E-Mail
           input(type="text" id="email" name="email")
         div
-          button(type="button", onclick="localSignup()") Signup 
+          button(type="submit") Signup 
        
     section(class="login")
       h3 Login
@@ -50,7 +49,7 @@ html
         button(type="submit") DELETE
         
     section(class="logout")
-        button(onclick="logout()") LOGOUT
+      button(onclick="logout()") LOGOUT
     
     section(class="getId")
       button(onclick="getId()") getId

@@ -9,31 +9,33 @@ function localLogin() {
     $.post('/member/login', postUserInformation, 
         function(response){
             if (response.success == true){
-                localStorage.setItem("id", response.data.id);
+                localStorage.setItem("username", response.data.username);
                 localStorage.setItem("token", response.token);
-                console.log(response.data.id);
+                console.log(response.data.username);
             }
+            else {console.log('로그인 정보를 확인하세요');}
          });
     $("#loginid").val("");
     $("#loginpassword").val("");
 }
 
-function localSignup() {
-    var localid = $("#signupid").val();
-    var localPassword = $("#signuppassword").val();
-   
-    var postUserInformation = {
-        id: localid,
-        password: localPassword
-    };
-    $.post('/member/signup', postUserInformation, 
-        function(response){
-            console.log(response);
-            if (response.success == true){
-                localStorage.setItem("id", response.data.id);
-                localStorage.setItem("token", response.token);
-            }
-         });
-    $("#signupid").val("");
-    $("#signuppassword").val("");
+function getId() {
+    var token = localStorage.getItem("token");
+    $.ajax({
+        type: "GET",
+        url: "/me",
+        timeout: 3000,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization","Bearer " + token);
+        },
+        success: function (res) {
+            console.log(res);
+            document.getElementById('loginid').innerHTML = res.type.id;
+        }
+    });
+}
+
+function logout(res) {
+    localStorage.removeItem("username");
+    localStorage.removeItem("token");
 }
