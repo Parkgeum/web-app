@@ -32,7 +32,7 @@ function localSignup() {
     };
     $.post('/member/signup', postUserInformation, 
         function(response){
-            console.log(response);
+            console.log(response+"test log");
             if (response.success == true){
                 localStorage.setItem("id", response.data.id);
                 localStorage.setItem("token", response.token);
