@@ -2,21 +2,21 @@ const mongoose = require('mongoose');
 // const passport = require('passport');
 const_ = require('lodash');
 
-const Signup = mongoose.model('signup');
+const User = mongoose.model('user');
 
 
 module.exports.register = (req, res, next) => { 
     // console.log('inside register fn.');
-    var signup = new Signup();
-    signup.id = req.body.id;
-    signup.username = req.body.username;
-    signup.password = req.body.password;
-    signup.email = req.body.email;
-    console.log(signup.id);
-    console.log(signup.username);
-    console.log(signup.password);
-    console.log(signup.email);
-    signup.save((err, doc) => {
+    var user = new User();
+    user.id = req.body.id;
+    user.username = req.body.username;
+    user.password = req.body.password;
+    user.email = req.body.email;
+    console.log(user.id);
+    console.log(user.username);
+    console.log(user.password);
+    console.log(user.email);
+    user.save((err, doc) => {
         if (!err)
             res.send(doc);
         else{

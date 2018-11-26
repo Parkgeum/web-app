@@ -58,4 +58,4 @@ userSchema.path('email').validate((val) => {
 // }
 // => 비교를 통해 일치하지 않을 경우, false
 
-module.exports = mongoose.model('signup',userSchema);
+module.exports = mongoose.model('user',userSchema);
