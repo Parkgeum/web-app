@@ -106,11 +106,11 @@ router.get('/me', ensureAuthorized, function(req, res, next){
   User.findOne(findConditionToken, function(err, user){
     if(err) {res.send({success:false, type:"Error Occured"+err});}
     else {
-      console.log("username: "+user.username)
+   /*   console.log("username: "+user.username)
       console.log("following: "+user.following)
       console.log("follower: "+user.follower)
       console.log("posts: "+user.posts)
-      console.log("image: "+image.data)
+      console.log("image: "+image.data)*/
       res.send({success:true, data:user});
     }
   })
@@ -119,7 +119,7 @@ router.get('/me', ensureAuthorized, function(req, res, next){
 function ensureAuthorized(req, res, next) {
   var bearerToken;
   var bearerHeader = req.headers["authorization"];
-  console.log(bearerHeader);
+  //console.log(bearerHeader);
   if (typeof bearerHeader !== "undefined") {
     var bearer = bearerHeader.split(" ");
     bearerToken = bearer[0];

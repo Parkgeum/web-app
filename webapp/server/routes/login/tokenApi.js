@@ -3,7 +3,9 @@ function getId() {
     var token = localStorage.getItem("token");
     $.ajax({
         type: "GET",
-        url: "/me",
+        url: "http://localhost:3000/me",
+        async: false,
+        timeout: 3000,
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization","Bearer " + token);
         },
@@ -13,6 +15,9 @@ function getId() {
             console.log(res.data.following);
             console.log(res.data.follower);
             console.log(res.data.image);
+        },
+        error: function(jqXhr, textStatus, errorMessage){
+            console.log("Error: ", errorMessage);
         }
     });
 }
