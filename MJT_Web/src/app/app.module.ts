@@ -16,6 +16,7 @@ import { appRoutes } from './routes';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
+import { UploadComponent } from './upload/upload.component';
 //other
 // import { AuthGuard } from './auth/auth.guard';
 
@@ -25,7 +26,8 @@ import { UserService } from './shared/user.service';
     UserComponent,
     SignUpComponent,
     UserprofileComponent,
-    SignInComponent
+    SignInComponent,
+    UploadComponent
   ],
   imports: [ 
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { UploadComponent } from './upload/upload.component';
 
 //Sign in을 위해
 import { SignInComponent } from './user/sign-in/sign-in.component';
@@ -18,6 +19,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'userprofile', component: UserprofileComponent
+    },
+    {
+        path: 'upload', component: UploadComponent
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'

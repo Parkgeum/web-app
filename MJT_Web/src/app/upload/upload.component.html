@@ -1,0 +1,54 @@
+<div class="header">
+
+    <img id="lg1" src="assets/img/camera.jpg" style="width:7%; height:80%;">
+    <img id="lg2" src="assets/img/logom.png" style="width: 12%; height:70%;">
+    <div id="searchbox">
+        <input type="search" placeholder="">
+    </div>
+    <div id="searchbtn">
+        <input type="submit" value="검색" class="btn">
+        <!-- <button type="button" class="btn1">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> -->
+        <!-- a href="Main_Page.html"> Main </a> -->
+        <!-- </button>
+        <button type="button" class="btn2">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>  -->
+        <!-- <a href="Profile_Page.html">  -->
+        <!-- </a> -->
+        <!-- Profile
+        </button>
+        <button type="button" class="btn2">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+        </button> -->
+        <!-- <a routerLink="/login"> Logout </a> -->
+    </div>
+
+</div>
+<div class="content">
+    <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s12">
+                    <!-- <textarea id="textarea1" class="materialize-textarea"></textarea>
+                  <label for="textarea1">Textarea</label>
+                  <br> -->
+                    <h1> Image Upload </h1>
+                    <!-- Pick file시 이쪽에 불려진 이미지 전달하기 -->
+                    <img src="assets/img/logom.png" class="pickimg"><br>
+                    <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput>
+                    <button type="button" class="btn-1" (click)="fileInput.click()" required> Pick File </button>
+                    <button type="button" class="btns-1" (click)="onUpload()"> Upload </button>
+                    <br><br>
+                    <label> 사용자 Text </label>
+                    <br>
+                    <input type="text" class="text" name="text" #name="ngModel" [(ngModel)]="uploadService.selectedUpload.text"
+                        placeholder="Input text">
+                    <br><br>
+                    <label> Hashtag </label>
+                    <br>
+                    <textarea ng-model="myName" class="text" required></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
