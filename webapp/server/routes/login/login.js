@@ -61,7 +61,7 @@ function localSignUp(User, next) {
   User.save(function(err, newUser) {
     newUser.image.contentsType='image/jpg';
     var buffer = fs.readFileSync('./routes/login/profile.jpg');  //이미지부분, 추후 수정!
-    newUser.image.data = buffer;
+    newUser.image.data = '';
     newUser.jsonWebToken = jwt.sign(newUser.toJSON(), jwtSecret);
     newUser.save(function(err, saveUser) {
       next(err, saveUser);
@@ -110,7 +110,7 @@ router.get('/me', ensureAuthorized, function(req, res, next){
       console.log("following: "+user.following)
       console.log("follower: "+user.follower)
       console.log("posts: "+user.posts)
-      console.log("image: "+image.data)
+      //console.log("image: "+image.data)
       res.send({success:true, data:user});
     }
   })
@@ -119,7 +119,7 @@ router.get('/me', ensureAuthorized, function(req, res, next){
 function ensureAuthorized(req, res, next) {
   var bearerToken;
   var bearerHeader = req.headers["authorization"];
-  console.log(bearerHeader);
+  //console.log(bearerHeader);
   if (typeof bearerHeader !== "undefined") {
     var bearer = bearerHeader.split(" ");
     bearerToken = bearer[0];

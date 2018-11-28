@@ -30,8 +30,7 @@ var userSchema = new mongoose.Schema({
     image: {
         data : Buffer,
         contentsType : String
-   },
-   
+    },
     jsonWebToken: String
 });
 

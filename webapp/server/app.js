@@ -13,6 +13,7 @@ var bodyParser = require('body-parser');
 
 var loginRouter = require('./routes/login/login');
 var usersRouter = require('./routes/users');
+var postsRouter = require('./routes/posts');
 
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true}, (err) => {
   if(!err) { console.log('MongoDB connection succeeded'); }
@@ -35,7 +36,8 @@ app.use(bodyParser.json());
 
 app.use('/', loginRouter);
 app.use('/users', usersRouter);
-app.use('/api', usersRouter);
+//app.use('/api', usersRouter);
+app.use('/posts', postsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

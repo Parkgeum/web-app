@@ -9,7 +9,7 @@ function localLogin() {
     $.post('/member/login', postUserInformation, 
         function(response){
             if (response.success == true){
-                localStorage.setItem("id", response.data.id);
+                localStorage.setItem("username", response.data.username);
                 localStorage.setItem("token", response.token);
                 console.log(response.data.id);
             }
@@ -34,7 +34,7 @@ function localSignup() {
         function(response){
             console.log(response+"test log");
             if (response.success == true){
-                localStorage.setItem("id", response.data.id);
+                localStorage.setItem("username", response.data.username);
                 localStorage.setItem("token", response.token);
             }
          });
