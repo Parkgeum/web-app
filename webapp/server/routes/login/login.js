@@ -61,7 +61,7 @@ function localSignUp(User, next) {
   User.save(function(err, newUser) {
     newUser.image.contentsType='image/jpg';
     var buffer = fs.readFileSync('./routes/login/profile.jpg');  //이미지부분, 추후 수정!
-    newUser.image.data = buffer;
+    newUser.image.data = '';
     newUser.jsonWebToken = jwt.sign(newUser.toJSON(), jwtSecret);
     newUser.save(function(err, saveUser) {
       next(err, saveUser);
@@ -106,11 +106,11 @@ router.get('/me', ensureAuthorized, function(req, res, next){
   User.findOne(findConditionToken, function(err, user){
     if(err) {res.send({success:false, type:"Error Occured"+err});}
     else {
-   /*   console.log("username: "+user.username)
+      console.log("username: "+user.username)
       console.log("following: "+user.following)
       console.log("follower: "+user.follower)
       console.log("posts: "+user.posts)
-      console.log("image: "+image.data)*/
+      //console.log("image: "+image.data)
       res.send({success:true, data:user});
     }
   })

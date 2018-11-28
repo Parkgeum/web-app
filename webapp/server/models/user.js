@@ -12,10 +12,10 @@ var userSchema = new mongoose.Schema({
     following: {type:Number, default:0}, //팔로잉 목록 볼 수 있게 수정해야 함
     follower: {type:Number, default:0},
     posts: {type: Number, default:0},
-    image: {
+    /*image: {
         data : Buffer,
-        contentsType : String
-   },
+        contentsType : String   //url프로필 사진(defalut)
+   },*/
     // password: {
     //     type: String,
     //     required: 'Password can not be empty',
