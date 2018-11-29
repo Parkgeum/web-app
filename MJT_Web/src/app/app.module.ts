@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule} from '@agm/core';
 
 //component
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +35,10 @@ import { UploadComponent } from './upload/upload.component';
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyApX1bT78XX5t8JYZOkMMYUOo8vxfZtObQ'
+    })
   ],
   
   providers: [UserService],

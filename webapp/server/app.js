@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-// var cors = require('cors');
+var cors = require('cors');
 
 
 var loginRouter = require('./routes/login/login');
@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use(cors());
+app.use(cors( { origin: 'http://localhost:4200' }));
 
 app.use('/', loginRouter);
 app.use('/users', usersRouter);
@@ -55,6 +55,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
+// app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
 
 module.exports = app;

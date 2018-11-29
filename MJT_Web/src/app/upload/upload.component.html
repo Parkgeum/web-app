@@ -24,7 +24,9 @@
     </div>
 
 </div>
+
 <div class="content">
+
     <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
         <div class="row">
             <div class="row">
@@ -34,10 +36,23 @@
                   <br> -->
                     <h1> Image Upload </h1>
                     <!-- Pick file시 이쪽에 불려진 이미지 전달하기 -->
-                    <img src="assets/img/logom.png" class="pickimg"><br>
-                    <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput>
-                    <button type="button" class="btn-1" (click)="fileInput.click()" required> Pick File </button>
-                    <button type="button" class="btns-1" (click)="onUpload()"> Upload </button>
+                    <script>
+                        function image_check() {
+                            // var path = "path";
+                            var imgSource = document.targetImg;
+                            // imgSource.src = path;
+                            
+                        }
+                    </script>
+                    <!-- <img src="assets/img/logom.png"  class="pickimg"><br> -->
+                    <img [src] ="imageUrl"  style = "width: 250px; height: 150px">
+                    <br>
+                    <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+                    <button type="submit" class="btn-1"> Submit</button>
+                    <!-- <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput> -->
+                    <!-- <button type="submit" class="btn-1" (click)="fileInput.click()" required> Pick File </button> -->
+                    <!-- <button type="button" class="btns-1" (click)="onUpload()"> Upload </button>
+                    <button type="button" class="btns-1" (click)="reset(uploadForm)"> Reset </button> -->
                     <br><br>
                     <label> 사용자 Text </label>
                     <br>
@@ -46,9 +61,16 @@
                     <br><br>
                     <label> Hashtag </label>
                     <br>
-                    <textarea ng-model="myName" class="text" required></textarea>
+                    <input type="text" class="text" name="hastag" #name="ngModel" [(ngModel)]="uploadService.selectedUpload.hastag"
+                        placeholder="Input text">
                 </div>
             </div>
         </div>
     </form>
+
+    <!-- 구글맵 부분 -->
+    <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+        <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="locationChosen">
+        </agm-marker>
+    </agm-map>
 </div>

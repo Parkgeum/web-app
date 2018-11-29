@@ -1,7 +1,7 @@
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/tests', {useNewUrlParser: true});
 
 var boardSchema = new mongoose.Schema({
 
@@ -12,4 +12,4 @@ var boardSchema = new mongoose.Schema({
    }]
 });
 
-module.exports = mongoose.model('board',boardSchema);
+module.exports = mongoose.model('tests', boardSchema);
