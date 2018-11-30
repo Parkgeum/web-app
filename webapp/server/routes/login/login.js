@@ -155,6 +155,41 @@ router.post('/member/update', ensureAuthorized, function(req, res) {
   })
 });
 
+//비밀번호 수정
+router.post('/member/updatePass', ensureAuthorized, function(req, res) {
+  //토큰으로 사용자 찾고 그 사용자에 username,email 정보 덮어쓰기
+  var pre_password = req.body.pre_password; //이전비번
+  var new_password = req.body.new_password; //새로운비번
+
+  var findConditionToken ={
+    jsonWebToken: req.token
+  };
+
+  User.findOne(findConditionToken, function(err, user){
+    if(err) {res.send({success:false, type:"Error Occured"+err});}
+    else {
+      console.log("id: "+user.id);
+      //이전 비밀번호가 저장 되어있는 비밀번호와 같으면
+      if(user.password == pre_password){
+        user.password = new_password;
+        localUpdate(user, function(err, updateuser){
+          if (err){
+            res.send({success:false, data:"Error Occured"+err});
+          } else {
+            res.send({
+              success: true,
+              data: updateuser,
+              type: "password_update",
+            });
+          }
+        });
+      } else{ //다르면
+        res.send({success:false, data:"Not Matching"});
+      }
+    }
+  })
+});
+
 //사용자정보 UPDATE 함수
 function localUpdate(User, next) {
   User.save(function(err, updateuser) {
