@@ -7,10 +7,12 @@ var User = require('./../models/user')
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
 
 /* GET home page. */
+//http://localhost:3000/posts
 router.get('/', function(req, res, next) {
     res.render('post');
 });
 
+// posts/photo로 연결
 router.post('/photo', ensureAuthorized, function (req, res, next) {
     //res.render('posting');
     //res.send({success:true, data:savedPost})

@@ -36,7 +36,6 @@ app.use(cors( { origin: 'http://localhost:4200' }));
 
 app.use('/', loginRouter);
 app.use('/users', usersRouter);
-//app.use('/api', usersRouter);
 app.use('/posts', postsRouter);
 
 // catch 404 and forward to error handler

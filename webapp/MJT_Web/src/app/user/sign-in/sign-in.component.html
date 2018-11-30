@@ -1,0 +1,41 @@
+<div id="wrapper">
+  <div class="main-content">
+    <div class="header">
+      <img src="assets/img/logom.png" />
+    </div>
+    <div class="l-part">
+      <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+        <!-- model은 ts 파일에 정의한 model -->
+        <!-- <input type="text" name="id" #email="ngModel" [(ngModel)]="model.email" placeholder="Email" class="input-1"
+          [pattern]="emailRegex" required [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }"> -->
+          <input type="text" autocomplete="off" #id="ngModel" [(ngModel)]="model.id" name="id" placeholder="id" 
+          class="input-1" required [ngClass]="{ 'invalid-textbox' : signInForm.submitted && !id.valid}">  
+
+
+        <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Password"
+          required minlength="4" class="input-1" [ngClass]="{'invalid-textbox' : signInForm.submitted && !password.valid }">
+
+        <div *ngIf="signInForm.submitted && password.errors?.minlength">
+          <label class="validation-message"> Minimum 4 characters.</label>
+        </div>
+        <input type="submit" value="Sign In" class="btn" (click)="btnclick()">
+      </form>
+    </div>
+    <br>
+
+
+    <div class="sub-content">
+      <div class="s-part">
+        계정이 없으신가요? <a routerLink="/signup"> 회원가입 </a>
+      </div>
+    </div>
+
+
+
+    <!-- form을 사용하기 위해 app.module.ts에 선언해줌 -->
+
+    <!-- sign-in.component.ts에 들어갈 에러 문구 -->
+    <div class="errorm" *ngIf="serverErrorMessages">
+      Error : {{serverErrorMessages}}
+    </div>
+  </div>

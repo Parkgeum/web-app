@@ -1,0 +1,49 @@
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms'
+import { Router, ActivatedRoute } from "@angular/router"
+
+import { UserService } from '../../shared/user.service';
+
+@Component({
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.css']
+})
+export class SignInComponent implements OnInit {
+
+  //생성자 왜 만들어줌? part2 19:00
+  constructor(private userService: UserService,
+    private _router: Router,
+    private _route: ActivatedRoute) { }
+
+  model = {
+    id: '',
+    password: ''
+  };
+
+  emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  serverErrorMessages: string;
+
+  ngOnInit() {
+  }
+
+  onSubmit(form: NgForm) {
+    //subscribe의 callback 함수 res,err
+    // this.userService.login(form.value).subscribe(
+    //   res => {
+    //     this.userService.setToken(res['token']);
+    //     this.router.navigateByUrl('/userprofile');
+    //   },
+
+    //   err => {
+    //       this.serverErrorMessages = err.error.message;
+    //   }
+    // );
+
+  }
+
+  btnclick() {
+    this._router.navigate(['/upload']);
+  }
+}

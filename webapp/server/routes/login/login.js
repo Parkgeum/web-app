@@ -11,6 +11,7 @@ var userid;
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
 
 /* GET home page. */
+//http//localhost:3000
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
@@ -80,6 +81,8 @@ router.post('/member/login', function(req, res) {
     id: local_id,
     password: local_password
   }
+  console.log(local_id);
+  console.log(local_password);
 
   User.findOne(findConditionLocalUser).exec(function (err, user) {
     
