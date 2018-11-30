@@ -19,6 +19,7 @@ router.get('/member', function(req, res, next){
   res.render('login');
 });
 
+//회원가입
 router.post('/member/signup', function(req, res) {
   var signup = new User();
   signup.id = req.body.id;
@@ -56,6 +57,7 @@ router.post('/member/signup', function(req, res) {
   });
 });
 
+//회원가입 함수
 function localSignUp(User, next) {
 
   User.save(function(err, newUser) {
@@ -69,6 +71,7 @@ function localSignUp(User, next) {
   });
 }
 
+//로그인
 router.post('/member/login', function(req, res) {
   var local_id = req.body.id;
   var local_password = req.body.password;
@@ -99,6 +102,7 @@ router.post('/member/login', function(req, res) {
   })
 });
 
+//사용자정보 READ 
 router.get('/me', ensureAuthorized, function(req, res, next){
   var findConditionToken ={
     jsonWebToken: req.token
@@ -115,6 +119,47 @@ router.get('/me', ensureAuthorized, function(req, res, next){
     }
   })
 });
+
+//사용자정보 UPDATE
+router.post('/member/update', ensureAuthorized, function(req, res) {
+  //토큰으로 사용자 찾고 그 사용자에 username,email 정보 덮어쓰기
+  var username = req.body.username;
+  var email = req.body.email;
+
+  var findConditionToken ={
+    jsonWebToken: req.token
+  };
+
+  User.findOne(findConditionToken, function(err, user){
+    if(err) {res.send({success:false, type:"Error Occured"+err});}
+    else {
+      console.log("id: "+user.id);
+      user.username = username;
+      user.email = email;
+
+      localUpdate(user, function(err, updateuser){
+        if (err){
+          res.send({success:false, data:"Error Occured"+err});
+        } else {
+          res.send({
+            success: true,
+            data: updateuser,
+            type: "userinfo_update",
+          });
+        }
+      });
+    }
+  })
+});
+
+//사용자정보 UPDATE 함수
+function localUpdate(User, next) {
+  User.save(function(err, updateuser) {
+    updateuser.save(function(err, updateuser) {
+      next(err, updateuser);
+    });
+  });
+}
 
 function ensureAuthorized(req, res, next) {
   var bearerToken;
