@@ -8,7 +8,7 @@ var postSchema = new mongoose.Schema({
     //image: {type:String, required:true},
     text: {type:String, default:''},
     likes: {type:Number, default:0}, 
-    data: {type:Date, default:Date.now},
+    time: {type:Date, default:Date.now},
     //주소 정보 필요?
 });
 
