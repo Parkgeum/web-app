@@ -114,9 +114,9 @@ router.get('/me', ensureAuthorized, function(req, res, next){
     if(err) {res.send({success:false, type:"Error Occured"+err});}
     else {
       console.log("username: "+user.username)
-      console.log("following: "+user.following)
-      console.log("follower: "+user.follower)
-      console.log("posts: "+user.posts)
+      console.log("following: "+user.following.length)
+      console.log("follower: "+user.follower.length)
+      console.log("posts: "+user.posts.length)
       //console.log("image: "+image.data)
       res.send({success:true, data:user});
     }

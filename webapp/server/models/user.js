@@ -24,9 +24,9 @@ var userSchema = new mongoose.Schema({
         required: 'Email can not be empty',
         unique: true
     },
-    following: {type:Number, default:0}, //팔로잉 목록 볼 수 있게 수정해야 함
-    follower: {type:Number, default:0},
-    posts: {type: Number, default:0},
+    following: [String], //팔로잉 목록 볼 수 있게 수정해야 함
+    follower:  [String],
+    posts:  [String],
     image: {
         data : Buffer,
         contentsType : String
