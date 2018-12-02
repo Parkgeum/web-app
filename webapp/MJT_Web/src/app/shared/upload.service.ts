@@ -15,12 +15,13 @@ export class UploadService {
   selectedUpload: Upload;
   upload: Upload[];
   //보내줄 base주소 설정해줌
-  readonly baseURL = 'http://localhost:3000/posts';
+  readonly baseURL = 'http://localhost:3000/posts/upload';
 
+  
   constructor(private http : HttpClient) { }
 
   postUpload(uld : Upload){
-    return this.http.post(this.baseURL+'/photo', uld);
+    return this.http.post(this.baseURL, uld);
   }
 
 }

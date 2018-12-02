@@ -12,7 +12,16 @@ export class UserService {
     id: '',
     username: '',
     email: '',
-    password: ''
+    password: '',
+    // following: string[];
+    // follower: String[];
+    // posts: String[];
+    // image: {
+    //     data: Buffer,
+    //     contentsType: String
+    // };
+    // jsonWebToken = this.jsonWebToken;
+    
   }
 
   constructor(private http: HttpClient) { }
@@ -24,8 +33,8 @@ export class UserService {
     return this.http.post(environment.apiBaseUrl+'/member/signup', user);
   }
 
-  login(authCredentials){
-    return this.http.post(environment.apiBaseUrl + '/member/login', authCredentials);
+  login(user: User){
+    return this.http.post(environment.apiBaseUrl +'/member/login', user);
   }
 
   // // Help Methods
