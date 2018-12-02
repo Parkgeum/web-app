@@ -7,7 +7,7 @@ var postSchema = new mongoose.Schema({
     username: {type:String, default:''},
     //image: {type:String, required:true},
     text: {type:String, default:''},
-    likes: {type:Number, default:0}, 
+    likes: [String],
     time: {type:Date, default:Date.now},
     //주소 정보 필요?
 });
