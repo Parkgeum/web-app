@@ -14,6 +14,7 @@ var cors = require('cors');
 var loginRouter = require('./routes/login/login');
 var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts');
+var boardsRouter = require('./routes/boards')
 
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true}, (err) => {
   if(!err) { console.log('MongoDB connection succeeded'); }
@@ -37,6 +38,7 @@ app.use(cors( { origin: 'http://localhost:4200' }));
 app.use('/', loginRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
+app.use('/boards', boardsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -7,14 +7,9 @@ html
       include ./../routes/login/tokenAPI.js 
     
   body
+
     section
-      form(action="/posts/posting" method="post")      
-        div
-          button(type="button", onclick='getUsername()') 글쓰기
-    section
-      form(action="/posts/photo" method="post")
-        div(class="input")
-          input(type='text', name='text', id='text' style='width:500px; height:250px;') 
+      form(action="/boards/follow" method="post")
         div
           button(type="submit") 글쓰기
     
