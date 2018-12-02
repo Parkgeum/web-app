@@ -12,8 +12,8 @@ router.get('/', function(req, res, next) {
     res.render('post');
 });
 
-// posts/photo로 연결
-router.post('/photo', ensureAuthorized, function (req, res, next) {
+// posts/upload로 연결
+router.post('/upload', ensureAuthorized, function (req, res, next) {
     //res.render('posting');
     //res.send({success:true, data:savedPost})
     //localuser = req.username;
@@ -69,6 +69,17 @@ function localPosting(Post, next) {
       });
     });
 }
+
+//전체 게시물 READ
+router.get('/total', function(req, res, next){
+  Post.find(function(err, posts){
+    if(err) {res.send({success:false, type:"Error Occured"+err});}
+    else {
+      console.log("posts: "+posts)
+      res.send({success:true, data:posts});
+    }
+  })
+});
 
 function ensureAuthorized(req, res, next) {
     var bearerToken;
