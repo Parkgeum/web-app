@@ -3,13 +3,9 @@ export class User {
     username: string;
     email: string;
     password: string;
-    // following: string[];
-    // follower: String[];
-    // posts: String[];
-    // image: {
-    //     data: Buffer,
-    //     contentsType: String
-    // };
-    // jsonWebToken: String;
-
+    following: string[];
+    follower: string[];
+    posts: string[];
+    image: string;
+    jsonWebToken: string;
 }

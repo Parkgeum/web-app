@@ -8,21 +8,7 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class UserService {
-  selectedUser: User = {
-    id: '',
-    username: '',
-    email: '',
-    password: '',
-    // following: string[];
-    // follower: String[];
-    // posts: String[];
-    // image: {
-    //     data: Buffer,
-    //     contentsType: String
-    // };
-    // jsonWebToken = this.jsonWebToken;
-    
-  }
+  selectedUser: User 
 
   constructor(private http: HttpClient) { }
 
@@ -35,6 +21,14 @@ export class UserService {
 
   login(user: User){
     return this.http.post(environment.apiBaseUrl +'/member/login', user);
+  }
+
+  getUserList() {
+    return this.http.get('http://localhost:3000/member/info');
+  }
+
+  profile() {
+    return this.http.get('http://localhost:3000/me');
   }
 
   // // Help Methods

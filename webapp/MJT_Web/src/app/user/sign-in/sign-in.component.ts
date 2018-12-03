@@ -45,8 +45,7 @@ export class SignInComponent implements OnInit {
   refreshUserList() {
     this.getUserList().subscribe((res) => {
       this.user = res as User[];
-      
-      // console.log(this.user); 
+      // console.log("refresh"+this.user.indexOf);  
     });
   }
 
@@ -58,17 +57,14 @@ export class SignInComponent implements OnInit {
         var num = "0";
         var i = parseInt(num);
         // form 전달시 id와 password를 비교해서 일치할 경우 userprofile로 전달
-        // for (i; i < this.user.length; i++) {
-        //   if (this.user.id == id) {
-        //     if (this.user.password == password) {
-        //       this.router.navigateByUrl('/userprofile');
-        //     }
-        //   }
-        //   console.log(i);
-        // }
-        this.router.navigateByUrl('/upload');
+        for (i; i < this.user.length; i++) {
+          if (this.user[i].id == form.value.id) {
+            if (this.user[i].password == form.value.password) {
+              this.router.navigateByUrl('/userprofile');
+            }
+          }
+        }
       },
-
       err => {
         this.serverErrorMessages = err.error.message;
       }

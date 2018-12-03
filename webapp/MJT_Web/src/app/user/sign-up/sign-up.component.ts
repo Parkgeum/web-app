@@ -21,6 +21,13 @@ export class SignUpComponent implements OnInit {
     private _router : Router,
     private _route : ActivatedRoute) { }
 
+    model = {
+      id: '',
+      username: '',
+      email: '',
+      password: ''
+    };
+
   ngOnInit() {
     
   }
@@ -28,7 +35,6 @@ export class SignUpComponent implements OnInit {
 
   onSubmit(form : NgForm) {
     //user.service.ts와 매칭
-    console.log(form+"test");
     this.userService.postUser(form.value).subscribe(
       // success or error function
       res => {
@@ -51,12 +57,9 @@ export class SignUpComponent implements OnInit {
 
   //성공적으로 전달이 완료 될 경우
   resetForm(form: NgForm) {
-    this.userService.selectedUser = {
-      id: '',
-      username: '',
-      email: '',
-      password: ''
-    };
+    // this.model ={
+
+    // };
     form.resetForm();
     this.serverErrorMessages = '';
     this._router.navigate(['/login'])

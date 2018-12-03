@@ -22,16 +22,17 @@ router.get('/member', function (req, res, next) {
 });
 
 //http://localhost:3000/member/info
-// router.get('/member/info', (req, res) => {
-//   user.find((err, docs) => {
-//     if (!err) {
-//       res.send(docs);
-//     }
-//     else {
-//       console.log("test info log");
-//     }
-//   });
-// });
+router.get('/member/info', (req, res) => {
+  
+  User.find((err, docs) => {
+    if (!err) {
+      res.send(docs);
+    }
+    else {
+      console.log("test info log");
+    }
+  });
+});
 
 //회원가입
 router.post('/member/signup', function (req, res) {

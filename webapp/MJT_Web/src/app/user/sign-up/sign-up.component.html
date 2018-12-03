@@ -8,7 +8,7 @@
     <div class="l-part">
       <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
 
-        <input type="text" autocomplete="off" #id="ngModel" [(ngModel)]="userService.selectedUser.id" name="id"
+        <input type="text" autocomplete="off" #id="ngModel" [(ngModel)]="model.id" name="id"
           placeholder="id" class="input-1" required [ngClass]="{ 'invalid-textbox' : signUpForm.submitted && !id.valid}">
 
         <!-- 위에서 id 검증 후에 검증되지 않으면 아래에서 에러 문구 발생 -->
@@ -17,7 +17,7 @@
         </div>
 
 
-        <input type="text" autocomplete="off" #username="ngModel" [(ngModel)]="userService.selectedUser.username" name="username"
+        <input type="text" autocomplete="off" #username="ngModel" [(ngModel)]="model.username" name="username"
           placeholder="UserName" class="input-1" required [ngClass]="{ 'invalid-textbox' : signUpForm.submitted && !username.valid}">
         <!-- 위에서 name 검증 후에 검증되지 않으면 아래에서 에러 문구 발생 -->
         <div *ngIf="signUpForm.submitted && !username.valid">
@@ -25,7 +25,7 @@
         </div>
 
 
-        <input type="text" autocomplete="off" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email"
+        <input type="text" autocomplete="off" #email="ngModel" [(ngModel)]="model.email" name="email"
           placeholder="Email" class="input-1" required [pattern]="emailRegex" [ngClass]="{ 'invalid-textbox' : signUpForm.submitted && !email.valid}">
         <!-- 위에서 email 검증 후에 검증되지 않으면 아래에서 에러 문구 발생 -->
         <div *ngIf="signUpForm.submitted && email.errors">
@@ -35,7 +35,7 @@
 
 
         <div class="overlap-text">
-          <input type="password" autocomplete="off" #password="ngModel" [(ngModel)]="userService.selectedUser.password"
+          <input type="password" autocomplete="off" #password="ngModel" [(ngModel)]="model.password"
             name="password" placeholder="password" class="input-1" minlength="4" required [ngClass]="{ 'invalid-textbox' : signUpForm.submitted && !password.valid}">
           <div *ngIf="signUpForm.submitted && password.errors">
             <label *ngIf="password.errors.required" class="validation-message">This field is requied. </label>
