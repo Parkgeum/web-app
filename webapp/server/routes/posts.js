@@ -17,6 +17,7 @@ router.post('/upload', ensureAuthorized, function (req, res, next) {
     //res.render('posting');
     //res.send({success:true, data:savedPost})
     //localuser = req.username;
+    console.log('upload test');
     var findConditionToken ={
         jsonWebToken: req.token
       };

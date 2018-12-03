@@ -4,7 +4,6 @@ var router = express.Router();
 var ctrlUser = require('../controllers/user.controller');
 
 
-router.post('/register', ctrlUser.register);
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

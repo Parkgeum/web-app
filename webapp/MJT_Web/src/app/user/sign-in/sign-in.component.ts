@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms'
 import { Router, ActivatedRoute } from "@angular/router"
-
+import { User } from '../../shared/user.model';
 import { UserService } from '../../shared/user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,9 +12,16 @@ import { UserService } from '../../shared/user.service';
 })
 export class SignInComponent implements OnInit {
 
+  selectedUser: User;
+  user: User[];
+
+  readonly baseUrls = 'http://localhost:3000/member/info';
+
   //생성자 왜 만들어줌? part2 19:00
-  constructor(private userService: UserService,
-    private _router: Router,
+  constructor(
+    private http: HttpClient,
+    private userService: UserService,
+    private router: Router,
     private _route: ActivatedRoute) { }
 
   model = {
@@ -26,24 +34,48 @@ export class SignInComponent implements OnInit {
   serverErrorMessages: string;
 
   ngOnInit() {
+    this.refreshUserList();
+  }
+
+
+  getUserList() {
+    return this.http.get(this.baseUrls);
+  }
+
+  refreshUserList() {
+    this.getUserList().subscribe((res) => {
+      this.user = res as User[];
+      
+      // console.log(this.user); 
+    });
   }
 
   onSubmit(form: NgForm) {
     //subscribe의 callback 함수 res,err
-    // this.userService.login(form.value).subscribe(
-    //   res => {
-    //     this.userService.setToken(res['token']);
-    //     this.router.navigateByUrl('/userprofile');
-    //   },
 
-    //   err => {
-    //       this.serverErrorMessages = err.error.message;
-    //   }
-    // );
+    this.userService.login(form.value).subscribe(
+      res => {
+        var num = "0";
+        var i = parseInt(num);
+        // form 전달시 id와 password를 비교해서 일치할 경우 userprofile로 전달
+        // for (i; i < this.user.length; i++) {
+        //   if (this.user.id == id) {
+        //     if (this.user.password == password) {
+        //       this.router.navigateByUrl('/userprofile');
+        //     }
+        //   }
+        //   console.log(i);
+        // }
+        this.router.navigateByUrl('/upload');
+      },
 
+      err => {
+        this.serverErrorMessages = err.error.message;
+      }
+    );
   }
 
-  btnclick() {
-    this._router.navigate(['/upload']);
-  }
+  // btnclick() {
+  //   this._router.navigate(['/upload']);
+  // }
 }
