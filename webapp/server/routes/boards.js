@@ -24,6 +24,7 @@ router.post('/follow', ensureAuthorized, function (req, res, next) {
 
             Post.find({"username":{"$in":follow}},function(err, rawContent){
                     if(err) throw err;
+                    rawContent.reverse(); // 최신항목이 위에 뜨도록 역순 정렬
                     res.send(rawContent); 
             })
         }

@@ -206,6 +206,52 @@ router.post('/member/updatePass', ensureAuthorized, function (req, res) {
   })
 });
 
+
+//팔로우하기
+router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
+  var followuser = req.body.followuser;
+
+  var findConditionToken = {
+    jsonWebToken: req.token
+  };
+
+  User.findOne(findConditionToken, function (err, user) {
+    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+    else {
+      User.findOne({username: followuser}, function(err,followinguser){
+        console.log(followinguser);
+        //팔로잉 항목 추가
+        var followinglist = user.following;
+        followinglist.push(followinguser.username);
+        //팔로잉 당하는 사람의 팔로우 항목 추가
+        var followerlist = followinguser.follower;
+        followerlist.push(user.username);
+
+        //팔로잉하는 사람 유저정보 업데이트
+        localUpdate(user, function (err, updateuser) {
+          if (err) {
+            res.send({ success: false, data: "Error Occured" + err });
+          } else {
+            //팔로잉 당하는 사람 유저정보 업데이트
+            localUpdate(followinguser, function (err, updateuser) {
+              if (err) {
+                res.send({ success: false, data: "Error Occured" + err });
+              } else {
+                res.send({
+                  success: true,
+                  //data: updateuser,
+                  type: "following / follower 추가",
+                });
+              }
+            }); 
+          
+          }
+        });
+      })
+    }
+  })
+});
+
 //사용자정보 UPDATE 함수
 function localUpdate(User, next) {
   User.save(function (err, updateuser) {
