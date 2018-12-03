@@ -5,7 +5,7 @@
 .btn-1 {
     width: 20%;
     /* height: 10%; */
-    background-color: #3897f0;
+    background-color: #b6c3cf;
     border: 1px solid #3897f0;
     padding: 5px 12px;
     color: #fff;
@@ -29,7 +29,7 @@
     margin: 1%;
   }
 
-  .btn {
+  .btns {
     /*width: 3%;*/
     /*height: 20px;*/
     background-color: #3897f0;
@@ -99,42 +99,47 @@ img {
       border-radius: 3px;
     }
 
-        .header {
-            height: 80px;
-            background-color: white;
-            border-bottom: 1px solid slategray;
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            overflow: hidden;
+    .header {
+        height: 12%;
+        background-color: white;
+        border-bottom: 1px solid slategray;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        overflow: hidden;
+    }
 
-        }
+    #lg1 {
+        margin: 5px;
+        float: left;
+    }
 
-        #lg1 {
-            margin: 5px;
-            float: left;
-        }
+    #lg2 {
+        border-left: 1px solid black;
+        padding-left: 40px;
+        margin: 20px;
+        float: left;
+    }
 
-        #lg2 {
-            border-left: 1px solid black;
-            padding-left: 40px;
-            margin: 20px;
-            float: left;
-        }
+    #lg3 {
+        margin: 30px;
+        float: 0px;
+    }
 
-        #lg3 {
-            margin: 30px;
-            float: right;
-        }
+    #searchbox {
 
-        #searchbox {
+        margin-top: 2%;
+        margin-left: 7%;
+        float: left;
 
-            margin-top: 30px;
-            margin-left: 100px;
-            float: left;
+    }
 
-        }
+    #searchbtn {
+        margin-top: 2%;
+        float: center;
+
+    }
 
 .container {
     max-width: 93.5rem;

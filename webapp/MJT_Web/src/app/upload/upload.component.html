@@ -6,21 +6,10 @@
         <input type="search" placeholder="">
     </div>
     <div id="searchbtn">
-        <input type="submit" value="검색" class="btn">
-        <!-- <button type="button" class="btn1">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> -->
-        <!-- a href="Main_Page.html"> Main </a> -->
-        <!-- </button>
-        <button type="button" class="btn2">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>  -->
-        <!-- <a href="Profile_Page.html">  -->
-        <!-- </a> -->
-        <!-- Profile
-        </button>
-        <button type="button" class="btn2">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
-        </button> -->
-        <!-- <a routerLink="/login"> Logout </a> -->
+        <button type="submit" class="btn" (click)="Searchbtn()">검색</button>
+        <a routerLink="/signup" class="btn1"> Main </a>
+      <a routerLink="/upload" class="btn2"> Upload </a>
+      <a routerLink="/login" class="btn2"> Logout </a>
     </div>
 
 </div>
@@ -28,25 +17,25 @@
 <div class="content">
 
     <form #uploadForm="ngForm">
-     <!-- (ngSubmit)="onSubmit(uploadForm)"> -->
+        <!-- (ngSubmit)="onSubmit(uploadForm)"> -->
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
                     <!-- <textarea id="textarea1" class="materialize-textarea"></textarea>
                   <label for="textarea1">Textarea</label>
                   <br> -->
-                    <h1> Image Upload </h1>
+                    <h2> 게시물 업로드 페이지 </h2>
                     <!-- Pick file시 이쪽에 불려진 이미지 전달하기 -->
                     <script>
                         function image_check() {
                             // var path = "path";
                             var imgSource = document.targetImg;
                             // imgSource.src = path;
-                            
+
                         }
                     </script>
                     <!-- <img src="assets/img/logom.png"  class="pickimg"><br> -->
-                    <img [src] ="imageUrl"  style = "width: 250px; height: 150px">
+                    <img [src]="imageUrl" style="width: 250px; height: 150px">
                     <br>
                     <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
                     <button type="submit" class="btn-1" (click)="onUpload(uploadForm)"> Submit</button>
@@ -63,15 +52,9 @@
                     <label> Hashtag </label>
                     <br>
                     <input type="text" class="text" name="hastag" #name="ngModel" [(ngModel)]="uploadService.selectedUpload.hastag"
-                        placeholder="Input text" >
+                        placeholder="Input text">
                 </div>
             </div>
         </div>
     </form>
-
-    <!-- 구글맵 부분 -->
-    <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
-        <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="locationChosen">
-        </agm-marker>
-    </agm-map>
 </div>

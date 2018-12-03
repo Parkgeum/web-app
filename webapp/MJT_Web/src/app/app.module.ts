@@ -14,10 +14,11 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 
 //routes
 import { appRoutes } from './routes';
-import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UserprofileComponent } from './user/userprofile/userprofile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
 import { UploadComponent } from './upload/upload.component';
+import { GooglemapComponent } from './googlemap/googlemap.component';
 //other
 // import { AuthGuard } from './auth/auth.guard';
 
@@ -28,7 +29,8 @@ import { UploadComponent } from './upload/upload.component';
     SignUpComponent,
     UserprofileComponent,
     SignInComponent,
-    UploadComponent
+    UploadComponent,
+    GooglemapComponent
   ],
   imports: [ 
     BrowserModule,

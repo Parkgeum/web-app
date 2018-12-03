@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadService } from '../shared/upload.service';
 import { HttpClient, HttpEventType } from '@angular/common/http';
+import { Router, ActivatedRoute } from "@angular/router"
 import { NgForm } from '@angular/forms';
 
 declare var M: any;
@@ -12,19 +13,6 @@ declare var M: any;
   providers: [UploadService]
 })
 export class UploadComponent implements OnInit {
-
-  latitude = 37.588787;
-  longitude = 127.00432;
-  locationChosen = false;
-
-  //googlemap 이벤트
-  onChoseLocation(event){
-    // console.log(event);
-    this.latitude = event.coords.lat;
-    this.longitude = event.coords.lng;
-    this.locationChosen=  true;
-    // 이부분 그대로 사용하면 이미지 가져오기 가능 ?
-  }
 
   selectedFile : File = null;
   imageUrl : string = "assets/img/logom.png"
@@ -92,10 +80,14 @@ export class UploadComponent implements OnInit {
 
   // constructor() {}
 
-  constructor(private uploadService: UploadService, private http: HttpClient) { }
+  constructor(private uploadService: UploadService, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.reset();
+  }
+
+  Searchbtn(){
+    this.router.navigateByUrl('/googlemap');
   }
 
 }

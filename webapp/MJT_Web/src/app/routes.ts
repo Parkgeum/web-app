@@ -5,7 +5,8 @@ import { UploadComponent } from './upload/upload.component';
 
 //Sign in을 위해
 import { SignInComponent } from './user/sign-in/sign-in.component';
-import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UserprofileComponent } from './user/userprofile/userprofile.component';
+import { GooglemapComponent } from './googlemap/googlemap.component';
 // import { AuthGuard } from './auth/auth.guard';
 
 export const appRoutes: Routes = [
@@ -22,6 +23,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'upload', component: UploadComponent
+    },
+    {
+        path: 'googlemap', component: GooglemapComponent
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'

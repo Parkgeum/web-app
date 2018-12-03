@@ -6,20 +6,11 @@
     <input type="search" placeholder="">
   </div>
   <div id="searchbtn">
-    <input type="submit" value="검색" class="btn">
-    <button type="button" class="btn1">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <!-- a href="Main_Page.html"> Main </a> -->
-      Main
-    </button>
-    <button type="button" class="btn2">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span><!--  <a href="Profile_Page.html"> Profile </a> -->
-      Profile
-    </button>
-    <button type="button" class="btn2">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span><!--  <a href="Login_Page.html"> Logout </a> -->
-      Logout
-    </button>
-  </div>
+    <button type="submit" class="btns" (click)="Searchbtn()">검색</button>
+    <a routerLink="/signup" class="btn1"> Main </a>
+  <a routerLink="/upload" class="btn2"> Upload </a>
+  <a routerLink="/login" class="btn2"> Logout </a>
+</div>
 </div>
 
 <br><br><br><br>
