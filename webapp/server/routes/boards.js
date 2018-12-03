@@ -18,18 +18,17 @@ router.post('/follow', ensureAuthorized, function (req, res, next) {
         if(err) {res.send({success:false, type:"Error Occured"+err});}
         else {
             //user값에 저장된 사용자 이름과 posts를 받아옴
-            var follow = user.following
-            follow.push(user.username)
+            var follow = user.following //팔로잉 하고있는 사람
+            follow.push(user.username) //+자기 이름
             console.log(follow)
 
-            User.find({"username":{"$in":follow}},function(err, rawContent){
+            Post.find({"username":{"$in":follow}},function(err, rawContent){
                     if(err) throw err;
                     res.send(rawContent); 
             })
         }
       })
 });
-
 
 //좋아요 수 늘리기!
 router.post('/like', ensureAuthorized, function (req, res, next) {
