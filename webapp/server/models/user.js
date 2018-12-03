@@ -4,6 +4,16 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true} );
 
+var postSchema = new mongoose.Schema({
+
+    username: {type:String, default:''},
+    //image: {type:String, required:true},
+    text: {type:String, default:''},
+    likes: [String],
+    time: {type:Date, default:Date.now},
+    //주소 정보 필요?
+});
+
 var userSchema = new mongoose.Schema({
     id: {
         type: String,
@@ -26,7 +36,7 @@ var userSchema = new mongoose.Schema({
     },
     following: [String], //팔로잉 목록 볼 수 있게 수정해야 함
     follower:  [String],
-    posts:  [String],
+    posts:  [postSchema],
     image: {
         data : Buffer,
         contentsType : String

@@ -40,44 +40,39 @@ router.post('/like', ensureAuthorized, function (req, res, next) {
     var findConditionToken ={
         jsonWebToken: req.token
     };
-    var likeuser;
     //토큰을 사용해서 사용자를 찾은 다음 user값으로 받음. 
     User.findOne(findConditionToken, function(err, user){
         if(err) {res.send({success:false, type:"Error Occured"+err});}
         else {
             var username = user.username;
+            console.log(username)
             //좋아요 할 게시글 불러옴.
             Post.findOne(findlocalPOst,function(err, rawContent){
                 if(err) {res.send({success:false, type:"Error Occured"+err});}
-                else {//게시글의 좋아요 목록에 내 username 추가
-                    likeuser = rawContent.username;
-                    rawContent.save({$push:{"likes":username}}, function(err, updatepost){
-                    console.log('좋아요')
+                else {//게시글post의 좋아요 목록에 내 username 추가
+                    var likelist = rawContent.likes
+                    likelist.addToSet(username)
+                    rawContent.save({"likes":likelist}, function(err, updatepost){
+                        console.log('좋아요') 
+                        //user목록의 post항목 업데이트
+                        User.findOne({"posts":{"$elemMatch":findlocalPOst}}, function (err,likeuser) {
+                            if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+                            else {
+                                likeuser.posts=updatepost;
+                                likeuser.save(updatepost, function(err, com){
+                                    res.send(com)
+                                })
+                                 
+                            }
+                        })
                     })
                 }
-                /*
-                User.findOne({"username":likeuser}, function(err, updatePost){
-                    var update = updatePost.findOne()
-                    if(err) res.send("에러 발생")
-                    else {
-                        updatePost.update({"posts":{$push:{"likes":username}}}, function(err, updatepost){
-                        res.send(updatepost)})
-                    }
-                })*/
             })
             
         }
     })    
 })
 
-//사용자정보 UPDATE 함수
-function localUpdate(User, next) {
-  User.save(function(err, updateuser) {
-    updateuser.save(function(err, updateuser) {
-      next(err, updateuser);
-    });
-  });
-}
 function ensureAuthorized(req, res, next) {
     var bearerToken;
     var bearerHeader = req.headers["authorization"];
