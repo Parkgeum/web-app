@@ -7,6 +7,7 @@ import { UploadComponent } from './upload/upload.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserprofileComponent } from './user/userprofile/userprofile.component';
 import { GooglemapComponent } from './googlemap/googlemap.component';
+import { BoardComponent } from './board/board.component'
 // import { AuthGuard } from './auth/auth.guard';
 
 export const appRoutes: Routes = [
@@ -19,13 +20,16 @@ export const appRoutes: Routes = [
         children: [{ path: '', component: SignInComponent }]
     },
     {
-        path: 'userprofile', component: UserprofileComponent
+        path: 'profile', component: UserprofileComponent
     },
     {
         path: 'upload', component: UploadComponent
     },
     {
         path: 'googlemap', component: GooglemapComponent
+    },
+    {
+        path: 'board', component: BoardComponent
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'

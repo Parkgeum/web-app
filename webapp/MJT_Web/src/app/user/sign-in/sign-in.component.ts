@@ -57,12 +57,30 @@ export class SignInComponent implements OnInit {
       res => {
         var num = "0";
         var i = parseInt(num);
+
+        
         // form 전달시 id와 password를 비교해서 일치할 경우 userprofile로 전달
         for (i; i < this.user.length; i++) {
           if (this.user[i].id == form.value.id) {
             if (this.user[i].password == form.value.password) {
-              this.router.navigateByUrl('/userprofile');
-            }
+              console.log(this.user[i].id+"1"+ this.user[i].password+"2" + this.user[i].jsonWebToken)
+              localStorage.setItem('token', this.user[i].jsonWebToken);
+              console.log("client"+localStorage.getItem("token"));
+              this.router.navigateByUrl('/profile')
+              // this.userService.profile().subscribe(
+                // success or error function
+                // res => {
+                //   console.log(form.value.id)
+                // }
+                
+                // err => {
+                //   if (err.status == 422) {
+                //     this.serverErrorMessages = err.error.join('<br/>');
+                //   }
+                //   else
+                //     this.serverErrorMessages = 'Something went wrong. Please contact admin';
+                // );
+              }
           }
         }
       },

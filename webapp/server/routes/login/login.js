@@ -124,8 +124,11 @@ router.post('/member/login', function (req, res) {
 
 //사용자정보 READ 
 router.get('/me', ensureAuthorized, function (req, res, next) {
+  // var token = localStorage.getItem("token");
+  // console.log("server" + token);
   var findConditionToken = {
     jsonWebToken: req.token
+    // jsonWebToken: localStorage.getItem("token")
   };
   User.findOne(findConditionToken, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }

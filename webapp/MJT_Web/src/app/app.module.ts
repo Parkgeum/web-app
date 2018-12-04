@@ -19,6 +19,7 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
 import { UploadComponent } from './upload/upload.component';
 import { GooglemapComponent } from './googlemap/googlemap.component';
+import { BoardComponent } from './board/board.component';
 //other
 // import { AuthGuard } from './auth/auth.guard';
 
@@ -30,7 +31,8 @@ import { GooglemapComponent } from './googlemap/googlemap.component';
     UserprofileComponent,
     SignInComponent,
     UploadComponent,
-    GooglemapComponent
+    GooglemapComponent,
+    BoardComponent
   ],
   imports: [ 
     BrowserModule,

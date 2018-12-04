@@ -7,7 +7,7 @@
     </div>
     <div id="searchbtn">
         <button type="submit" class="btn" (click)="Searchbtn()">검색</button>
-        <a routerLink="/signup" class="btn1"> Main </a>
+        <a routerLink="/board" class="btn1"> Main </a>
       <a routerLink="/upload" class="btn2"> Upload </a>
       <a routerLink="/login" class="btn2"> Logout </a>
     </div>
@@ -37,7 +37,7 @@
                     <!-- <img src="assets/img/logom.png"  class="pickimg"><br> -->
                     <img [src]="imageUrl" style="width: 250px; height: 150px">
                     <br>
-                    <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+                    <input type="file" #Image accept="image/*"  (change)="handleFileInput($event.target.files)">
                     <button type="submit" class="btn-1" (click)="onUpload(uploadForm)"> Submit</button>
                     <!-- <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput> -->
                     <!-- <button type="submit" class="btn-1" (click)="fileInput.click()" required> Pick File </button> -->
