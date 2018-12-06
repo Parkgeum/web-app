@@ -1,5 +1,5 @@
 export class Upload {
-    _id: string;
+    username: string;
     text: string;
     image: string;
     hashtag: string;

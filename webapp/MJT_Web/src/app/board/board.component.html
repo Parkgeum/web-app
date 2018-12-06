@@ -1,4 +1,4 @@
-<div class="header">
+<!-- <div class="header">
 
   <img id="lg1" src="assets/img/camera.jpg" style="width:7%; height:80%;">
   <img id="lg2" src="assets/img/logom.png" style="width: 12%; height:70%;">
@@ -12,7 +12,7 @@
     <a routerLink="/login" class="btn2"> Logout </a>
   </div>
 
-</div>
+</div> -->
 
 <div class="content">
 
@@ -21,6 +21,17 @@
       <div class="row">
           <div class="row">
               <div class="input-field col s12">
+                    <table>
+                            <thead>
+                              <th>id</th>
+                              <th>text</th>
+                            </thead>
+                            <tr *ngFor="let upload of uploadService.upload">
+                              <td>{{upload.username}}</td>
+                              <td>{{upload.text}}</td>
+                              <!-- <td>{{user.following}}</td> -->
+                            </tr>
+                          </table>
                  
               </div>
           </div>

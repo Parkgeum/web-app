@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms'
 import { Router, ActivatedRoute } from "@angular/router"
 import { User } from '../../shared/user.model';
 import { UserService } from '../../shared/user.service';
-
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -63,23 +62,8 @@ export class SignInComponent implements OnInit {
         for (i; i < this.user.length; i++) {
           if (this.user[i].id == form.value.id) {
             if (this.user[i].password == form.value.password) {
-              console.log(this.user[i].id+"1"+ this.user[i].password+"2" + this.user[i].jsonWebToken)
               localStorage.setItem('token', this.user[i].jsonWebToken);
-              console.log("client"+localStorage.getItem("token"));
               this.router.navigateByUrl('/profile')
-              // this.userService.profile().subscribe(
-                // success or error function
-                // res => {
-                //   console.log(form.value.id)
-                // }
-                
-                // err => {
-                //   if (err.status == 422) {
-                //     this.serverErrorMessages = err.error.join('<br/>');
-                //   }
-                //   else
-                //     this.serverErrorMessages = 'Something went wrong. Please contact admin';
-                // );
               }
           }
         }

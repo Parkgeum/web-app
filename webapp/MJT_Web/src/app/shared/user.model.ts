@@ -9,3 +9,10 @@ export class User {
     image: string;
     jsonWebToken: string;
 }
+
+export class usermodels {
+    username: string;
+    following: number;
+    follower: number;
+    posts: number;
+}

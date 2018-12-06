@@ -96,4 +96,17 @@ function ensureAuthorized(req, res, next) {
   }
 }
 
+//localhost:3000/posts/info
+router.get('/info', (req, res) => {
+  
+  Post.find((err, docs) => {
+    if (!err) {
+      res.send(docs);
+    }
+    else {
+      console.log("test info log");
+    }
+  });
+});
+
 module.exports = router;

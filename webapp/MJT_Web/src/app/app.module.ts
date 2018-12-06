@@ -20,6 +20,10 @@ import { UserService } from './shared/user.service';
 import { UploadComponent } from './upload/upload.component';
 import { GooglemapComponent } from './googlemap/googlemap.component';
 import { BoardComponent } from './board/board.component';
+import { NgFlashMessagesModule } from 'ng-flash-messages';
+import { UploadService } from './shared/upload.service';
+import { NavbarComponent } from './navbar/navbar.component';
+// import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
 
@@ -32,7 +36,9 @@ import { BoardComponent } from './board/board.component';
     SignInComponent,
     UploadComponent,
     GooglemapComponent,
-    BoardComponent
+    BoardComponent,
+    // Observable
+    NavbarComponent
   ],
   imports: [ 
     BrowserModule,
@@ -42,10 +48,11 @@ import { BoardComponent } from './board/board.component';
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyApX1bT78XX5t8JYZOkMMYUOo8vxfZtObQ'
-    })
+    }),
+    NgFlashMessagesModule
   ],
   
-  providers: [UserService],
+  providers: [UserService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

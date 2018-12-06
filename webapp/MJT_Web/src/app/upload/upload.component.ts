@@ -43,7 +43,7 @@ export class UploadComponent implements OnInit {
     if(form)
       form.reset();
     this.uploadService.selectedUpload = {
-        _id: "",
+      username: "",
       text: "",
       image: "",
       hashtag: "",
@@ -54,8 +54,7 @@ export class UploadComponent implements OnInit {
   onUpload(form?: NgForm) {
     this.uploadService.postUpload(form.value).subscribe(res=> {
       this.reset(form);
-      console.log("test upload");
-      M.toast({ html: 'Upload successfully', classes: 'rounded'})
+      M.toast({ html : 'Upload Successfully', classes: 'rounded' });
     });
   }
 

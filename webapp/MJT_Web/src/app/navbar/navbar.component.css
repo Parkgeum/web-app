@@ -1,0 +1,16 @@
+#lg1 {
+    margin: 5px;
+    float: left;
+}
+
+#lg2 {
+    border-left: 1px solid black;
+    padding-left: 40px;
+    margin: 20px;
+    float: left;
+}
+
+#lg3 {
+    margin: 30px;
+    float: 0px;
+}
