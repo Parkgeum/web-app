@@ -37,10 +37,7 @@ var userSchema = new mongoose.Schema({
     following: [String], //팔로잉 목록 볼 수 있게 수정해야 함
     follower:  [String],
     posts:  [postSchema],
-    image: {
-        data : Buffer,
-        contentsType : String
-    },
+    image: {type:String,default:'null'},
     jsonWebToken: String
 });
 

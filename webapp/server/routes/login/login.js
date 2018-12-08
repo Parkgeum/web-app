@@ -76,9 +76,7 @@ router.post('/member/signup', function (req, res) {
 function localSignUp(User, next) {
 
   User.save(function (err, newUser) {
-    newUser.image.contentsType = 'image/jpg';
-    var buffer = fs.readFileSync('./routes/login/profile.jpg');  //이미지부분, 추후 수정!
-    newUser.image.data = '';
+    newUser.image = "null";
     newUser.jsonWebToken = jwt.sign(newUser.toJSON(), jwtSecret);
     newUser.save(function (err, saveUser) {
       next(err, saveUser);
@@ -209,6 +207,38 @@ router.post('/member/updatePass', ensureAuthorized, function (req, res) {
     }
   })
 });
+
+//프로필 사진 수정
+router.post('/member/profileimage', ensureAuthorized, function (req, res) {
+  //토큰으로 사용자 찾고 그 사용자의 imageurl 업데이트
+  var imageurl = req.body.imageurl; //s3에서 가져온 이미지 url
+  console.log(imageurl);
+  var findConditionToken = {
+    jsonWebToken: req.token
+  };
+
+  User.findOne(findConditionToken, function (err, user) {
+    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+    else {
+      console.log("id: " + user.id);
+      user.image=imageurl;
+
+        localUpdate(user, function (err, updateuser) {
+          if (err) {
+            res.send({ success: false, data: "Error Occured" + err });
+          } else {
+            console.log(updateuser);
+            res.send({
+              success: true,
+              data: updateuser,
+              type: "profileimage_update",
+            });
+          }
+        });
+    }
+  })
+});
+
 
 
 //팔로우하기
