@@ -33,6 +33,7 @@ router.post('/upload', ensureAuthorized, function (req, res, next) {
       //post 모델을 생성해서 text값과 유저이름을 저장함
       var post = new Post();
       post.text = req.body.text;
+      post.image = req.body.imageuri;
       post.username = username;
 
       //userposts 배열에 post 모델 값을 저장함 

@@ -9,7 +9,7 @@ var postSchema = new mongoose.Schema({
     text: {type:String, default:''},
     likes: [String],
     time: {type:Date, default:Date.now},
-    //주소 정보 필요?
+    image: {type:String}
 });
 
 module.exports = mongoose.model('post',postSchema);
