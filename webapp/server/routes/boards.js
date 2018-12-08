@@ -3,6 +3,7 @@ var router = express.Router();
 var Post = require('./../models/post')
 var mongoose = require('mongoose');
 var User = require('./../models/user')
+var Restaurant = require('./../models/restaurant')
 
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
 
@@ -87,5 +88,27 @@ function ensureAuthorized(req, res, next) {
     } else{
       res.sendStatus(403);
     }
-  }
+}
+
+
+//맛집 이름 검색
+router.post('/search/restaurant', function (req, res, next) {
+
+    var SearchRestaurant = req.body.restaurant
+    Restaurant.find({"restaurant":{"$in":SearchRestaurant}},function(err, findRestaurant){
+        if(err) throw err;
+        res.send(findRestaurant); 
+    })
+});
+
+
+//사용자 검색
+router.post('/search/user', function (req, res, next) {
+
+    var SearchUser = req.body.username;
+    User.find({"username":{"$in":SearchUser}},function(err, findUser){
+        if(err) throw err;
+        res.send(findUser); 
+    })
+});
 module.exports = router;
