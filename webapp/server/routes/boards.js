@@ -8,7 +8,7 @@ var Restaurant = require('./../models/restaurant')
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
 
 //following기준 게시글 불러오기
-router.post('/follow', ensureAuthorized, function (req, res, next) {
+router.get('/follow', ensureAuthorized, function (req, res, next) {
 
     var findConditionToken ={
         jsonWebToken: req.token
@@ -26,7 +26,7 @@ router.post('/follow', ensureAuthorized, function (req, res, next) {
             Post.find({"username":{"$in":follow}},function(err, rawContent){
                     if(err) throw err;
                     rawContent.reverse(); // 최신항목이 위에 뜨도록 역순 정렬
-                    res.send(rawContent); 
+                    res.send({success: true, data: rawContent}); 
             })
         }
       })
@@ -107,6 +107,7 @@ router.post('/search/user', function (req, res, next) {
 
     var SearchUser = req.body.username;
     User.find({"username":{"$in":SearchUser}},function(err, findUser){
+        console.log(findUser)
         if(err) throw err;
         res.send(findUser); 
     })

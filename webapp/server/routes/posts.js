@@ -72,18 +72,6 @@ function localPosting(Post, next) {
   });
 }
 
-//전체 게시물 READ
-router.get('/total', function (req, res, next) {
-  Post.find(function (err, posts) {
-    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
-    else {
-      posts.reverse(); //배열 역순으로 정렬 : 최근 항목이 위로오게 하려고 사용함.
-      console.log("posts: " + posts)
-      res.send({ success: true, data: posts });
-    }
-  })
-});
-
 function ensureAuthorized(req, res, next) {
   var bearerToken;
   var bearerHeader = req.headers["authorization"];
