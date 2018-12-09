@@ -32,6 +32,20 @@ router.get('/follow', ensureAuthorized, function (req, res, next) {
       })
 });
 
+//내 게시글 불러오기
+router.post('/myposts', function (req, res, next) {
+    var username = req.body.username;
+
+    //토큰을 사용해서 사용자를 찾은 다음 user값으로 받음. 
+    Post.find({username: username}, function(err, posts){
+        if(err) {res.send({success:false, type:"Error Occured"+err});}
+        else {
+            console.log("myposts: "+posts)
+            res.send({success:true, data:posts})
+        }
+      })
+});
+
 //좋아요 수 늘리기!
 router.post('/like', ensureAuthorized, function (req, res, next) {
     var findlocalPOst ={

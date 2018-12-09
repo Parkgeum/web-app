@@ -244,6 +244,7 @@ router.post('/member/profileimage', ensureAuthorized, function (req, res) {
 //팔로우하기
 router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
   var followuser = req.body.followuser;
+  var state = req.body.state;
 
   var findConditionToken = {
     jsonWebToken: req.token
@@ -253,35 +254,78 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
     else {
       User.findOne({username: followuser}, function(err,followinguser){
-        console.log(followinguser);
-        //팔로잉 항목 추가
-        var followinglist = user.following;
-        followinglist.push(followinguser.username);
-        //팔로잉 당하는 사람의 팔로우 항목 추가
-        var followerlist = followinguser.follower;
-        followerlist.push(user.username);
+        console.log("state: "+state);
+        if(state==="On"){
+          console.log("팔로잉 추가");
+          //팔로잉 항목 추가
+          var followinglist = user.following;
+          followinglist.push(followinguser.username);
+          //팔로잉 당하는 사람의 팔로우 항목 추가
+          var followerlist = followinguser.follower;
+          followerlist.push(user.username);
 
-        //팔로잉하는 사람 유저정보 업데이트
-        localUpdate(user, function (err, updateuser) {
-          if (err) {
-            res.send({ success: false, data: "Error Occured" + err });
-          } else {
-            //팔로잉 당하는 사람 유저정보 업데이트
-            localUpdate(followinguser, function (err, updateuser) {
-              if (err) {
-                res.send({ success: false, data: "Error Occured" + err });
-              } else {
-                res.send({
-                  success: true,
-                  //data: updateuser,
-                  type: "following / follower 추가",
-                });
-              }
-            }); 
-          
-          }
-        });
+          //팔로잉하는 사람 유저정보 업데이트
+          localUpdate(user, function (err, updateuser) {
+            if (err) {
+              res.send({ success: false, data: "Error Occured" + err });
+            } else {
+              //팔로잉 당하는 사람 유저정보 업데이트
+              localUpdate(followinguser, function (err, updateuser) {
+                if (err) {
+                  res.send({ success: false, data: "Error Occured" + err });
+                } else {
+                  res.send({
+                    success: true,
+                    data: updateuser.follower,
+                    type: "following / follower 추가",
+                  });
+                }
+              }); 
+            }
+          });
+        } else{
+          console.log("팔로잉 삭제");
+          //팔로잉 항목 삭제
+          var followinglist = user.following;
+          followinglist.pop(followinguser.username);
+          //팔로잉 당하는 사람의 팔로우 항목 추가
+          var followerlist = followinguser.follower;
+          followerlist.pop(user.username);
+
+          //팔로잉하는 사람 유저정보 업데이트
+          localUpdate(user, function (err, updateuser) {
+            if (err) {
+              res.send({ success: false, data: "Error Occured" + err });
+            } else {
+              //팔로잉 당하는 사람 유저정보 업데이트
+              localUpdate(followinguser, function (err, updateuser) {
+                if (err) {
+                  res.send({ success: false, data: "Error Occured" + err });
+                } else {
+                  res.send({
+                    success: true,
+                    data: updateuser.follower,
+                    type: "following / follower 삭제",
+                  });
+                }
+              }); 
+            }
+          });
+        }
       })
+    }
+  })
+});
+
+//다른 유저 정보 받아오기
+router.post('/member/userinfo', function (req, res) {
+  var username = req.body.username;
+
+  User.findOne({username: username}, function (err, user) {
+    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+    else {
+      console.log("userinfo: "+user);
+      res.send({success:true, data: user});
     }
   })
 });
