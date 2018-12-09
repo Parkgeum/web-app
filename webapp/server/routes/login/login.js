@@ -165,6 +165,8 @@ router.post('/member/update', ensureAuthorized, function (req, res) {
   //토큰으로 사용자 찾고 그 사용자에 username,email 정보 덮어쓰기
   var username = req.body.username;
   var email = req.body.email;
+  console.log("username :" + username);
+  console.log("email :" + email);
 
   var findConditionToken = {
     jsonWebToken: req.token
@@ -197,6 +199,8 @@ router.post('/member/updatePass', ensureAuthorized, function (req, res) {
   //토큰으로 사용자 찾고 그 사용자에 username,email 정보 덮어쓰기
   var pre_password = req.body.pre_password; //이전비번
   var new_password = req.body.new_password; //새로운비번
+  console.log("pre_password :" + pre_password);
+  console.log("new_password :" + new_password);
 
   var findConditionToken = {
     jsonWebToken: req.token
@@ -268,10 +272,10 @@ router.post('/member/profileimage', ensureAuthorized, function (req, res) {
 
           }
         });
+      })
     }
-  })
+  });
 });
-
 
 
 //팔로우하기
@@ -286,14 +290,14 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
   User.findOne(findConditionToken, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
     else {
-      User.findOne({username: followuser}, function(err,followinguser){
-        console.log("state: "+state);
-        if(state==="On"){
+      User.findOne({ username: followuser }, function (err, followinguser) {
+        console.log("state: " + state);
+        if (state === "On") {
           console.log("팔로잉 추가");
           //팔로잉 항목 추가
           var followinglist = user.following;
           followinglist.push(followinguser.username);
-          //팔로잉 당하는 사람의 팔로우 항목 추가
+          //팔  로잉 당하는 사람의 팔로우 항목 추가
           var followerlist = followinguser.follower;
           followerlist.push(user.username);
 
@@ -313,10 +317,10 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
                     type: "following / follower 추가",
                   });
                 }
-              }); 
+              });
             }
           });
-        } else{
+        } else {
           console.log("팔로잉 삭제");
           //팔로잉 항목 삭제
           var followinglist = user.following;
@@ -341,7 +345,7 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
                     type: "following / follower 삭제",
                   });
                 }
-              }); 
+              });
             }
           });
         }
@@ -354,11 +358,11 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
 router.post('/member/userinfo', function (req, res) {
   var username = req.body.username;
 
-  User.findOne({username: username}, function (err, user) {
+  User.findOne({ username: username }, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
     else {
-      console.log("userinfo: "+user);
-      res.send({success:true, data: user});
+      console.log("userinfo: " + user);
+      res.send({ success: true, data: user });
     }
   })
 });

@@ -23,6 +23,7 @@ import { BoardComponent } from './board/board.component';
 import { NgFlashMessagesModule } from 'ng-flash-messages';
 import { UploadService } from './shared/upload.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ChangeprofileComponent } from './changeprofile/changeprofile.component';
 // import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
@@ -38,7 +39,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     GooglemapComponent,
     BoardComponent,
     // Observable
-    NavbarComponent
+    NavbarComponent,
+    ChangeprofileComponent
   ],
   imports: [ 
     BrowserModule,

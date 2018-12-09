@@ -19,3 +19,11 @@ export class usermodels {
     follower: number;
     posts: number;
 }
+
+export class Change {
+    id: string;
+    pre_password: string;
+    new_password: string;
+    username: string;
+    email: string;
+}

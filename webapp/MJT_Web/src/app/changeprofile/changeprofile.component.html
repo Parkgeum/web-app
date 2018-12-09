@@ -1,0 +1,85 @@
+<div id="wrapper">
+  <div class="main-content">
+    <div class="header">
+      <img src="assets/img/logom.png" />
+    </div>
+    <div class="l-part">
+      <form #chagneForm="ngForm" (ngSubmit)="chagneForm.valid && onSubmit(chagneForm)">
+        <input type="text" autocomplete="off" #id="ngModel" [(ngModel)]="model.id" name="id" placeholder="id" class="input-1"
+          required [ngClass]="{ 'invalid-textbox' : chagneForm.submitted && !id.valid}">
+
+        <div *ngIf="chagneForm.submitted && id.errors?.minlength">
+          <label class="validation-message"> Minimum 2 characters. </label>
+        </div>
+
+
+        <input type="password" name="pre_password" #password="ngModel" [(ngModel)]="model.pre_password" placeholder="pre_password"
+          required minlength="4" class="input-1" [ngClass]="{'invalid-textbox' : chagneForm.submitted && !pre_password.valid }">
+
+        <div *ngIf="chagneForm.submitted && pre_password.errors?.minlength">
+          <label class="validation-message"> Minimum 4 characters. </label>
+        </div>
+
+        <input type="password" name="new_password" #password="ngModel" [(ngModel)]="model.new__password" placeholder="new_password"
+          required minlength="4" class="input-1" [ngClass]="{'invalid-textbox' : chagneForm.submitted && !new_password.valid }">
+
+        <div *ngIf="chagneForm.submitted && new_password.errors?.minlength">
+          <label class="validation-message"> Minimum 4 characters. </label>
+        </div>
+
+        <input type="submit" value="Change Password" class="btn">
+      </form>
+
+
+    </div>
+    <br>
+    <hr style="border: solid 1px red;">
+    <br>
+    <div class="l-part">
+      <form #changeInForm="ngForm" (ngSubmit)="changeInForm.valid && onInSubmit(changeInForm)">
+        <!-- model은 ts 파일에 정의한 model -->
+        <input type="text" autocomplete="off" #id="ngModel" [(ngModel)]="model_.id" name="id" placeholder="id" class="input-1"
+          required [ngClass]="{ 'invalid-textbox' : changeInForm.submitted && !id.valid}">
+
+        <div *ngIf="changeInForm.submitted && id.errors?.minlength">
+        </div>
+
+
+        <input type="text" name="username" #password="ngModel" [(ngModel)]="model_.username" placeholder="username"
+          required minlength="2" class="input-1" [ngClass]="{'invalid-textbox' : changeInForm.submitted && !username.valid }">
+
+        <div *ngIf="changeInForm.submitted && username.errors?.minlength">
+          <label class="validation-message"> Minimum 2 characters. </label>
+        </div>
+
+        <input type="text" autocomplete="off" #email="ngModel" [(ngModel)]="model_.email" name="email" placeholder="Email"
+          class="input-1" required [pattern]="emailRegex" [ngClass]="{ 'invalid-textbox' : changeInForm.submitted && !email.valid}">
+        <!-- 위에서 email 검증 후에 검증되지 않으면 아래에서 에러 문구 발생 -->
+        <div *ngIf="changeInForm.submitted && email.errors">
+          <label *ngIf="email.errors.pattern" class="validation-message">Invaild email address. </label>
+        </div>
+
+        <input type="submit" value="Change Inform" class="btn">
+      </form>
+    </div>
+    <br>
+
+
+
+
+    <div class="sub-content">
+      <!-- <div class="s-part"> -->
+      <a routerLink="/profile"> 프로필로 돌아가기 </a>
+      <!-- </div> -->
+    </div>
+
+
+
+    <!-- form을 사용하기 위해 app.module.ts에 선언해줌 -->
+
+    <!-- sign-in.component.ts에 들어갈 에러 문구 -->
+    <div class="errorm" *ngIf="serverErrorMessages">
+      Error : {{serverErrorMessages}}
+    </div>
+  </div>
+</div>

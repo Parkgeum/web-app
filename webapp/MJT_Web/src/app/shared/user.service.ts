@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
-import { User } from './user.model';
+import { User, Change } from './user.model';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
@@ -14,6 +14,7 @@ import 'rxjs/add/operator/toPromise'
 export class UserService {
   selectedUser: User ;
   user: User[];
+  change: Change[];
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +27,24 @@ export class UserService {
 
   login(user: User){
     return this.http.post(environment.apiBaseUrl +'/member/login', user);
+  }
+
+  changepass(change: Change){
+    return this.http.post(environment.apiBaseUrl +'/member/updatePass', change, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('token')
+      })
+    });
+  }
+
+  changeInfo(change: Change){
+    return this.http.post(environment.apiBaseUrl +'/member/update', change, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('token')
+      })
+    });
   }
 
   getUserList() {

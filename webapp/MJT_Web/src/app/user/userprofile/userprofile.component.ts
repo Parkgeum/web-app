@@ -110,6 +110,13 @@ export class UserprofileComponent implements OnInit {
 
   }
 
+  editprofile() {
+    if(localStorage.getItem('token')!=null)
+    {
+      this.router.navigate(['/change'])
+    }
+  }
+
 
 }
 
