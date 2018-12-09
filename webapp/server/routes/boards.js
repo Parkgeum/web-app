@@ -3,11 +3,12 @@ var router = express.Router();
 var Post = require('./../models/post')
 var mongoose = require('mongoose');
 var User = require('./../models/user')
+var Restaurant = require('./../models/restaurant')
 
 mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
 
 //following기준 게시글 불러오기
-router.post('/follow', ensureAuthorized, function (req, res, next) {
+router.get('/follow', ensureAuthorized, function (req, res, next) {
 
     var findConditionToken ={
         jsonWebToken: req.token
@@ -25,8 +26,22 @@ router.post('/follow', ensureAuthorized, function (req, res, next) {
             Post.find({"username":{"$in":follow}},function(err, rawContent){
                     if(err) throw err;
                     rawContent.reverse(); // 최신항목이 위에 뜨도록 역순 정렬
-                    res.send(rawContent); 
+                    res.send({success: true, data: rawContent}); 
             })
+        }
+      })
+});
+
+//내 게시글 불러오기
+router.post('/myposts', function (req, res, next) {
+    var username = req.body.username;
+
+    //토큰을 사용해서 사용자를 찾은 다음 user값으로 받음. 
+    Post.find({username: username}, function(err, posts){
+        if(err) {res.send({success:false, type:"Error Occured"+err});}
+        else {
+            console.log("myposts: "+posts)
+            res.send({success:true, data:posts})
         }
       })
 });
@@ -87,5 +102,28 @@ function ensureAuthorized(req, res, next) {
     } else{
       res.sendStatus(403);
     }
-  }
+}
+
+
+//맛집 이름 검색
+router.post('/search/restaurant', function (req, res, next) {
+
+    var SearchRestaurant = req.body.restaurant
+    Restaurant.find({"restaurant":{"$in":SearchRestaurant}},function(err, findRestaurant){
+        if(err) throw err;
+        res.send(findRestaurant); 
+    })
+});
+
+
+//사용자 검색
+router.post('/search/user', function (req, res, next) {
+
+    var SearchUser = req.body.username;
+    User.find({"username":{"$in":SearchUser}},function(err, findUser){
+        console.log(findUser)
+        if(err) throw err;
+        res.send(findUser); 
+    })
+});
 module.exports = router;
