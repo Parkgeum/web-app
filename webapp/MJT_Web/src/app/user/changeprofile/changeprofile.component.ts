@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms'
 import { Router, ActivatedRoute } from "@angular/router"
-import { User } from '../shared/user.model';
-import { UserService } from '../shared/user.service';
+import { User } from '../..//shared/user.model';
+import { UserService } from '../../shared/user.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -20,8 +20,8 @@ export class ChangeprofileComponent implements OnInit {
     private _router: Router,
     private _route: ActivatedRoute) { }
 
-    emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  
+  emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 
   model = {
     id: '',
@@ -89,18 +89,15 @@ export class ChangeprofileComponent implements OnInit {
         if (err.status == 422) {
           this.serverErrorMessages = err.error.join('<br/>');
 
-          console.log(form.value.pre_password);
-          console.log(form.value.new_password);
         }
         else
           this.serverErrorMessages = 'Something went wrong. Please contact admin';
-        console.log(form.value.pre_password);
-        console.log(form.value.new_password);
+
       }
     );
   }
 
-  
+
 
   //성공적으로 전달이 완료 될 경우
   resetForm(form: NgForm) {
@@ -126,4 +123,17 @@ export class ChangeprofileComponent implements OnInit {
   //   this._router.navigate(['/upload']);
   // }
 
+}
+
+interface pro {
+  _id: string;
+  id: string;
+  username: string;
+  email: string;
+  password: string;
+  following: string[];
+  follower: string[];
+  posts: string[];
+  image: string;
+  jsonWebToken: string;
 }

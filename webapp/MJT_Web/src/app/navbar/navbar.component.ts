@@ -32,6 +32,7 @@ export class NavbarComponent implements OnInit {
     //   timeout: 3000
     // });
      localStorage.setItem('token', null);
+     localStorage.setItem('profile', null);
     this.router.navigate(['/login']);
     // return false;
   }

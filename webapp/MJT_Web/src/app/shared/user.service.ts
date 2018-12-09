@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 import { User, Change } from './user.model';
-
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/toPromise'
@@ -46,6 +45,11 @@ export class UserService {
       })
     });
   }
+
+  otherInfo(user: User){
+    return this.http.post(environment.apiBaseUrl +'/member/userinfo', user);
+  }
+
 
   getUserList() {
     return this.http.get('http://localhost:3000/member/info');
