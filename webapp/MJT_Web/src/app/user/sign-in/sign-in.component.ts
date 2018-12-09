@@ -57,12 +57,12 @@ export class SignInComponent implements OnInit {
         var num = "0";
         var i = parseInt(num);
 
-        
         // form 전달시 id와 password를 비교해서 일치할 경우 userprofile로 전달
         for (i; i < this.user.length; i++) {
           if (this.user[i].id == form.value.id) {
             if (this.user[i].password == form.value.password) {
               localStorage.setItem('token', this.user[i].jsonWebToken);
+              localStorage.setItem('profile', this.user[i]._id);
               this.router.navigateByUrl('/profile')
               }
           }
@@ -72,6 +72,7 @@ export class SignInComponent implements OnInit {
         this.serverErrorMessages = err.error.message;
       }
     );
+
   }
 
   // btnclick() {

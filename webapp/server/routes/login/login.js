@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 var jwtSecret = 'secret';
 var fs = require('fs');
+var ObjectId = require('mongoose').Types.ObjectId;
 var crypto = require('crypto');
 var userid;
 
@@ -23,7 +24,7 @@ router.get('/member', function (req, res, next) {
 
 //http://localhost:3000/member/info
 router.get('/member/info', (req, res) => {
-  
+
   User.find((err, docs) => {
     if (!err) {
       res.send(docs);
@@ -33,6 +34,23 @@ router.get('/member/info', (req, res) => {
     }
   });
 });
+
+
+//--------------------------------------------------------
+router.get('/member/info/pro/:id', (req, res) => {
+  User.findById(req.params.id, (err, doc) => {
+    if (!err) { res.send(doc); }
+    else { console.log('Error in Retriving Employee :' + JSON.stringify(err, undefined, 2)); }
+  });
+});
+
+// pro?a=!!~~~
+// find({"follower": req.query.a}, (err, doc))
+// req.query.a = !!~~~
+// :id
+// req.params.id = {"id": ~~~}
+
+
 
 //회원가입
 router.post('/member/signup', function (req, res) {
@@ -133,10 +151,11 @@ router.get('/me', ensureAuthorized, function (req, res, next) {
   User.findOne(findConditionToken, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
     else {
-      console.log("username: " + user.username)
-      console.log("following: " + user.following.length)
-      console.log("follower: " + user.follower.length)
-      console.log("posts: " + user.posts.length)
+      // console.log(user)
+      // console.log("username: " + user.username)
+      // console.log("following: " + user.following.length)
+      // console.log("follower: " + user.follower.length)
+      // console.log("posts: " + user.posts.length)
       //console.log("image: "+image.data)
       res.send({ success: true, data: user });
     }
@@ -222,7 +241,7 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
   User.findOne(findConditionToken, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
     else {
-      User.findOne({username: followuser}, function(err,followinguser){
+      User.findOne({ username: followuser }, function (err, followinguser) {
         console.log(followinguser);
         //팔로잉 항목 추가
         var followinglist = user.following;
@@ -247,8 +266,8 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
                   type: "following / follower 추가",
                 });
               }
-            }); 
-          
+            });
+
           }
         });
       })

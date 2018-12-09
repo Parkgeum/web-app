@@ -17,24 +17,24 @@
 <div class="content">
 
   <form #uploadForm="ngForm">
-      <!-- (ngSubmit)="onSubmit(uploadForm)"> -->
+    <!-- (ngSubmit)="onSubmit(uploadForm)"> -->
+    <div class="row">
       <div class="row">
-          <div class="row">
-              <div class="input-field col s12">
-                    <table>
-                            <thead>
-                              <th>id</th>
-                              <th>text</th>
-                            </thead>
-                            <tr *ngFor="let upload of uploadService.upload">
-                              <td>{{upload.username}}</td>
-                              <td>{{upload.text}}</td>
-                              <!-- <td>{{user.following}}</td> -->
-                            </tr>
-                          </table>
-                 
-              </div>
-          </div>
+        <div class="input-field col s12">
+          <table>
+            <thead>
+              <th>id</th>
+              <th>text</th>
+              <th>time</th>
+            </thead>
+            <tr *ngFor="let upload of uploadService.upload">
+              <td>{{upload.username}}</td>
+              <td>{{upload.text}}</td>
+              <td>{{upload.time}}</td>
+            </tr>
+          </table>
+        </div>
       </div>
+    </div>
   </form>
 </div>

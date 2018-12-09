@@ -16,7 +16,12 @@ export class NavbarComponent implements OnInit {
     // private flashMessage: NgFlashMessageService
     ) { }
 
+   
+  public token : Token[];
+
   ngOnInit() {
+    // this.token[0].tok = localStorage.getItem('token');
+    // console.log("aaaa" + this.token[0].tok);
   }
 
   onLogoutClick() {
@@ -26,8 +31,13 @@ export class NavbarComponent implements OnInit {
     //   type: 'success', 
     //   timeout: 3000
     // });
-    this.router.navigate(['/board']);
+     localStorage.setItem('token', null);
+    this.router.navigate(['/login']);
     // return false;
   }
 
+}
+
+interface Token {
+  tok: string;
 }

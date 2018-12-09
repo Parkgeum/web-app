@@ -47,6 +47,7 @@ export class UploadComponent implements OnInit {
       text: "",
       image: "",
       hashtag: "",
+      time: null
     }
   }
 

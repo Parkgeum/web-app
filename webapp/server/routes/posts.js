@@ -33,7 +33,6 @@ router.post('/upload', ensureAuthorized, function (req, res, next) {
       //post 모델을 생성해서 text값과 유저이름을 저장함
       var post = new Post();
       post.text = req.body.text;
-      post.image = req.body.imageuri;
       post.username = username;
 
       //userposts 배열에 post 모델 값을 저장함 
@@ -99,15 +98,22 @@ function ensureAuthorized(req, res, next) {
 
 //localhost:3000/posts/info
 router.get('/info', (req, res) => {
-  
-  Post.find((err, docs) => {
+
+  Post.findById((err, docs) => {
     if (!err) {
-      res.send(docs);
+      res.send(docs.reverse());
     }
     else {
       console.log("test info log");
     }
   });
 });
+
+// router.get('/info', (req, res) => {
+//   User.findById(req.params.jsonWebToken, (err, doc) => {
+//     if (!err) { res.send(doc); }
+//     else { console.log('Error in Retriving Employee :' + JSON.stringify(err, undefined, 2)); }
+//   });
+// });
 
 module.exports = router;

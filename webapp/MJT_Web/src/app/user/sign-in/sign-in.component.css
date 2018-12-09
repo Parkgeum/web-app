@@ -9,7 +9,7 @@
   }
 
   #wrapper {
-    width: 500px;
+    width: 40%;
     height: 90%;
     overflow: hidden;
     border: 0px solid #000;
@@ -18,7 +18,7 @@
   }
 
   .main-content {
-    width: 270px;
+    width: 50%;
     height: 50%;
     margin: 5px auto;
     background-color: #fff;
@@ -78,11 +78,11 @@
   }
 
   .sub-content {
-    width: 68%;
-    height: 18px;
+    width: 105%;
+    height: 8%;
     margin: 5px auto;
     border: 1px solid #e6e6e6;
-    padding: 20px 50px;
+    padding: 30px 30px;
     background-color: #fff;
   }
 

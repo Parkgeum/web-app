@@ -1,4 +1,7 @@
+import { ObjectOrientedRenderer3 } from "@angular/core/src/render3/interfaces/renderer";
+
 export class User {
+    _id: string;
     id: string;
     username: string;
     email: string;

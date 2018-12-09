@@ -33,8 +33,16 @@ export class UserService {
   }
 
   profile() {
-    return this.http.get('http://localhost:3000/me');
+    return this.http.get('http://localhost:3000/me', {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('token')
+      })
+    });
   }
+
+
+  
 
   // // Help Methods
 
