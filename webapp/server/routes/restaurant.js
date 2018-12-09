@@ -6,6 +6,19 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/member', { useNewUrlParser: true });
 
+//맛집 정보
+router.post('/restaurant', function (req, res, next) {
+
+  var restID = req.body.restID
+  //맛집 데이터의 _id값 받아서 정보 출력
+  Restaurant.findOne({"_id":restID}, function(err, restaurant){
+      if(err) {res.send({success:false, type:"Error Occured"+err});}
+      else {
+        res.send({success: true, data: restaurant}); 
+      }
+    })
+});
+
 //맛집 추가
 router.post('/addrestaurant', function (req, res) {
   var add = new Restaurant();
