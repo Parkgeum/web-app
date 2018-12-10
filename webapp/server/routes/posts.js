@@ -3,6 +3,7 @@ var router = express.Router();
 var Post = require('./../models/post')
 var mongoose = require('mongoose');
 var User = require('./../models/user')
+var Comment = require('./../models/comments')
 
 mongoose.connect('mongodb://localhost:27017/member', { useNewUrlParser: true });
 
@@ -84,6 +85,41 @@ function ensureAuthorized(req, res, next) {
     res.sendStatus(403);
   }
 }
+
+//게시물 댓글 작성
+router.post('/comments', ensureAuthorized, function(req, res, next){
+  var postID =  req.body.postID;
+  var comments = req.body.comments;
+  
+  var findConditionToken = {
+    jsonWebToken: req.token
+  };
+  //토큰을 사용해서 사용자를 찾은 다음 username 저장
+  User.findOne(findConditionToken, function (err, user) {
+    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+    else {
+      //user값에 저장된 사용자 이름과 posts를 받아옴
+      var username = user.username
+
+      Post.findOne({"_id":postID}, function(err, post){
+        var input = new Comment();
+        //var commentlist = post.commentSchema;
+        input.username= username;
+        input.comments= comments;
+        //commentlist.addToSet(input);
+        if(err) throw err;
+
+        console.log(post)
+
+        post.update({"comments":input}, function(err,postdb){
+          console.log(postdb);
+        })
+        res.send(post);
+      })
+    }
+  })
+})
+
 
 //localhost:3000/posts/info
 router.get('/info', (req, res) => {
