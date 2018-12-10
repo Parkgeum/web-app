@@ -27,9 +27,9 @@
 
     <div class="profile-user-settings">
 
-      <h1 class="profile-user-name">{{this.proinfo[0].username}}</h1>
+      <h1 class="profile-user-name">{{this.information.username}}</h1>
 
-      <button class="btn profile-edit-btn" (click)="editprofile()"> Edit Profile </button>
+      <button class="btn profile-edit-btn" (click)="following()"> 팔로잉 </button>
 
       <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
 
@@ -39,27 +39,14 @@
   </div>
     <div class="profile-stats">
       <ul>
-        <li><span class="profile-stat-count">{{this.proinfo[0].posts.length}}</span> 게시물</li>
-        <li><span class="profile-stat-count">{{this.proinfo[0].follower.length}}</span> 팔로워</li>
-        <li><span class="profile-stat-count">{{this.proinfo[0].following.length}}</span> 팔로잉</li>
+        <li>게시물 <span class="profile-stat-count">{{this.information.posts.length}}</span> </li>
+        <li>팔로워 <span class="profile-stat-count" (click)="searchbtn()">{{this.information.follower.length}}</span> </li>
+        <li>팔로잉 <span class="profile-stat-count">{{this.information.following.length}}</span> </li>
       </ul>
     </div>
     <div class="profile-bio">
 
-      <p><span class="profile-real-name">{{this.proinfo[0].username}}</span> </p>
-
-      <!-- <table>
-        <thead>
-          <th>post</th>
-          <th>follower</th>
-          <th>follower</th>
-        </thead>
-        <tr>
-          <td>{{this.proinfo[0].posts.length}}</td>
-          <td>{{this.proinfo[0].follower.length}}</td>
-          <td>{{this.proinfo[0].following.length}}</td>
-        </tr>
-      </table> -->
+      <p><span class="profile-real-name">{{this.information.username}}</span> </p>
 
     </div>
 

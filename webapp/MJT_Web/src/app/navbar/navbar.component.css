@@ -14,3 +14,16 @@
     margin: 30px;
     float: 0px;
 }
+
+.btns {
+    /*width: 3%;*/
+    /*height: 20px;*/
+    background-color: white;
+    border: 1px solid darkblue;
+    padding: 5px 12px;
+    margin-left: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+  }

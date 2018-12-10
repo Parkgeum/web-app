@@ -34,6 +34,7 @@ export class SignInComponent implements OnInit {
   serverErrorMessages: string;
 
   ngOnInit() {
+    localStorage.setItem("username", null);
     this.refreshUserList();
   }
 

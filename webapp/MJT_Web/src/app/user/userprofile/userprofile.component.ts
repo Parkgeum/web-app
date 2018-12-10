@@ -92,9 +92,9 @@ export class UserprofileComponent implements OnInit {
 
   profile1() {
     var check = localStorage.getItem('profile')
-    console.log( this.baseUrls + "/pro" + `/${check}`);
+    // console.log( this.baseUrls + "/pro" + `/${check}`);
     this.http.get(this.baseUrls + "/pro" + `/${check}`).subscribe((res: any) => {
-      console.log( JSON.stringify(res));
+      // console.log( JSON.stringify(res));
       this.proinfo = [res];
     })
 
@@ -115,7 +115,8 @@ export class UserprofileComponent implements OnInit {
   }
 
   editprofile() {
-    if(localStorage.getItem('token')!=this.proinfo[0].jsonWebToken)
+    console.log(localStorage.getItem('token') + " vs " + this.proinfo[0].jsonWebToken)
+    if(localStorage.getItem('token') == this.proinfo[0].jsonWebToken)
     {
       this.router.navigate(['/change'])
     }

@@ -140,8 +140,6 @@ router.post('/member/login', function (req, res) {
 
 //사용자정보 READ 
 router.get('/me', ensureAuthorized, function (req, res, next) {
-  // var token = localStorage.getItem("token");
-  // console.log("server" + token);
   var findConditionToken = {
     jsonWebToken: req.token
     // jsonWebToken: localStorage.getItem("token")
@@ -357,11 +355,12 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
 //다른 유저 정보 받아오기
 router.post('/member/userinfo', function (req, res) {
   var username = req.body.username;
+  console.log(username);
 
   User.findOne({ username: username }, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
     else {
-      console.log("userinfo: " + user);
+      // console.log("userinfo: " + user);
       res.send({ success: true, data: user });
     }
   })

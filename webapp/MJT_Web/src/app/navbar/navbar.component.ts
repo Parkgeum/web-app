@@ -25,16 +25,14 @@ export class NavbarComponent implements OnInit {
   }
 
   onLogoutClick() {
-    // this.authService.logout();
-    // this.flashMessage.showFlashMessage({
-    //   messages: ['You are logged out'], 
-    //   type: 'success', 
-    //   timeout: 3000
-    // });
+-
      localStorage.setItem('token', null);
      localStorage.setItem('profile', null);
     this.router.navigate(['/login']);
-    // return false;
+  }
+
+  Searchbtn() {
+    this.router.navigateByUrl('/googlemap');
   }
 
 }
