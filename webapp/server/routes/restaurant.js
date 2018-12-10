@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Restaurant = require('./..//models/restaurant')
 var mongoose = require('mongoose');
+var User = require('./../models/user')
 
 
 mongoose.connect('mongodb://localhost:27017/member', { useNewUrlParser: true });
@@ -63,6 +64,57 @@ function addRestaurant(Restaurant, next) {
         next(err, newRestaurant);
     });
 }
+
+//맛집 좋아요
+router.post('/restaurant/like', ensureAuthorized, function (req, res, next) {
+  var findConditionToken ={
+      jsonWebToken: req.token
+  };
+
+  var restID = req.body.restID
+  //토큰을 사용해서 사용자를 찾은 다음 user값으로 받음. 
+  User.findOne(findConditionToken, function(err, user){
+      if(err) {res.send({success:false, type:"Error Occured"+err});}
+      else {
+          var username = user.username;
+          console.log(username)
+          //좋아요 할 맛집 불러옴.
+          Restaurant.findOne({"_id":restID},function(err, restaurant){
+              if(err) {res.send({success:false, type:"Error Occured"+err});}
+              else {//맛집 데이터베이스의 좋아요 목록에 내 username 추가
+                  var likelist = restaurant.likes
+                  likelist.addToSet(username)
+                  restaurant.save({"likes":likelist}, function(err, update){
+                      console.log('좋아요') 
+                     //User목록의 restaurant에 해당 맛집 추가
+                     user.restaurants.addToSet(update);
+                     user.update({"restaurants":update}, function(err, userdb){
+                       console.log(userdb)
+                     })
+                     res.send(user)
+                  })
+              }
+          })
+      }
+  })    
+})
+
+
+function ensureAuthorized(req, res, next) {
+  var bearerToken;
+  var bearerHeader = req.headers["authorization"];
+
+  if (typeof bearerHeader !== "undefined") {
+    var bearer = bearerHeader.split(" "); 
+    bearerToken = bearer[0];
+    req.token = bearerToken;
+    next();
+  } else{
+    res.sendStatus(403);
+  }
+}
+
+
 
 //맛집 정보 수정하는 기능 추가하기
 

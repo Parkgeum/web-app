@@ -5,11 +5,12 @@ mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
 var postSchema = new mongoose.Schema({
 
     username: {type:String, default:''},
-    //image: {type:String, required:true},
+    image: {type:String, required:true},
     text: {type:String, default:''},
     likes: [String],
     time: {type:Date, default:Date.now},
     image: {type:String}
+    //댓글 기능 추가
 });
 
 module.exports = mongoose.model('post',postSchema);

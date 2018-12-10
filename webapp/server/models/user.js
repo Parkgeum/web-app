@@ -7,12 +7,24 @@ mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true} );
 var postSchema = new mongoose.Schema({
 
     username: {type:String, default:''},
-    //image: {type:String, required:true},
+    image: {type:String, required:true},
     text: {type:String, default:''},
     likes: [String],
     time: {type:Date, default:Date.now},
-    //주소 정보 필요?
+    //댓글 기능 추가
 });
+
+var restaurantSchema = new mongoose.Schema({
+
+    restaurant: {type:String, required:true},
+    image: {type:String},
+    address: [String],
+    telephone: {type:String},
+    business_hours: {type:String},
+    breake_time: {type:String},
+    likes: [String]
+});
+
 
 var userSchema = new mongoose.Schema({
     id: {
@@ -34,9 +46,10 @@ var userSchema = new mongoose.Schema({
         required: 'Email can not be empty',
         unique: true
     },
-    following: [String], //팔로잉 목록 볼 수 있게 수정해야 함
+    following: [String],
     follower:  [String],
-    posts:  [postSchema],
+    posts:  [postSchema], //작성한 게시글
+    restaurants: [restaurantSchema], //좋아요 한 맛집
     image: {type:String,default:'null'},
     jsonWebToken: String
 });

@@ -109,7 +109,7 @@ function ensureAuthorized(req, res, next) {
 
 router.post('/search/restaurant', function (req, res, next) {
 
-    var SearchRestaurant = req.body.restaurant
+    var SearchRestaurant = req.body.restaurant.split(' ');
     Restaurant.find({$or:[{"restaurant":{"$in":SearchRestaurant}},{"address":{"$in":SearchRestaurant}}]},function(err, findRestaurant){
         if(err) throw err;
         res.send(findRestaurant); 
