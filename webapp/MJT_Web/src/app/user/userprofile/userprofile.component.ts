@@ -16,6 +16,8 @@ import { headersToString } from 'selenium-webdriver/http';
 
 export class UserprofileComponent implements OnInit {
 
+
+
   constructor(private router: Router,
     private http: HttpClient,
     private userService: UserService) {
@@ -23,10 +25,12 @@ export class UserprofileComponent implements OnInit {
 
 
 
+
   public proinfo: pro[];
   selectedUser: User;
   user: User[];
   userinfo: any;
+
 
   //value를 전달하기 위해 usermodels를 새로 정의하고 refreshUserList에서 사용
   @Input('userinfo') userObj: usermodels;
@@ -110,6 +114,13 @@ export class UserprofileComponent implements OnInit {
 
   }
 
+  editprofile() {
+    if(localStorage.getItem('token')!=this.proinfo[0].jsonWebToken)
+    {
+      this.router.navigate(['/change'])
+    }
+  }
+
 
 }
 
@@ -125,4 +136,9 @@ interface pro {
   posts: string[];
   image: string;
   jsonWebToken: string;
+}
+
+
+export interface message{
+  message: message[];
 }

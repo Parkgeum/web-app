@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { ChangeprofileComponent } from './user/changeprofile/changeprofile.component';
 
 //routes
 import { appRoutes } from './routes';
@@ -23,6 +24,7 @@ import { BoardComponent } from './board/board.component';
 import { NgFlashMessagesModule } from 'ng-flash-messages';
 import { UploadService } from './shared/upload.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OtherprofileComponent } from './otherprofile/otherprofile.component';
 // import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
@@ -38,7 +40,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     GooglemapComponent,
     BoardComponent,
     // Observable
-    NavbarComponent
+    NavbarComponent,
+    ChangeprofileComponent,
+    OtherprofileComponent
   ],
   imports: [ 
     BrowserModule,

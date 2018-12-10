@@ -78,7 +78,7 @@ module.exports = "* {\r\n    margin: 0px;\r\n    padding: 0px;\r\n  }\r\n\r\n \r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<router-outlet></router-outlet>\n"
+module.exports = "<app-navbar></app-navbar>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -149,6 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _shared_upload_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./shared/upload.service */ "./src/app/shared/upload.service.ts");
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _changeprofile_changeprofile_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./changeprofile/changeprofile.component */ "./src/app/changeprofile/changeprofile.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -178,6 +179,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 // import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
@@ -196,7 +198,8 @@ var AppModule = /** @class */ (function () {
                 _googlemap_googlemap_component__WEBPACK_IMPORTED_MODULE_15__["GooglemapComponent"],
                 _board_board_component__WEBPACK_IMPORTED_MODULE_16__["BoardComponent"],
                 // Observable
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_19__["NavbarComponent"]
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_19__["NavbarComponent"],
+                _changeprofile_changeprofile_component__WEBPACK_IMPORTED_MODULE_20__["ChangeprofileComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -238,7 +241,7 @@ module.exports = "/* html, body {\r\n    position: absolute;\r\n     height: 100
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"header\">\n\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\n  <div id=\"searchbox\">\n      <input type=\"search\" placeholder=\"\">\n  </div>\n  <div id=\"searchbtn\">\n      <button type=\"submit\" class=\"btn\" (click)=\"Searchbtn()\">검색</button>\n      <a routerLink=\"/profile\" class=\"btn1\"> Profile </a>\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\n  </div>\n\n</div> -->\n\n<div class=\"content\">\n\n  <form #uploadForm=\"ngForm\">\n    <!-- (ngSubmit)=\"onSubmit(uploadForm)\"> -->\n    <div class=\"row\">\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <table>\n            <thead>\n              <th>id</th>\n              <th>text</th>\n              <th>time</th>\n            </thead>\n            <tr *ngFor=\"let upload of uploadService.upload\">\n              <td>{{upload.username}}</td>\n              <td>{{upload.text}}</td>\n              <td>{{upload.time}}</td>\n            </tr>\n          </table>\n        </div>\n      </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<!-- <div class=\"header\">\r\n\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\r\n  <div id=\"searchbox\">\r\n      <input type=\"search\" placeholder=\"\">\r\n  </div>\r\n  <div id=\"searchbtn\">\r\n      <button type=\"submit\" class=\"btn\" (click)=\"Searchbtn()\">검색</button>\r\n      <a routerLink=\"/profile\" class=\"btn1\"> Profile </a>\r\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\r\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\r\n  </div>\r\n\r\n</div> -->\r\n\r\n<div class=\"content\">\r\n\r\n  <form #uploadForm=\"ngForm\">\r\n    <!-- (ngSubmit)=\"onSubmit(uploadForm)\"> -->\r\n    <div class=\"row\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12\">\r\n          <table>\r\n            <thead>\r\n              <th>id</th>\r\n              <th>text</th>\r\n              <th>time</th>\r\n            </thead>\r\n            <tr *ngFor=\"let upload of uploadService.upload\">\r\n              <td>{{upload.username}}</td>\r\n              <td>{{upload.text}}</td>\r\n              <td>{{upload.time}}</td>\r\n            </tr>\r\n          </table>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -333,6 +336,144 @@ var BoardComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/changeprofile/changeprofile.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/changeprofile/changeprofile.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n* {\r\n    margin: 0px;\r\n    padding: 0px;\r\n  }\r\n\r\n  body {\r\n    background-color: #eee;\r\n  }\r\n\r\n  #wrapper {\r\n    width: 40%;\r\n    height: 90%;\r\n    overflow: hidden;\r\n    border: 0px solid #000;\r\n    margin: 50px auto;\r\n    padding: 10px;\r\n  }\r\n\r\n  .main-content {\r\n    width: 50%;\r\n    height: 50%;\r\n    margin: 5px auto;\r\n    background-color: #fff;\r\n    border: 2px solid #e6e6e6;\r\n    padding: 40px 50px;\r\n  }\r\n\r\n  .header {\r\n    border: 0px solid #000;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .header img {\r\n    height: 80px;\r\n    width: 180px;\r\n    margin: auto;\r\n    position: relative;\r\n    left: 40px;\r\n  }\r\n\r\n  .input-1,\r\n  .input-2 {\r\n    width: 105%;\r\n    height: 40px;\r\n    margin-bottom: 5px;\r\n    padding: 8px 12px;\r\n    border: 1px solid #dbdbdb;\r\n    box-sizing: border-box;\r\n    border-radius: 3px;\r\n  }\r\n\r\n  .overlap-text {\r\n    position: relative;\r\n  }\r\n\r\n  .overlap-text a {\r\n    position: absolute;\r\n    top: 8px;\r\n    right: 10px;\r\n    color: #003569;\r\n    font-size: 14px;\r\n    text-decoration: none;\r\n    font-family: 'Overpass Mono', monospace;\r\n    letter-spacing: -1px;\r\n  }\r\n\r\n  .btn {\r\n    width: 105%;\r\n    height: 40px;\r\n    background-color: #3897f0;\r\n    border: 1px solid #3897f0;\r\n    padding: 5px 12px;\r\n    color: #fff;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    border-radius: 3px;\r\n  }\r\n\r\n  .sub-content {\r\n    width: 105%;\r\n    height: 8%;\r\n    margin: 5px auto;\r\n    border: 1px solid #e6e6e6;\r\n    padding: 30px 30px;\r\n    background-color: #fff;\r\n    text-align: center;\r\n  }\r\n\r\n  .s-part {\r\n    text-align: left;\r\n    font-family: 'Overpass Mono', monospace;\r\n    word-spacing: -3px;\r\n    letter-spacing: -2px;\r\n    font-weight: normal;\r\n  }\r\n\r\n  .errorm {\r\n    text-align: center;\r\n  }\r\n\r\n  .s-part a {\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n    color: #3897f0;\r\n    font-family: 'Overpass Mono', monospace;\r\n    word-spacing: -3px;\r\n    letter-spacing: -2px;\r\n    font-weight: normal;\r\n  }\r\n\r\n  input:focus {\r\n      background-color: yellow;\r\n  }\r\n\r\n  .alert { \r\n        padding: 20px;\r\n        text-align: center; \r\n        background-color: #f44336; \r\n        color: white; \r\n      }\r\n\r\n  .success{ \r\n        padding: 20px; \r\n        text-align: center;\r\n        background-color:#249424; \r\n        color: white; \r\n        \r\n      }\r\n\r\n  input[type=text]:placeholder { \r\n            color: #cccccc; \r\n         }\r\n\r\n  input[type=text].invalid-textbox,input[type=password].invalid-textbox{ \r\n          border-bottom: 2px solid #3897f0; \r\n         }\r\n\r\n  label.validation-message{ \r\n            color:#ed5558; \r\n          } \r\n\r\n    \r\n           \r\n           \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhbmdlcHJvZmlsZS9jaGFuZ2Vwcm9maWxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7R0FDZDs7RUFFRDtJQUNFLHVCQUF1QjtHQUN4Qjs7RUFFRDtJQUNFLFdBQVc7SUFDWCxZQUFZO0lBQ1osaUJBQWlCO0lBQ2pCLHVCQUF1QjtJQUN2QixrQkFBa0I7SUFDbEIsY0FBYztHQUNmOztFQUVEO0lBQ0UsV0FBVztJQUNYLFlBQVk7SUFDWixpQkFBaUI7SUFDakIsdUJBQXVCO0lBQ3ZCLDBCQUEwQjtJQUMxQixtQkFBbUI7R0FDcEI7O0VBRUQ7SUFDRSx1QkFBdUI7SUFDdkIsbUJBQW1CO0dBQ3BCOztFQUVEO0lBQ0UsYUFBYTtJQUNiLGFBQWE7SUFDYixhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLFdBQVc7R0FDWjs7RUFFRDs7SUFFRSxZQUFZO0lBQ1osYUFBYTtJQUNiLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsMEJBQTBCO0lBQzFCLHVCQUF1QjtJQUN2QixtQkFBbUI7R0FDcEI7O0VBRUQ7SUFDRSxtQkFBbUI7R0FDcEI7O0VBRUQ7SUFDRSxtQkFBbUI7SUFDbkIsU0FBUztJQUNULFlBQVk7SUFDWixlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLHNCQUFzQjtJQUN0Qix3Q0FBd0M7SUFDeEMscUJBQXFCO0dBQ3RCOztFQUVEO0lBQ0UsWUFBWTtJQUNaLGFBQWE7SUFDYiwwQkFBMEI7SUFDMUIsMEJBQTBCO0lBQzFCLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixtQkFBbUI7R0FDcEI7O0VBRUQ7SUFDRSxZQUFZO0lBQ1osV0FBVztJQUNYLGlCQUFpQjtJQUNqQiwwQkFBMEI7SUFDMUIsbUJBQW1CO0lBQ25CLHVCQUF1QjtJQUN2QixtQkFBbUI7R0FDcEI7O0VBRUQ7SUFDRSxpQkFBaUI7SUFDakIsd0NBQXdDO0lBQ3hDLG1CQUFtQjtJQUNuQixxQkFBcUI7SUFDckIsb0JBQW9CO0dBQ3JCOztFQUVEO0lBQ0UsbUJBQW1CO0dBQ3BCOztFQUVEO0lBQ0Usc0JBQXNCO0lBQ3RCLGdCQUFnQjtJQUNoQixlQUFlO0lBQ2Ysd0NBQXdDO0lBQ3hDLG1CQUFtQjtJQUNuQixxQkFBcUI7SUFDckIsb0JBQW9CO0dBQ3JCOztFQUVEO01BQ0kseUJBQXlCO0dBQzVCOztFQUVEO1FBQ00sY0FBYztRQUNkLG1CQUFtQjtRQUNuQiwwQkFBMEI7UUFDMUIsYUFBYTtPQUNkOztFQUdEO1FBQ0UsY0FBYztRQUNkLG1CQUFtQjtRQUNuQix5QkFBeUI7UUFDekIsYUFBYTs7T0FFZDs7RUFFRDtZQUNNLGVBQWU7VUFDakI7O0VBR0E7VUFDQSxpQ0FBaUM7VUFDakM7O0VBR0E7WUFDRSxjQUFjO1dBQ2YiLCJmaWxlIjoic3JjL2FwcC9jaGFuZ2Vwcm9maWxlL2NoYW5nZXByb2ZpbGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4qIHtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgcGFkZGluZzogMHB4O1xyXG4gIH1cclxuXHJcbiAgYm9keSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWVlO1xyXG4gIH1cclxuXHJcbiAgI3dyYXBwZXIge1xyXG4gICAgd2lkdGg6IDQwJTtcclxuICAgIGhlaWdodDogOTAlO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIGJvcmRlcjogMHB4IHNvbGlkICMwMDA7XHJcbiAgICBtYXJnaW46IDUwcHggYXV0bztcclxuICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgfVxyXG5cclxuICAubWFpbi1jb250ZW50IHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBoZWlnaHQ6IDUwJTtcclxuICAgIG1hcmdpbjogNXB4IGF1dG87XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgI2U2ZTZlNjtcclxuICAgIHBhZGRpbmc6IDQwcHggNTBweDtcclxuICB9XHJcblxyXG4gIC5oZWFkZXIge1xyXG4gICAgYm9yZGVyOiAwcHggc29saWQgIzAwMDtcclxuICAgIG1hcmdpbi1ib3R0b206IDVweDtcclxuICB9XHJcblxyXG4gIC5oZWFkZXIgaW1nIHtcclxuICAgIGhlaWdodDogODBweDtcclxuICAgIHdpZHRoOiAxODBweDtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGxlZnQ6IDQwcHg7XHJcbiAgfVxyXG5cclxuICAuaW5wdXQtMSxcclxuICAuaW5wdXQtMiB7XHJcbiAgICB3aWR0aDogMTA1JTtcclxuICAgIGhlaWdodDogNDBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDVweDtcclxuICAgIHBhZGRpbmc6IDhweCAxMnB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2RiZGJkYjtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgfVxyXG5cclxuICAub3ZlcmxhcC10ZXh0IHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB9XHJcblxyXG4gIC5vdmVybGFwLXRleHQgYSB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDhweDtcclxuICAgIHJpZ2h0OiAxMHB4O1xyXG4gICAgY29sb3I6ICMwMDM1Njk7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICBmb250LWZhbWlseTogJ092ZXJwYXNzIE1vbm8nLCBtb25vc3BhY2U7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogLTFweDtcclxuICB9XHJcblxyXG4gIC5idG4ge1xyXG4gICAgd2lkdGg6IDEwNSU7XHJcbiAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzg5N2YwO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgIzM4OTdmMDtcclxuICAgIHBhZGRpbmc6IDVweCAxMnB4O1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDNweDtcclxuICB9XHJcblxyXG4gIC5zdWItY29udGVudCB7XHJcbiAgICB3aWR0aDogMTA1JTtcclxuICAgIGhlaWdodDogOCU7XHJcbiAgICBtYXJnaW46IDVweCBhdXRvO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2U2ZTZlNjtcclxuICAgIHBhZGRpbmc6IDMwcHggMzBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICAucy1wYXJ0IHtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBmb250LWZhbWlseTogJ092ZXJwYXNzIE1vbm8nLCBtb25vc3BhY2U7XHJcbiAgICB3b3JkLXNwYWNpbmc6IC0zcHg7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogLTJweDtcclxuICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7XHJcbiAgfVxyXG5cclxuICAuZXJyb3JtIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcblxyXG4gIC5zLXBhcnQgYSB7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBjb2xvcjogIzM4OTdmMDtcclxuICAgIGZvbnQtZmFtaWx5OiAnT3ZlcnBhc3MgTW9ubycsIG1vbm9zcGFjZTtcclxuICAgIHdvcmQtc3BhY2luZzogLTNweDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAtMnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcclxuICB9XHJcblxyXG4gIGlucHV0OmZvY3VzIHtcclxuICAgICAgYmFja2dyb3VuZC1jb2xvcjogeWVsbG93O1xyXG4gIH1cclxuXHJcbiAgLmFsZXJ0IHsgXHJcbiAgICAgICAgcGFkZGluZzogMjBweDtcclxuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7IFxyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7IFxyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTsgXHJcbiAgICAgIH0gXHJcbiAgICAgIFxyXG5cclxuICAgICAgLnN1Y2Nlc3N7IFxyXG4gICAgICAgIHBhZGRpbmc6IDIwcHg7IFxyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiMyNDk0MjQ7IFxyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTsgXHJcbiAgICAgICAgXHJcbiAgICAgIH0gXHJcblxyXG4gICAgICBpbnB1dFt0eXBlPXRleHRdOnBsYWNlaG9sZGVyIHsgXHJcbiAgICAgICAgICAgIGNvbG9yOiAjY2NjY2NjOyBcclxuICAgICAgICAgfSBcclxuICAgICAgICAgIFxyXG4gICAgICAgICBcclxuICAgICAgICAgIGlucHV0W3R5cGU9dGV4dF0uaW52YWxpZC10ZXh0Ym94LGlucHV0W3R5cGU9cGFzc3dvcmRdLmludmFsaWQtdGV4dGJveHsgXHJcbiAgICAgICAgICBib3JkZXItYm90dG9tOiAycHggc29saWQgIzM4OTdmMDsgXHJcbiAgICAgICAgIH0gXHJcbiAgICAgICAgICBcclxuICAgICAgICAgXHJcbiAgICAgICAgICBsYWJlbC52YWxpZGF0aW9uLW1lc3NhZ2V7IFxyXG4gICAgICAgICAgICBjb2xvcjojZWQ1NTU4OyBcclxuICAgICAgICAgIH0gXHJcblxyXG4gICAgXHJcbiAgICAgICAgICAgXHJcbiAgICAgICAgICAgIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/changeprofile/changeprofile.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/changeprofile/changeprofile.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"wrapper\">\n  <div class=\"main-content\">\n    <div class=\"header\">\n      <img src=\"assets/img/logom.png\" />\n    </div>\n    <div class=\"l-part\">\n      <form #chagneForm=\"ngForm\" (ngSubmit)=\"chagneForm.valid && onSubmit(chagneForm)\">\n        <input type=\"text\" autocomplete=\"off\" #id=\"ngModel\" [(ngModel)]=\"model.id\" name=\"id\" placeholder=\"id\" class=\"input-1\"\n          required [ngClass]=\"{ 'invalid-textbox' : chagneForm.submitted && !id.valid}\">\n\n        <div *ngIf=\"chagneForm.submitted && id.errors?.minlength\">\n          <label class=\"validation-message\"> Minimum 2 characters. </label>\n        </div>\n\n\n        <input type=\"password\" name=\"pre_password\" #password=\"ngModel\" [(ngModel)]=\"model.pre_password\" placeholder=\"pre_password\"\n          required minlength=\"4\" class=\"input-1\" [ngClass]=\"{'invalid-textbox' : chagneForm.submitted && !pre_password.valid }\">\n\n        <div *ngIf=\"chagneForm.submitted && pre_password.errors?.minlength\">\n          <label class=\"validation-message\"> Minimum 4 characters. </label>\n        </div>\n\n        <input type=\"password\" name=\"new_password\" #password=\"ngModel\" [(ngModel)]=\"model.new__password\" placeholder=\"new_password\"\n          required minlength=\"4\" class=\"input-1\" [ngClass]=\"{'invalid-textbox' : chagneForm.submitted && !new_password.valid }\">\n\n        <div *ngIf=\"chagneForm.submitted && new_password.errors?.minlength\">\n          <label class=\"validation-message\"> Minimum 4 characters. </label>\n        </div>\n\n        <input type=\"submit\" value=\"Change Password\" class=\"btn\">\n      </form>\n\n\n    </div>\n    <br>\n    <hr style=\"border: solid 1px red;\">\n    <br>\n    <div class=\"l-part\">\n      <form #changeInForm=\"ngForm\" (ngSubmit)=\"changeInForm.valid && onInSubmit(changeInForm)\">\n        <!-- model은 ts 파일에 정의한 model -->\n        <input type=\"text\" autocomplete=\"off\" #id=\"ngModel\" [(ngModel)]=\"model_.id\" name=\"id\" placeholder=\"id\" class=\"input-1\"\n          required [ngClass]=\"{ 'invalid-textbox' : changeInForm.submitted && !id.valid}\">\n\n        <div *ngIf=\"changeInForm.submitted && id.errors?.minlength\">\n        </div>\n\n\n        <input type=\"text\" name=\"username\" #password=\"ngModel\" [(ngModel)]=\"model_.username\" placeholder=\"username\"\n          required minlength=\"2\" class=\"input-1\" [ngClass]=\"{'invalid-textbox' : changeInForm.submitted && !username.valid }\">\n\n        <div *ngIf=\"changeInForm.submitted && username.errors?.minlength\">\n          <label class=\"validation-message\"> Minimum 2 characters. </label>\n        </div>\n\n        <input type=\"text\" autocomplete=\"off\" #email=\"ngModel\" [(ngModel)]=\"model_.email\" name=\"email\" placeholder=\"Email\"\n          class=\"input-1\" required [pattern]=\"emailRegex\" [ngClass]=\"{ 'invalid-textbox' : changeInForm.submitted && !email.valid}\">\n        <!-- 위에서 email 검증 후에 검증되지 않으면 아래에서 에러 문구 발생 -->\n        <div *ngIf=\"changeInForm.submitted && email.errors\">\n          <label *ngIf=\"email.errors.pattern\" class=\"validation-message\">Invaild email address. </label>\n        </div>\n\n        <input type=\"submit\" value=\"Change Inform\" class=\"btn\">\n      </form>\n    </div>\n    <br>\n\n\n\n\n    <div class=\"sub-content\">\n      <!-- <div class=\"s-part\"> -->\n      <a routerLink=\"/profile\"> 프로필로 돌아가기 </a>\n      <!-- </div> -->\n    </div>\n\n\n\n    <!-- form을 사용하기 위해 app.module.ts에 선언해줌 -->\n\n    <!-- sign-in.component.ts에 들어갈 에러 문구 -->\n    <div class=\"errorm\" *ngIf=\"serverErrorMessages\">\n      Error : {{serverErrorMessages}}\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/changeprofile/changeprofile.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/changeprofile/changeprofile.component.ts ***!
+  \**********************************************************/
+/*! exports provided: ChangeprofileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeprofileComponent", function() { return ChangeprofileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/user.service */ "./src/app/shared/user.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ChangeprofileComponent = /** @class */ (function () {
+    function ChangeprofileComponent(userService, _router, _route) {
+        this.userService = userService;
+        this._router = _router;
+        this._route = _route;
+        this.emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        this.model = {
+            id: '',
+            pre_password: '',
+            new_password: ''
+        };
+        this.model_ = {
+            id: '',
+            username: '',
+            email: ''
+        };
+    }
+    ChangeprofileComponent.prototype.ngOnInit = function () {
+    };
+    ChangeprofileComponent.prototype.onSubmit = function (form) {
+        var _this = this;
+        //user.service.ts와 매칭
+        this.userService.changepass(form.value).subscribe(
+        // success or error function
+        function (res) {
+            _this.showSucessMessage = true;
+            // 메세지 노출 시간
+            console.log("Change is  Success");
+            setTimeout(function () { return _this.showSucessMessage = false; }, 3000);
+            _this.resetForm(form);
+        }, function (err) {
+            if (err.status == 422) {
+                _this.serverErrorMessages = err.error.join('<br/>');
+                console.log(form.value.pre_password);
+                console.log(form.value.new_password);
+            }
+            else
+                _this.serverErrorMessages = 'Something went wrong. Please contact admin';
+            console.log(form.value.pre_password);
+            console.log(form.value.new_password);
+        });
+    };
+    ChangeprofileComponent.prototype.onInSubmit = function (form) {
+        var _this = this;
+        //user.service.ts와 매칭
+        this.userService.changeInfo(form.value).subscribe(
+        // success or error function
+        function (res) {
+            _this.showSucessMessage = true;
+            // 메세지 노출 시간
+            console.log("Change is  Success");
+            setTimeout(function () { return _this.showSucessMessage = false; }, 3000);
+            _this.resetForm(form);
+        }, function (err) {
+            if (err.status == 422) {
+                _this.serverErrorMessages = err.error.join('<br/>');
+                console.log(form.value.pre_password);
+                console.log(form.value.new_password);
+            }
+            else
+                _this.serverErrorMessages = 'Something went wrong. Please contact admin';
+            console.log(form.value.pre_password);
+            console.log(form.value.new_password);
+        });
+    };
+    //성공적으로 전달이 완료 될 경우
+    ChangeprofileComponent.prototype.resetForm = function (form) {
+        // this.model ={
+        // };
+        form.resetForm();
+        this.serverErrorMessages = '';
+        this._router.navigate(['/profile']);
+    };
+    ChangeprofileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-changeprofile',
+            template: __webpack_require__(/*! ./changeprofile.component.html */ "./src/app/changeprofile/changeprofile.component.html"),
+            styles: [__webpack_require__(/*! ./changeprofile.component.css */ "./src/app/changeprofile/changeprofile.component.css")],
+            providers: [_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]]
+        }),
+        __metadata("design:paramtypes", [_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+    ], ChangeprofileComponent);
+    return ChangeprofileComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/googlemap/googlemap.component.css":
 /*!***************************************************!*\
   !*** ./src/app/googlemap/googlemap.component.css ***!
@@ -351,7 +492,7 @@ module.exports = "/* html, body {\r\n    position: absolute;\r\n     height: 100
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\">\n\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\n  <div id=\"searchbox\">\n    <input type=\"search\" placeholder=\"\">\n  </div>\n  <div id=\"searchbtn\">\n    <button type=\"submit\" class=\"btn\" (click)=\"Searchbtn()\">검색</button>\n    <a routerLink=\"/board\" class=\"btn1\"> Main </a>\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\n  </div>\n\n</div>\n\n<div class=\"content\">\n\n  <!-- 구글맵 부분 -->\n  <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=15 (mapClick)=\"onChoseLocation($event)\">\n    <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\" *ngIf=\"locationChosen\">\n    </agm-marker>\n  </agm-map>\n</div>"
+module.exports = "<div class=\"header\">\r\n\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\r\n  <div id=\"searchbox\">\r\n    <input type=\"search\" placeholder=\"\">\r\n  </div>\r\n  <div id=\"searchbtn\">\r\n    <button type=\"submit\" class=\"btn\" (click)=\"Searchbtn()\">검색</button>\r\n    <a routerLink=\"/board\" class=\"btn1\"> Main </a>\r\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\r\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\r\n  </div>\r\n\r\n</div>\r\n\r\n<div class=\"content\">\r\n\r\n  <!-- 구글맵 부분 -->\r\n  <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=15 (mapClick)=\"onChoseLocation($event)\">\r\n    <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\" *ngIf=\"locationChosen\">\r\n    </agm-marker>\r\n  </agm-map>\r\n</div>"
 
 /***/ }),
 
@@ -431,7 +572,7 @@ module.exports = "#lg1 {\r\n    margin: 15px;\r\n    float: left;\r\n}\r\n\r\n#l
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:60px;\">\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:60px;\">\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExample04\" aria-controls=\"navbarsExample04\"\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExample04\">\n    <ul class=\"navbar-nav mr-auto\">\n      <!-- <li class=\"nav-item active\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a>\n      </li> -->\n    </ul>\n    <ul class=\"navbar-nav navbar-right\">\n        <!-- *ngIf=\"localStorage.getItem('token')!=null\" -->\n      <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\n        <a class=\"nav-link\" [routerLink]=\"['/board']\">Main</a>\n      </li>\n      <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\n      </li>\n      <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\n        <a class=\"nav-link\" [routerLink]=\"['/signup']\">Register</a>\n      </li>\n      <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\n      </li> -->\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\">Logout</a>\n      </li>\n    </ul>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:60px;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:60px;\">\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExample04\" aria-controls=\"navbarsExample04\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExample04\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <!-- <li class=\"nav-item active\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a>\r\n      </li> -->\r\n    </ul>\r\n    <ul class=\"navbar-nav navbar-right\">\r\n        <!-- *ngIf=\"localStorage.getItem('token')!=null\" -->\r\n      <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/board']\">Main</a>\r\n      </li>\r\n      <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\r\n      </li>\r\n      <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/signup']\">Register</a>\r\n      </li>\r\n      <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\">Logout</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -513,10 +654,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user/userprofile/userprofile.component */ "./src/app/user/userprofile/userprofile.component.ts");
 /* harmony import */ var _googlemap_googlemap_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./googlemap/googlemap.component */ "./src/app/googlemap/googlemap.component.ts");
 /* harmony import */ var _board_board_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./board/board.component */ "./src/app/board/board.component.ts");
+/* harmony import */ var _changeprofile_changeprofile_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./changeprofile/changeprofile.component */ "./src/app/changeprofile/changeprofile.component.ts");
 
 
 
 //Sign in을 위해
+
 
 
 
@@ -542,6 +685,9 @@ var appRoutes = [
     },
     {
         path: 'board', component: _board_board_component__WEBPACK_IMPORTED_MODULE_6__["BoardComponent"]
+    },
+    {
+        path: 'change', component: _changeprofile_changeprofile_component__WEBPACK_IMPORTED_MODULE_7__["ChangeprofileComponent"]
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'
@@ -619,13 +765,14 @@ var UploadService = /** @class */ (function () {
 /*!**************************************!*\
   !*** ./src/app/shared/user.model.ts ***!
   \**************************************/
-/*! exports provided: User, usermodels */
+/*! exports provided: User, usermodels, Change */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usermodels", function() { return usermodels; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Change", function() { return Change; });
 var User = /** @class */ (function () {
     function User() {
     }
@@ -636,6 +783,12 @@ var usermodels = /** @class */ (function () {
     function usermodels() {
     }
     return usermodels;
+}());
+
+var Change = /** @class */ (function () {
+    function Change() {
+    }
+    return Change;
 }());
 
 
@@ -684,6 +837,22 @@ var UserService = /** @class */ (function () {
     UserService.prototype.login = function (user) {
         return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiBaseUrl + '/member/login', user);
     };
+    UserService.prototype.changepass = function (change) {
+        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiBaseUrl + '/member/updatePass', change, {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            })
+        });
+    };
+    UserService.prototype.changeInfo = function (change) {
+        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiBaseUrl + '/member/update', change, {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            })
+        });
+    };
     UserService.prototype.getUserList = function () {
         return this.http.get('http://localhost:3000/member/info');
     };
@@ -726,7 +895,7 @@ module.exports = "/* html, body {\r\n    position: absolute;\r\n     height: 100
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"header\">\r\n\r\n    <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\r\n    <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\r\n    <div id=\"searchbox\">\r\n        <input type=\"search\" placeholder=\"\">\r\n    </div>\r\n    <div id=\"searchbtn\">\r\n        <button type=\"submit\" class=\"btn\" (click)=\"Searchbtn()\">검색</button>\r\n        <a routerLink=\"/board\" class=\"btn1\"> Main </a>\r\n      <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\r\n      <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\r\n    </div>\r\n\r\n</div> -->\r\n\r\n<div class=\"content\">\r\n\r\n    <form #uploadForm=\"ngForm\">\r\n        <!-- (ngSubmit)=\"onSubmit(uploadForm)\"> -->\r\n        <div class=\"row\">\r\n            <div class=\"row\">\r\n                <div class=\"input-field col s12\">\r\n                    <!-- <textarea id=\"textarea1\" class=\"materialize-textarea\"></textarea>\r\n                  <label for=\"textarea1\">Textarea</label>\r\n                  <br> -->\r\n                    <h2> 게시물 업로드 페이지 </h2>\r\n                    <!-- Pick file시 이쪽에 불려진 이미지 전달하기 -->\r\n                    <script>\r\n                        function image_check() {\r\n                            // var path = \"path\";\r\n                            var imgSource = document.targetImg;\r\n                            // imgSource.src = path;\r\n\r\n                        }\r\n                    </script>\r\n                    <!-- <img src=\"assets/img/logom.png\"  class=\"pickimg\"><br> -->\r\n                    <img [src]=\"imageUrl\" style=\"width: 250px; height: 150px\">\r\n                    <br>\r\n                    <input type=\"file\" #Image accept=\"image/*\"  (change)=\"handleFileInput($event.target.files)\">\r\n                    <button type=\"submit\" class=\"btn-1\" (click)=\"onUpload(uploadForm)\"> Submit</button>\r\n                    <!-- <input style=\"display: none\" type=\"file\" (change)=\"onFileSelected($event)\" #fileInput> -->\r\n                    <!-- <button type=\"submit\" class=\"btn-1\" (click)=\"fileInput.click()\" required> Pick File </button> -->\r\n                    <!-- <button type=\"button\" class=\"btns-1\" (click)=\"onUpload()\"> Upload </button>\r\n                    <button type=\"button\" class=\"btns-1\" (click)=\"reset(uploadForm)\"> Reset </button> -->\r\n                    <br><br>\r\n                    <label> 사용자 Text </label>\r\n                    <br>\r\n                    <input type=\"text\" class=\"text\" name=\"text\" #name=\"ngModel\" [(ngModel)]=\"uploadService.selectedUpload.text\"\r\n                        placeholder=\"Input text\">\r\n                    <br><br>\r\n                    <label> Hashtag </label>\r\n                    <br>\r\n                    <input type=\"text\" class=\"text\" name=\"hastag\" #name=\"ngModel\" [(ngModel)]=\"uploadService.selectedUpload.hastag\"\r\n                        placeholder=\"Input text\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>"
+module.exports = "\r\n\r\n<div class=\"content\">\r\n\r\n    <form #uploadForm=\"ngForm\">\r\n        <!-- (ngSubmit)=\"onSubmit(uploadForm)\"> -->\r\n        <div class=\"row\">\r\n            <div class=\"row\">\r\n                <div class=\"input-field col s12\">\r\n                    <!-- <textarea id=\"textarea1\" class=\"materialize-textarea\"></textarea>\r\n                  <label for=\"textarea1\">Textarea</label>\r\n                  <br> -->\r\n                    <h2> 게시물 업로드 페이지 </h2>\r\n                    <!-- Pick file시 이쪽에 불려진 이미지 전달하기 -->\r\n                    <script>\r\n                        function image_check() {\r\n                            // var path = \"path\";\r\n                            var imgSource = document.targetImg;\r\n                            // imgSource.src = path;\r\n\r\n                        }\r\n                    </script>\r\n                    <!-- <img src=\"assets/img/logom.png\"  class=\"pickimg\"><br> -->\r\n                    <img [src]=\"imageUrl\" style=\"width: 250px; height: 150px\">\r\n                    <br>\r\n                    <input type=\"file\" #Image accept=\"image/*\"  (change)=\"handleFileInput($event.target.files)\">\r\n                    <button type=\"submit\" class=\"btn-1\" (click)=\"onUpload(uploadForm)\"> Submit</button>\r\n                    <!-- <input style=\"display: none\" type=\"file\" (change)=\"onFileSelected($event)\" #fileInput> -->\r\n                    <!-- <button type=\"submit\" class=\"btn-1\" (click)=\"fileInput.click()\" required> Pick File </button> -->\r\n                    <!-- <button type=\"button\" class=\"btns-1\" (click)=\"onUpload()\"> Upload </button>\r\n                    <button type=\"button\" class=\"btns-1\" (click)=\"reset(uploadForm)\"> Reset </button> -->\r\n                    <br><br>\r\n                    <label> 사용자 Text </label>\r\n                    <br>\r\n                    <input type=\"text\" class=\"text\" name=\"text\" #name=\"ngModel\" [(ngModel)]=\"uploadService.selectedUpload.text\"\r\n                        placeholder=\"Input text\">\r\n                    <br><br>\r\n                    <label> Hashtag </label>\r\n                    <br>\r\n                    <input type=\"text\" class=\"text\" name=\"hastag\" #name=\"ngModel\" [(ngModel)]=\"uploadService.selectedUpload.hastag\"\r\n                        placeholder=\"Input text\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>"
 
 /***/ }),
 
@@ -1142,7 +1311,7 @@ module.exports = ":root {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn-1 {\r\n    wi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"header\">\n\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\n  <div id=\"searchbox\">\n    <input type=\"search\" placeholder=\"\">\n  </div>\n  <div id=\"searchbtn\">\n    <button type=\"submit\" class=\"btns\" (click)=\"Searchbtn()\">검색</button>\n    <a routerLink=\"/board\" class=\"btn1\"> Main </a>\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\n  </div>\n</div> -->\n\n<br><br><br><br>\n<div style=\"overflow:scroll; width:100%; height:auto;\">\n  <div class=\"container\">\n\n    <!-- <div class=\"profile\"></div> -->\n\n    <div class=\"profile-image\">\n\n      <img src=\"assets/img/mains.jpg\" alt=\"\">\n\n    </div>\n\n    <div class=\"profile-user-settings\">\n\n      <h1 class=\"profile-user-name\">{{this.proinfo[0].username}}</h1>\n\n      <button class=\"btn profile-edit-btn\"> Edit Profile </button>\n\n      <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\n\n    \n    \n\n  </div>\n    <div class=\"profile-stats\">\n      <ul>\n        <li><span class=\"profile-stat-count\">{{this.proinfo[0].posts.length}}</span> 게시물</li>\n        <li><span class=\"profile-stat-count\">{{this.proinfo[0].follower.length}}</span> 팔로워</li>\n        <li><span class=\"profile-stat-count\">{{this.proinfo[0].following.length}}</span> 팔로잉</li>\n      </ul>\n    </div>\n    <div class=\"profile-bio\">\n\n      <p><span class=\"profile-real-name\">{{this.proinfo[0].username}}</span> </p>\n\n      <!-- <table>\n        <thead>\n          <th>post</th>\n          <th>follower</th>\n          <th>follower</th>\n        </thead>\n        <tr>\n          <td>{{this.proinfo[0].posts.length}}</td>\n          <td>{{this.proinfo[0].follower.length}}</td>\n          <td>{{this.proinfo[0].following.length}}</td>\n        </tr>\n      </table> -->\n\n    </div>\n\n  </div>\n\n\n</div>\n\n\n\n\n<div class=\"container\">\n\n  <div class=\"gallery\">\n\n    <div class=\"gallery-item\" tabindex=\"0\">\n\n      <img src=\"https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop\" class=\"gallery-image\"\n        alt=\"\">\n\n      <div class=\"gallery-item-info\">\n        <ul>\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\n            56</li>\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\n              aria-hidden=\"true\"></i> 2</li>\n        </ul>\n      </div>\n\n    </div>\n\n    <div class=\"gallery-item\" tabindex=\"0\">2\n\n      <img src=\"https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop\" class=\"gallery-image\"\n        alt=\"\">\n\n      <div class=\"gallery-item-info\">\n\n        <ul>\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\n            89</li>\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\n              aria-hidden=\"true\"></i> 5</li>\n        </ul>\n\n      </div>\n\n    </div>\n\n    <div class=\"gallery-item\" tabindex=\"0\">3\n\n      <img src=\"https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop\" class=\"gallery-image\"\n        alt=\"\">\n\n      <div class=\"gallery-item-type\">\n\n        <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\n\n      </div>\n\n      <div class=\"gallery-item-info\">\n\n        <ul>\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\n            42</li>\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\n              aria-hidden=\"true\"></i> 1</li>\n        </ul>\n\n      </div>\n\n    </div>\n\n    <div class=\"gallery-item\" tabindex=\"0\">4\n\n      <img src=\"https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop\" class=\"gallery-image\"\n        alt=\"\">\n\n      <div class=\"gallery-item-type\">\n\n        <span class=\"visually-hidden\">Video</span><i class=\"fas fa-video\" aria-hidden=\"true\"></i>\n\n      </div>\n\n      <div class=\"gallery-item-info\">\n\n        <ul>\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\n            38</li>\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\n              aria-hidden=\"true\"></i> 0</li>\n        </ul>\n\n      </div>\n\n    </div>\n\n    <div class=\"gallery-item\" tabindex=\"0\">5\n\n      <img src=\"https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop\" class=\"gallery-image\"\n        alt=\"\">\n\n      <div class=\"gallery-item-type\">\n\n        <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\n\n      </div>\n\n      <div class=\"gallery-item-info\">\n\n        <ul>\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\n            47</li>\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\n              aria-hidden=\"true\"></i> 1</li>\n        </ul>\n\n      </div>\n\n    </div>\n\n    <div class=\"gallery-item\" tabindex=\"0\">6\n\n      <img src=\"https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop\" class=\"gallery-image\"\n        alt=\"\">\n\n      <div class=\"gallery-item-info\">\n\n        <ul>\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\n            94</li>\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\n              aria-hidden=\"true\"></i> 3</li>\n        </ul>\n\n      </div>\n\n    </div>\n\n    <!-- <div class=\"gallery-item\" tabindex=\"0\">7\n\n        <img src=\"https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&h=500&fit=crop\" class=\"gallery-image\"\n          alt=\"\">\n\n        <div class=\"gallery-item-type\">\n\n          <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\n\n        </div>\n\n        <div class=\"gallery-item-info\">\n\n          <ul>\n            <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\"\n                aria-hidden=\"true\"></i> 52</li>\n            <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\n                aria-hidden=\"true\"></i> 4</li>\n          </ul>\n\n        </div>\n\n      </div>  -->\n\n    <!-- <div class=\"gallery-item\" tabindex=\"0\">8\n\n        <img src=\"https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop\" class=\"gallery-image\"\n          alt=\"\">\n\n        <div class=\"gallery-item-info\">\n\n          <ul>\n            <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\"\n                aria-hidden=\"true\"></i> 66</li>\n            <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\n                aria-hidden=\"true\"></i> 2</li>\n          </ul>\n\n        </div>\n\n      </div> \n\n\n\n\n\n\n    </div>\n    \n   <div class=\"loader\"></div> -->\n\n  </div>\n</div>"
+module.exports = "<!-- <div class=\"header\">\r\n\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\r\n  <div id=\"searchbox\">\r\n    <input type=\"search\" placeholder=\"\">\r\n  </div>\r\n  <div id=\"searchbtn\">\r\n    <button type=\"submit\" class=\"btns\" (click)=\"Searchbtn()\">검색</button>\r\n    <a routerLink=\"/board\" class=\"btn1\"> Main </a>\r\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\r\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\r\n  </div>\r\n</div> -->\r\n\r\n<br><br><br><br>\r\n<div style=\"overflow:scroll; width:100%; height:auto;\">\r\n  <div class=\"container\">\r\n\r\n    <!-- <div class=\"profile\"></div> -->\r\n\r\n    <div class=\"profile-image\">\r\n\r\n      <img src=\"assets/img/mains.jpg\" alt=\"\">\r\n\r\n    </div>\r\n\r\n    <div class=\"profile-user-settings\">\r\n\r\n      <h1 class=\"profile-user-name\">{{this.proinfo[0].username}}</h1>\r\n\r\n      <button class=\"btn profile-edit-btn\" (click)=\"editprofile()\"> Edit Profile </button>\r\n\r\n      <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\r\n\r\n    \r\n    \r\n\r\n  </div>\r\n    <div class=\"profile-stats\">\r\n      <ul>\r\n        <li><span class=\"profile-stat-count\">{{this.proinfo[0].posts.length}}</span> 게시물</li>\r\n        <li><span class=\"profile-stat-count\">{{this.proinfo[0].follower.length}}</span> 팔로워</li>\r\n        <li><span class=\"profile-stat-count\">{{this.proinfo[0].following.length}}</span> 팔로잉</li>\r\n      </ul>\r\n    </div>\r\n    <div class=\"profile-bio\">\r\n\r\n      <p><span class=\"profile-real-name\">{{this.proinfo[0].username}}</span> </p>\r\n\r\n      <!-- <table>\r\n        <thead>\r\n          <th>post</th>\r\n          <th>follower</th>\r\n          <th>follower</th>\r\n        </thead>\r\n        <tr>\r\n          <td>{{this.proinfo[0].posts.length}}</td>\r\n          <td>{{this.proinfo[0].follower.length}}</td>\r\n          <td>{{this.proinfo[0].following.length}}</td>\r\n        </tr>\r\n      </table> -->\r\n\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n<div class=\"container\">\r\n\r\n  <div class=\"gallery\">\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            56</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 2</li>\r\n        </ul>\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">2\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            89</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 5</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">3\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            42</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 1</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">4\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Video</span><i class=\"fas fa-video\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            38</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 0</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">5\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            47</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 1</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">6\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            94</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 3</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <!-- <div class=\"gallery-item\" tabindex=\"0\">7\r\n\r\n        <img src=\"https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n          alt=\"\">\r\n\r\n        <div class=\"gallery-item-type\">\r\n\r\n          <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\r\n\r\n        </div>\r\n\r\n        <div class=\"gallery-item-info\">\r\n\r\n          <ul>\r\n            <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\"\r\n                aria-hidden=\"true\"></i> 52</li>\r\n            <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n                aria-hidden=\"true\"></i> 4</li>\r\n          </ul>\r\n\r\n        </div>\r\n\r\n      </div>  -->\r\n\r\n    <!-- <div class=\"gallery-item\" tabindex=\"0\">8\r\n\r\n        <img src=\"https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n          alt=\"\">\r\n\r\n        <div class=\"gallery-item-info\">\r\n\r\n          <ul>\r\n            <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\"\r\n                aria-hidden=\"true\"></i> 66</li>\r\n            <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n                aria-hidden=\"true\"></i> 2</li>\r\n          </ul>\r\n\r\n        </div>\r\n\r\n      </div> \r\n\r\n\r\n\r\n\r\n\r\n\r\n    </div>\r\n    \r\n   <div class=\"loader\"></div> -->\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1246,6 +1415,11 @@ var UserprofileComponent = /** @class */ (function () {
     UserprofileComponent.prototype.Clickfollower = function () {
     };
     UserprofileComponent.prototype.Clickfollowing = function () {
+    };
+    UserprofileComponent.prototype.editprofile = function () {
+        if (localStorage.getItem('token') != null) {
+            this.router.navigate(['/change']);
+        }
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('userinfo'),
