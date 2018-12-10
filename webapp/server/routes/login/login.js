@@ -241,38 +241,23 @@ router.post('/member/profileimage', ensureAuthorized, function (req, res) {
   User.findOne(findConditionToken, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
     else {
-      User.findOne({ username: followuser }, function (err, followinguser) {
-        console.log(followinguser);
-        //팔로잉 항목 추가
-        var followinglist = user.following;
-        followinglist.push(followinguser.username);
-        //팔로잉 당하는 사람의 팔로우 항목 추가
-        var followerlist = followinguser.follower;
-        followerlist.push(user.username);
+      console.log("id: " + user.id);
+      user.image=imageurl;
 
-        //팔로잉하는 사람 유저정보 업데이트
         localUpdate(user, function (err, updateuser) {
           if (err) {
             res.send({ success: false, data: "Error Occured" + err });
           } else {
-            //팔로잉 당하는 사람 유저정보 업데이트
-            localUpdate(followinguser, function (err, updateuser) {
-              if (err) {
-                res.send({ success: false, data: "Error Occured" + err });
-              } else {
-                res.send({
-                  success: true,
-                  //data: updateuser,
-                  type: "following / follower 추가",
-                });
-              }
+            console.log(updateuser);
+            res.send({
+              success: true,
+              data: updateuser,
+              type: "profileimage_update",
             });
-
           }
         });
-      })
     }
-  });
+  })
 });
 
 
