@@ -268,8 +268,9 @@ router.post('/member/profileimage', ensureAuthorized, function (req, res) {
 
           }
         });
-    }
-  })
+    });
+  }
+})
 });
 
 

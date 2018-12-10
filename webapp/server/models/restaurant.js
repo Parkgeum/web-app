@@ -6,7 +6,7 @@ var restaurantSchema = new mongoose.Schema({
 
     restaurant: {type:String, required:true},
     //image: {type:String},
-    address: {type:String},
+    address: [String],
     telephone: {type:String},
     business_hours: {type:String},
     likes: [String]

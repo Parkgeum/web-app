@@ -23,7 +23,7 @@ router.post('/restaurant', function (req, res, next) {
 router.post('/addrestaurant', function (req, res) {
   var add = new Restaurant();
   add.restaurant = req.body.restaurant;
-  add.address = req.body.address;
+  add.address = req.body.address.split(' ');
   add.telephone = req.body.telephone;
   add.business_hours = req.body.business_hours;
 
