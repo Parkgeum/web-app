@@ -41,7 +41,7 @@ router.post('/myposts', function (req, res, next) {
         if(err) {res.send({success:false, type:"Error Occured"+err});}
         else {
             console.log("myposts: "+posts)
-            res.send({success:true, data:posts})
+            res.send({success:true, data:posts.reverse()})
         }
       })
 });
