@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from "@angular/router"
 import { User } from '../shared/user.model';
 import { UserService } from '../shared/user.service';
 import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
+import { observable } from 'rxjs';
 
 @Component({
   selector: 'app-otherprofile',
@@ -23,6 +24,11 @@ export class OtherprofileComponent implements OnInit {
   information: proin;
   selectedUser: User;
   user: User[];
+  posts;
+  follower;
+  followings;
+  username;
+  id;
 
 
   ngOnInit() {
@@ -30,17 +36,49 @@ export class OtherprofileComponent implements OnInit {
   }
 
 
-  otherInfo(){
+  otherInfo() {
     localStorage.setItem('othername', 'sutest');
 
     let httpParams = new HttpParams()
-    .append("username", localStorage.getItem('othername'))
+      .append("username", localStorage.getItem('othername'))
+
+      console.log(httpParams);
 
     this.http.post('http://localhost:3000/member/userinfo', httpParams).subscribe((res: any) => {
-      console.log("test"+ JSON.stringify(res));
       this.information = res.data;
-      console.log("aaaaaaaaa  "+ this.information.username)
+      this.follower = this.information.follower.length;
+      this.followings = this.information.following.length;
+      this.posts = this.information.posts.length;
+      this.id = this.information.id;
+      this.username = this.information.username;
     });
+  }
+
+  otherInfos() {
+    localStorage.setItem('othername', 'sutest');
+
+    let httpParamss = new HttpParams()
+      .append("followuser", localStorage.getItem('othername'))
+      .append("state", "On");
+
+      console.log(httpParamss);
+
+    var follower = localStorage.getItem('othername');
+    var state = "On";
+
+    console.log(follower + state);
+
+    return this.http.post('http://localhost:3000//member/addfollowing', 
+    {
+      follower,
+      state
+    },
+     {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('token')
+      })
+    })
   }
 
 
@@ -67,17 +105,41 @@ export class OtherprofileComponent implements OnInit {
 
 
 
-  //follow했을 경우 클릭시 목록 출력
-  Clickfollower() {
 
-    }
+//   clickfollowing() {
+
+//     var num = this.information.follower.length;
+//     var state = "On";
+
+//     var i = parseInt('0');
+//     if (num == 0) {
+
+//       let httpParams = new Http
+//       .append("followuser", localStorage.getItem('othername'))
+//       .append("state", state);
+
+//       console.log(httpParams);
+
+//       return this.http.post('http://localhost:3000/member/addfollowing', 
+//       httpParams,
+//       {
+//         headers: new HttpHeaders({
+//           'Content-Type': 'application/json',
+//           'Authorization': localStorage.getItem('token')
+//         })
+//       }
+      
+//       );
+//     }
+
+//     else if (num > 0) {
+//       for (i; i < num; i++) {
 
 
-  //팔로잉하는 사람 리스트 출력
-  following() {
-    console.log("followingtest");
-  }
+//       }
+//     }
 
+//   }
 }
 
 interface proin {

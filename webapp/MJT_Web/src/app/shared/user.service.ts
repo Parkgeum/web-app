@@ -28,6 +28,10 @@ export class UserService {
     return this.http.post(environment.apiBaseUrl +'/member/login', user);
   }
 
+  Searcn(user: User){
+    return this.http.post(environment.apiBaseUrl+'/boards/search/user', user);
+  }
+
   changepass(change: Change){
     return this.http.post(environment.apiBaseUrl +'/member/updatePass', change, {
       headers: new HttpHeaders({
@@ -44,6 +48,18 @@ export class UserService {
         'Authorization': localStorage.getItem('token')
       })
     });
+  }
+
+  checkuser(){
+    const token = true;
+    if(localStorage.getItem('token')==null)
+    {
+      return false;
+    }
+    else if(localStorage.getItem('token')!=null)
+    {
+      return token;
+    }
   }
 
   otherInfo(user: User){

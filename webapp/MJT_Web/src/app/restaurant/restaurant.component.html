@@ -27,48 +27,35 @@
 
     <div class="profile-user-settings">
 
-      <h1 class="profile-user-name">{{this.id}}</h1>
-
-      <button class="btn profile-edit-btn" (click)="editprofile()"> Edit Profile </button>
+      <!-- 맛집 이름 -->
+      <h2 class="profile-user-name">레스토랑 테스트{{this.name}}</h2>
 
       <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+    </div>
 
-    
-    
-
-  </div>
+    <!-- 식당 소개
     <div class="profile-stats">
       <ul>
-        <li> 게시물 <span class="profile-stat-count">{{this.posts}}</span></li>
-        <li> 팔로워 <span class="profile-stat-count">{{this.follower}}</span></li>
-        <li> 팔로잉<span class="profile-stat-count">{{this.following}}</span></li>
+        주소, 전화번호, 영업시간, 브레이크타임
+        <li> 주소 <span class="profile-stat-count">{{this.posts}}</span></li>
+        <li> 전화번호 <span class="profile-stat-count">{{this.follower}}</span></li>
+        <li> 전화번호 <span class="profile-stat-count">{{this.follower}}</span></li>
+        <li> 브레이크 타임 <span class="profile-stat-count">{{this.following}}</span></li>
       </ul>
-    </div>
+    </div> -->
+
     <div class="profile-bio">
 
-      <p><span class="profile-real-name">{{this.username}}</span> </p>
-
-      <!-- <table>
-        <thead>
-          <th>post</th>
-          <th>follower</th>
-          <th>follower</th>
-        </thead>
-        <tr>
-          <td>{{this.proinfo[0].posts.length}}</td>
-          <td>{{this.proinfo[0].follower.length}}</td>
-          <td>{{this.proinfo[0].following.length}}</td>
-        </tr>
-      </table> -->
-
+      <p> address : <span class="profile-real-name"> ㅁㅁ{{this.address}}</span></p>
+      <p> telephone : <span class="profile-real-name"> ㅁㅁ{{this.telephone}}</span></p>
+      <p> business_hours : <span class="profile-real-name"> ㅁㅁ{{this.business_hours}}</span></p>
+      <p> breake_time : <span class="profile-real-name"> ㅁㅁ{{this.breake_time}}</span></p>
     </div>
-
   </div>
-
-
 </div>
 
 
+<!-- ngfor문으로 사진 출력 -->
 
 
 <div class="container">

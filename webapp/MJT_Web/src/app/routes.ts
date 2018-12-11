@@ -10,6 +10,7 @@ import { GooglemapComponent } from './googlemap/googlemap.component';
 import { BoardComponent } from './board/board.component';
 import { ChangeprofileComponent } from './user/changeprofile/changeprofile.component';
 import { OtherprofileComponent } from './otherprofile/otherprofile.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 // import { AuthGuard } from './auth/auth.guard';
 
 export const appRoutes: Routes = [
@@ -38,6 +39,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'other', component: OtherprofileComponent
+    },
+    {
+        path: 'rt', component: RestaurantComponent
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'

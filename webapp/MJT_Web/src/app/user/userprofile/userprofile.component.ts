@@ -26,10 +26,17 @@ export class UserprofileComponent implements OnInit {
 
 
 
-  public proinfo: pro[];
+  public proinfo: pro;
   selectedUser: User;
   user: User[];
-  userinfo: any;
+  posts;
+  follower;
+  following;
+  username;
+  id;
+  tok;
+  
+  
 
 
   //value를 전달하기 위해 usermodels를 새로 정의하고 refreshUserList에서 사용
@@ -95,7 +102,14 @@ export class UserprofileComponent implements OnInit {
     // console.log( this.baseUrls + "/pro" + `/${check}`);
     this.http.get(this.baseUrls + "/pro" + `/${check}`).subscribe((res: any) => {
       // console.log( JSON.stringify(res));
-      this.proinfo = [res];
+      this.proinfo = res;
+      this.follower = this.proinfo.follower.length;
+      this.following = this.proinfo.following.length;
+      this.posts = this.proinfo.posts.length;
+      this.id = this.proinfo.id;
+      this.username = this.proinfo.username;
+      this.tok = this.proinfo.jsonWebToken;
+      // console.log(this.follower + this.following + this.posts + this.id + this.username);
     })
 
 
@@ -115,8 +129,8 @@ export class UserprofileComponent implements OnInit {
   }
 
   editprofile() {
-    console.log(localStorage.getItem('token') + " vs " + this.proinfo[0].jsonWebToken)
-    if(localStorage.getItem('token') == this.proinfo[0].jsonWebToken)
+    console.log(localStorage.getItem('token') + " vs " + this.tok);
+    if(localStorage.getItem('token') == this.tok)
     {
       this.router.navigate(['/change'])
     }

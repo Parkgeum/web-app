@@ -25,6 +25,7 @@ import { NgFlashMessagesModule } from 'ng-flash-messages';
 import { UploadService } from './shared/upload.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OtherprofileComponent } from './otherprofile/otherprofile.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 // import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
@@ -42,7 +43,8 @@ import { OtherprofileComponent } from './otherprofile/otherprofile.component';
     // Observable
     NavbarComponent,
     ChangeprofileComponent,
-    OtherprofileComponent
+    OtherprofileComponent,
+    RestaurantComponent
   ],
   imports: [ 
     BrowserModule,
