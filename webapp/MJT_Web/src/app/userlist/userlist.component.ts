@@ -22,38 +22,13 @@ export class UserlistComponent implements OnInit {
   }
 
 
-
-  // userInfo() {
-
-  //   let httpParams = new HttpParams()
-  //     .append("username", localStorage.getItem('username'))
-  //     console.log(httpParams);
-
-  //   this.http.post('http://localhost:3000/boards/search/user', httpParams).subscribe((res: any) => {
-  //    this.information = res;
-  //   });
-  // }
-
-  // getUserList() {
-  //   return this.http.get(this.baseUrls);
-  // }
-
-  // refreshUserList() {
-  //   this.getUserList().subscribe((res) => {
-  //     this.information = res as proin;
-  //     // console.log("refresh"+this.user.indexOf);  
-  //   });
-  // }
-
   userInform() {
     let httpParams = new HttpParams()
       .append("username", localStorage.getItem('username'))
 
-      console.log(httpParams);
 
     this.http.post(this.baseUrls, httpParams).subscribe((res: any) => {
       this.information = res.data;
-      console.log(JSON.stringify(this.information));
     });
   }
 

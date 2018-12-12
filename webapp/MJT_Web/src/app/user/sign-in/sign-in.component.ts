@@ -64,7 +64,7 @@ export class SignInComponent implements OnInit {
             if (this.user[i].password == form.value.password) {
               localStorage.setItem('token', this.user[i].jsonWebToken);
               localStorage.setItem('profile', this.user[i]._id);
-              this.router.navigateByUrl('/profile')
+              this.router.navigateByUrl('/board')
               }
           }
         }

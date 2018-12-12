@@ -14,11 +14,11 @@
 
 </div> -->
 
-<div class="content">
+<!-- <div class="content">
 
-  <form #uploadForm="ngForm">
-    <!-- (ngSubmit)="onSubmit(uploadForm)"> -->
-    <div class="row">
+  <form #uploadForm="ngForm"> -->
+<!-- (ngSubmit)="onSubmit(uploadForm)"> -->
+<!-- <div class="row">
       <div class="row">
         <div class="input-field col s12">
           <table>
@@ -38,4 +38,60 @@
       </div>
     </div>
   </form>
+</div> -->
+
+<!-- <tr *ngFor="let post of Post">
+  <div class="content">
+
+    <img id="userimg" src="assets/img/camera.jpg">
+    <p class="user"> seulgiredvelvet </p>
+    <img id="userphoto" src="assets/img/camera.jpg">
+    <img id="instaicon" src="assets/img/camera.jpg">
+    <p class="like">좋아요 293개</p>
+    <div class="comment">
+      <p>seulgiredvelvet 제목 내용 </p>
+      <p style="font-size:10px; color:slategray">13시간 전 </p>
+    </div>
+    <div class="searchbox">
+      <input id="commentin" type="text" placeholder="  댓글을 입력해주세요.. ">
+      <input type="submit" value="확인" class="btn">
+    </div>
+
+  </div>
+</tr> -->
+<div class="content">
+
+  <table *ngFor="let posts of post" style="width:100%">
+    <tr class="font-2" >
+        <img id="userimg" src="assets/img/camera.jpg">
+        <!-- <img id="userimg" src="{{posts.image}}">  -->
+        <p class="user"> {{posts.username}} </p>
+    </tr>
+    <tr>
+        <img id="userphoto" src="assets/img/camera.jpg">
+    </tr>
+    <tr>
+      <br>
+        <p class="like">좋아요 {{posts.likes.length}}개</p>
+        <div class="comment">
+          <p style="font-size:125%">{{posts.username}} </p>
+          <p style="font-size:100%">{{posts.text}} </p>
+          
+        </div>
+        <div class="searchbox">
+            <input id="commentin" type="text" placeholder="  댓글을 입력해주세요.. "> 
+            <input type="submit" value="게시" class="btn">
+          </div>
+          <br>
+          <p style="font-size:15px; color:slategray">{{posts.time}} </p>
+    </tr>
+      <!-- <td>
+        <br><img id="userphoto" src="assets/img/camera.jpg">
+      </td> -->
+      <!-- <td>{{posts.username}}</td>
+          <td>{{posts.follower.length}}</td>
+          <td>{{posts.following.length}}</td> -->
+
+      <hr style="border : 1px solid black;">
+  </table>
 </div>

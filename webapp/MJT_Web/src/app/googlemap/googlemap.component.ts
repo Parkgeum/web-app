@@ -39,7 +39,6 @@ export class GooglemapComponent implements OnInit {
   }
 
   restInform(restinfo: restaurant) {
-    console.log("test");
     return this.http.post('http://localhost:3000/restaurant', restinfo);
   }
 
@@ -51,7 +50,6 @@ export class GooglemapComponent implements OnInit {
 
       if (res != null) {
         localStorage.setItem('resname', "test");
-        console.log("test" + JSON.stringify(this.restinfo));
         this.router.navigate(['/rt']);
 
         //조건 다시 수정

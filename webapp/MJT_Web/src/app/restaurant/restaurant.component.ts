@@ -32,8 +32,6 @@ export class RestaurantComponent implements OnInit {
     let httpParams = new HttpParams()
       .append("restID", name)
 
-      console.log(httpParams);
-
     this.http.post('http://localhost:3000/restaurant', httpParams).subscribe((res: any) => {
       this.restinfo = res.data;
       this.name = this.restinfo.restaurant;

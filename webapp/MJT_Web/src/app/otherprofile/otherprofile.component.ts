@@ -60,13 +60,10 @@ export class OtherprofileComponent implements OnInit {
       .append("followuser", localStorage.getItem('username'))
       .append("state", "On");
 
-      console.log(httpParamss);
 
     var followuser = localStorage.getItem('othername');
     var state = "On";
 
-    console.log(followuser + state);
-    console.log('http://localhost:3000/member/addfollowing')
     return this.http.post('http://localhost:3000/member/addfollowing', 
     {
       "followuser":followuser,
