@@ -42,6 +42,7 @@ export class UserprofileComponent implements OnInit {
   readonly baseUrls = 'http://localhost:3000/member/info';
 
   ngOnInit() {
+
     this.profilevalue();
   }
 
@@ -55,6 +56,10 @@ export class UserprofileComponent implements OnInit {
   }
 
   profilevalue() {
+    if (localStorage.getItem('token') == null) {
+      console.log("not logined");
+      this.router.navigate(['/login']);
+    }
     this.profilereturn().subscribe((res: any) => {
       this.proinfo = res.data;
       // console.log(JSON.stringify(this.proinfo));
@@ -80,9 +85,7 @@ export class UserprofileComponent implements OnInit {
     //   this.username = this.proinfo.username;
     //   this.tok = this.proinfo.jsonWebToken;
 
-    if (localStorage.getItem('token') == null) {
-      this.router.navigate(['/login']);
-    }
+
     // })
   }
 

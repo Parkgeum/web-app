@@ -239,7 +239,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* html, body {\r\n    position: absolute;\r\n     height: 100%; \r\n } */\r\n\r\n agm-map {\r\n    width: 100%;\r\n    height: 300px;\r\n  }\r\n\r\n .btn-1 {\r\n    width: 20%;\r\n    /* height: 10%; */\r\n    background-color: #3897f0;\r\n    border: 1px solid #3897f0;\r\n    padding: 5px 12px;\r\n    color: #fff;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    border-radius: 3px;\r\n    margin: 1%;\r\n  }\r\n\r\n .btns-1 {\r\n    width: 20%;\r\n    height: 30px;\r\n    background-color: #3897f0;\r\n    border: 1px solid #3897f0;\r\n    padding: 5px 12px;\r\n    margin-left: 1%;\r\n    color: #fff;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    border-radius: 3px;\r\n    margin: 1%;\r\n  }\r\n\r\n .btn {\r\n    /*width: 3%;*/\r\n    /*height: 20px;*/\r\n    background-color: #3897f0;\r\n    border: 1px solid #3897f0;\r\n    padding: 5px 12px;\r\n    margin-left: 5px;\r\n    color: #fff;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    border-radius: 3px;\r\n  }\r\n\r\n .btn1 {\r\n    /*width: 3%;*/\r\n    /*height: 20px;*/\r\n    background-color: #a9a9a9;\r\n    border: 1px solid #a9a9a9;\r\n    padding: 5px 12px;\r\n    margin-left: 35%;\r\n    /*margin-right: : 100px;*/\r\n    color: #fff;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    border-radius: 3px;\r\n  }\r\n\r\n .btn2 {\r\n    /*width: 3%;*/\r\n    /*height: 20px;*/\r\n    background-color: #a9a9a9;\r\n    border: 1px solid #a9a9a9;\r\n    padding: 5px 12px;\r\n    /*margin-left: 45%;*/\r\n    /*margin-right: : 100px;*/\r\n    color: #fff;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    border-radius: 3px;\r\n  }\r\n\r\n .text {\r\n    resize: none;\r\n    width: 70%;\r\n    height: 30px;\r\n    margin: 1%\r\n  }\r\n\r\n .has {\r\n    resize: none;\r\n    width: 70%;\r\n    height: 50px;\r\n    margin: 1%\r\n  }\r\n\r\n .pickimg {\r\n    margin: 1%;\r\n    width: auto;\r\n    height: auto;\r\n  }\r\n\r\n .header {\r\n    height: 12%;\r\n    background-color: white;\r\n    border-bottom: 1px solid slategray;\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    right: 0px;\r\n    overflow: hidden;\r\n}\r\n\r\n #lg1 {\r\n    margin: 5px;\r\n    float: left;\r\n}\r\n\r\n #lg2 {\r\n    border-left: 1px solid black;\r\n    padding-left: 40px;\r\n    margin: 20px;\r\n    float: left;\r\n}\r\n\r\n #lg3 {\r\n    margin: 30px;\r\n    float: 0px;\r\n}\r\n\r\n #searchbox {\r\n\r\n    margin-top: 2%;\r\n    margin-left: 7%;\r\n    float: left;\r\n\r\n}\r\n\r\n #searchbtn {\r\n    margin-top: 2%;\r\n    float: center;\r\n\r\n}\r\n\r\n .content {\r\n          margin: 0 auto;\r\n          height: auto;\r\n          width: 700px;\r\n          margin-top : 10%;\r\n          border-left : 1px solid black; \r\n          border-right : 1px solid black; \r\n          border-top : 1px solid black;\r\n          border-bottom : 1px solid black;\r\n          padding: 0.8%;\r\n          font-family: 'Hind Madurai', sans-serif;\r\n          font-weight: bold;\r\n      }\r\n\r\n #userimg {\r\n        border-radius: 100px;\r\n        width: 150px;\r\n        height: 150px;\r\n        border : 2px solid red;\r\n        margin : 10px;\r\n        float:left;\r\n      }\r\n\r\n .user {\r\n         margin-top: 7%;\r\n         font-size: 50px;\r\n         float:left;\r\n      }\r\n\r\n #userphoto {\r\n          width:100%;\r\n      }\r\n\r\n #instaicon {\r\n          width:100%;\r\n      }\r\n\r\n .like {\r\n         margin-left : 10px;\r\n      }\r\n\r\n .comment {\r\n          margin-left: 10px;\r\n          font-size: 13px;\r\n      }\r\n\r\n #commentin{\r\n          border : none;\r\n          width: 70%;\r\n          height : 40px;\r\n          font-size : 15px;\r\n          margin-left : 10px;\r\n      }\r\n\r\n #commentin::-webkit-input-placeholder {\r\n          \r\n          font-size : 15px;\r\n      }\r\n\r\n #menuimg {\r\n        \r\n          width:50px;\r\n          height:40px;\r\n          margin-left : 10px;\r\n         \r\n      }\r\n\r\n .comment2 {\r\n          width: 99%;\r\n          margin : 20px;\r\n          float: left;\r\n      }\r\n\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYm9hcmQvYm9hcmQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0tBR0s7O0NBRUo7SUFDRyxZQUFZO0lBQ1osY0FBYztHQUNmOztDQUdIO0lBQ0ksV0FBVztJQUNYLGtCQUFrQjtJQUNsQiwwQkFBMEI7SUFDMUIsMEJBQTBCO0lBQzFCLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsV0FBVztHQUNaOztDQUVEO0lBQ0UsV0FBVztJQUNYLGFBQWE7SUFDYiwwQkFBMEI7SUFDMUIsMEJBQTBCO0lBQzFCLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLFdBQVc7R0FDWjs7Q0FFRDtJQUNFLGNBQWM7SUFDZCxpQkFBaUI7SUFDakIsMEJBQTBCO0lBQzFCLDBCQUEwQjtJQUMxQixrQkFBa0I7SUFDbEIsaUJBQWlCO0lBQ2pCLFlBQVk7SUFDWixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLG1CQUFtQjtHQUNwQjs7Q0FDQTtJQUNDLGNBQWM7SUFDZCxpQkFBaUI7SUFDakIsMEJBQTBCO0lBQzFCLDBCQUEwQjtJQUMxQixrQkFBa0I7SUFDbEIsaUJBQWlCO0lBQ2pCLDBCQUEwQjtJQUMxQixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixtQkFBbUI7R0FDcEI7O0NBQ0Q7SUFDRSxjQUFjO0lBQ2QsaUJBQWlCO0lBQ2pCLDBCQUEwQjtJQUMxQiwwQkFBMEI7SUFDMUIsa0JBQWtCO0lBQ2xCLHFCQUFxQjtJQUNyQiwwQkFBMEI7SUFDMUIsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsbUJBQW1CO0dBQ3BCOztDQUVEO0lBQ0UsYUFBYTtJQUNiLFdBQVc7SUFDWCxhQUFhO0lBQ2IsVUFBVTtHQUNYOztDQUNEO0lBQ0UsYUFBYTtJQUNiLFdBQVc7SUFDWCxhQUFhO0lBQ2IsVUFBVTtHQUNYOztDQUVEO0lBQ0UsV0FBVztJQUNYLFlBQVk7SUFDWixhQUFhO0dBQ2Q7O0NBR0Q7SUFDRSxZQUFZO0lBQ1osd0JBQXdCO0lBQ3hCLG1DQUFtQztJQUNuQyxnQkFBZ0I7SUFDaEIsU0FBUztJQUNULFVBQVU7SUFDVixXQUFXO0lBQ1gsaUJBQWlCO0NBQ3BCOztDQUVEO0lBQ0ksWUFBWTtJQUNaLFlBQVk7Q0FDZjs7Q0FFRDtJQUNJLDZCQUE2QjtJQUM3QixtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLFlBQVk7Q0FDZjs7Q0FFRDtJQUNJLGFBQWE7SUFDYixXQUFXO0NBQ2Q7O0NBRUQ7O0lBRUksZUFBZTtJQUNmLGdCQUFnQjtJQUNoQixZQUFZOztDQUVmOztDQUVEO0lBQ0ksZUFBZTtJQUNmLGNBQWM7O0NBRWpCOztDQUVLO1VBQ0ksZUFBZTtVQUNmLGFBQWE7VUFDYixhQUFhO1VBQ2IsaUJBQWlCO1VBQ2pCLDhCQUE4QjtVQUM5QiwrQkFBK0I7VUFDL0IsNkJBQTZCO1VBQzdCLGdDQUFnQztVQUNoQyxjQUFjO1VBQ2Qsd0NBQXdDO1VBQ3hDLGtCQUFrQjtPQUNyQjs7Q0FDRDtRQUNFLHFCQUFxQjtRQUNyQixhQUFhO1FBQ2IsY0FBYztRQUNkLHVCQUF1QjtRQUN2QixjQUFjO1FBQ2QsV0FBVztPQUNaOztDQUNEO1NBQ0csZUFBZTtTQUNmLGdCQUFnQjtTQUNoQixXQUFXO09BQ2I7O0NBQ0Q7VUFDSSxXQUFXO09BQ2Q7O0NBQ0Q7VUFDSSxXQUFXO09BQ2Q7O0NBQ0Q7U0FDRyxtQkFBbUI7T0FDckI7O0NBQ0Q7VUFDSSxrQkFBa0I7VUFDbEIsZ0JBQWdCO09BQ25COztDQUNEO1VBQ0ksY0FBYztVQUNkLFdBQVc7VUFDWCxjQUFjO1VBQ2QsaUJBQWlCO1VBQ2pCLG1CQUFtQjtPQUN0Qjs7Q0FFRDs7VUFFSSxpQkFBaUI7T0FDcEI7O0NBQ0Q7O1VBRUksV0FBVztVQUNYLFlBQVk7VUFDWixtQkFBbUI7O09BRXRCOztDQUNEO1VBQ0ksV0FBVztVQUNYLGNBQWM7VUFDZCxZQUFZO09BQ2YiLCJmaWxlIjoic3JjL2FwcC9ib2FyZC9ib2FyZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogaHRtbCwgYm9keSB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgaGVpZ2h0OiAxMDAlOyBcclxuIH0gKi9cclxuXHJcbiBhZ20tbWFwIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxuICB9XHJcblxyXG5cclxuLmJ0bi0xIHtcclxuICAgIHdpZHRoOiAyMCU7XHJcbiAgICAvKiBoZWlnaHQ6IDEwJTsgKi9cclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMzODk3ZjA7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjMzg5N2YwO1xyXG4gICAgcGFkZGluZzogNXB4IDEycHg7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogM3B4O1xyXG4gICAgbWFyZ2luOiAxJTtcclxuICB9XHJcblxyXG4gIC5idG5zLTEge1xyXG4gICAgd2lkdGg6IDIwJTtcclxuICAgIGhlaWdodDogMzBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMzODk3ZjA7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjMzg5N2YwO1xyXG4gICAgcGFkZGluZzogNXB4IDEycHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMSU7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogM3B4O1xyXG4gICAgbWFyZ2luOiAxJTtcclxuICB9XHJcblxyXG4gIC5idG4ge1xyXG4gICAgLyp3aWR0aDogMyU7Ki9cclxuICAgIC8qaGVpZ2h0OiAyMHB4OyovXHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzg5N2YwO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgIzM4OTdmMDtcclxuICAgIHBhZGRpbmc6IDVweCAxMnB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDVweDtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgfVxyXG4gICAuYnRuMSB7XHJcbiAgICAvKndpZHRoOiAzJTsqL1xyXG4gICAgLypoZWlnaHQ6IDIwcHg7Ki9cclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNhOWE5YTk7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYTlhOWE5O1xyXG4gICAgcGFkZGluZzogNXB4IDEycHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMzUlO1xyXG4gICAgLyptYXJnaW4tcmlnaHQ6IDogMTAwcHg7Ki9cclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgfVxyXG4gIC5idG4yIHtcclxuICAgIC8qd2lkdGg6IDMlOyovXHJcbiAgICAvKmhlaWdodDogMjBweDsqL1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2E5YTlhOTtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNhOWE5YTk7XHJcbiAgICBwYWRkaW5nOiA1cHggMTJweDtcclxuICAgIC8qbWFyZ2luLWxlZnQ6IDQ1JTsqL1xyXG4gICAgLyptYXJnaW4tcmlnaHQ6IDogMTAwcHg7Ki9cclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgfVxyXG5cclxuICAudGV4dCB7XHJcbiAgICByZXNpemU6IG5vbmU7XHJcbiAgICB3aWR0aDogNzAlO1xyXG4gICAgaGVpZ2h0OiAzMHB4O1xyXG4gICAgbWFyZ2luOiAxJVxyXG4gIH1cclxuICAuaGFzIHtcclxuICAgIHJlc2l6ZTogbm9uZTtcclxuICAgIHdpZHRoOiA3MCU7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICBtYXJnaW46IDElXHJcbiAgfVxyXG5cclxuICAucGlja2ltZyB7XHJcbiAgICBtYXJnaW46IDElO1xyXG4gICAgd2lkdGg6IGF1dG87XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgfVxyXG5cclxuXHJcbiAgLmhlYWRlciB7XHJcbiAgICBoZWlnaHQ6IDEyJTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHNsYXRlZ3JheTtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDogMHB4O1xyXG4gICAgbGVmdDogMHB4O1xyXG4gICAgcmlnaHQ6IDBweDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbn1cclxuXHJcbiNsZzEge1xyXG4gICAgbWFyZ2luOiA1cHg7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuI2xnMiB7XHJcbiAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgcGFkZGluZy1sZWZ0OiA0MHB4O1xyXG4gICAgbWFyZ2luOiAyMHB4O1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbiNsZzMge1xyXG4gICAgbWFyZ2luOiAzMHB4O1xyXG4gICAgZmxvYXQ6IDBweDtcclxufVxyXG5cclxuI3NlYXJjaGJveCB7XHJcblxyXG4gICAgbWFyZ2luLXRvcDogMiU7XHJcbiAgICBtYXJnaW4tbGVmdDogNyU7XHJcbiAgICBmbG9hdDogbGVmdDtcclxuXHJcbn1cclxuXHJcbiNzZWFyY2hidG4ge1xyXG4gICAgbWFyZ2luLXRvcDogMiU7XHJcbiAgICBmbG9hdDogY2VudGVyO1xyXG5cclxufVxyXG5cclxuICAgICAgLmNvbnRlbnQge1xyXG4gICAgICAgICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICAgICAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICAgICAgICB3aWR0aDogNzAwcHg7XHJcbiAgICAgICAgICBtYXJnaW4tdG9wIDogMTAlO1xyXG4gICAgICAgICAgYm9yZGVyLWxlZnQgOiAxcHggc29saWQgYmxhY2s7IFxyXG4gICAgICAgICAgYm9yZGVyLXJpZ2h0IDogMXB4IHNvbGlkIGJsYWNrOyBcclxuICAgICAgICAgIGJvcmRlci10b3AgOiAxcHggc29saWQgYmxhY2s7XHJcbiAgICAgICAgICBib3JkZXItYm90dG9tIDogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgICAgICAgcGFkZGluZzogMC44JTtcclxuICAgICAgICAgIGZvbnQtZmFtaWx5OiAnSGluZCBNYWR1cmFpJywgc2Fucy1zZXJpZjtcclxuICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICB9XHJcbiAgICAgICN1c2VyaW1nIHtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMDBweDtcclxuICAgICAgICB3aWR0aDogMTUwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiAxNTBweDtcclxuICAgICAgICBib3JkZXIgOiAycHggc29saWQgcmVkO1xyXG4gICAgICAgIG1hcmdpbiA6IDEwcHg7XHJcbiAgICAgICAgZmxvYXQ6bGVmdDtcclxuICAgICAgfVxyXG4gICAgICAudXNlciB7XHJcbiAgICAgICAgIG1hcmdpbi10b3A6IDclO1xyXG4gICAgICAgICBmb250LXNpemU6IDUwcHg7XHJcbiAgICAgICAgIGZsb2F0OmxlZnQ7XHJcbiAgICAgIH1cclxuICAgICAgI3VzZXJwaG90byB7XHJcbiAgICAgICAgICB3aWR0aDoxMDAlO1xyXG4gICAgICB9XHJcbiAgICAgICNpbnN0YWljb24ge1xyXG4gICAgICAgICAgd2lkdGg6MTAwJTtcclxuICAgICAgfVxyXG4gICAgICAubGlrZSB7XHJcbiAgICAgICAgIG1hcmdpbi1sZWZ0IDogMTBweDtcclxuICAgICAgfVxyXG4gICAgICAuY29tbWVudCB7XHJcbiAgICAgICAgICBtYXJnaW4tbGVmdDogMTBweDtcclxuICAgICAgICAgIGZvbnQtc2l6ZTogMTNweDtcclxuICAgICAgfVxyXG4gICAgICAjY29tbWVudGlue1xyXG4gICAgICAgICAgYm9yZGVyIDogbm9uZTtcclxuICAgICAgICAgIHdpZHRoOiA3MCU7XHJcbiAgICAgICAgICBoZWlnaHQgOiA0MHB4O1xyXG4gICAgICAgICAgZm9udC1zaXplIDogMTVweDtcclxuICAgICAgICAgIG1hcmdpbi1sZWZ0IDogMTBweDtcclxuICAgICAgfVxyXG4gICAgXHJcbiAgICAgICNjb21tZW50aW46Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIge1xyXG4gICAgICAgICAgXHJcbiAgICAgICAgICBmb250LXNpemUgOiAxNXB4O1xyXG4gICAgICB9XHJcbiAgICAgICNtZW51aW1nIHtcclxuICAgICAgICBcclxuICAgICAgICAgIHdpZHRoOjUwcHg7XHJcbiAgICAgICAgICBoZWlnaHQ6NDBweDtcclxuICAgICAgICAgIG1hcmdpbi1sZWZ0IDogMTBweDtcclxuICAgICAgICAgXHJcbiAgICAgIH1cclxuICAgICAgLmNvbW1lbnQyIHtcclxuICAgICAgICAgIHdpZHRoOiA5OSU7XHJcbiAgICAgICAgICBtYXJnaW4gOiAyMHB4O1xyXG4gICAgICAgICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICAgIH1cclxuXHJcblxyXG4iXX0= */"
+module.exports = "\r\n      .btn {\r\n        /*width: 3%;*/\r\n        /*height: 20px;*/\r\n        background-color: #3897f0;\r\n        border: 1px solid #3897f0;\r\n        padding: 5px 12px;\r\n        margin-left: 5px;\r\n        color: #fff;\r\n        font-weight: bold;\r\n        cursor: pointer;\r\n        border-radius: 3px;\r\n      }\r\n       .btn1 {\r\n        /*width: 3%;*/\r\n        /*height: 20px;*/\r\n        background-color: #a9a9a9;\r\n        border: 1px solid #a9a9a9;\r\n        padding: 5px 12px;\r\n        margin-left: 35%;\r\n        /*margin-right: : 100px;*/\r\n        color: #fff;\r\n        font-weight: bold;\r\n        cursor: pointer;\r\n        border-radius: 3px;\r\n      }\r\n       .btn2 {\r\n        /*width: 3%;*/\r\n        /*height: 20px;*/\r\n        background-color: #a9a9a9;\r\n        border: 1px solid #a9a9a9;\r\n        padding: 5px 12px;\r\n        /*margin-left: 45%;*/\r\n        /*margin-right: : 100px;*/\r\n        color: #fff;\r\n        font-weight: bold;\r\n        cursor: pointer;\r\n        border-radius: 3px;\r\n      }\r\n       .header {\r\n              height: 90px;\r\n              background-color: white;\r\n              border-bottom: 1px solid slategray;\r\n              position: fixed;\r\n              top: 0px;\r\n              left: 0px;\r\n              right: 0px;\r\n              overflow: hidden;\r\n          }\r\n       #lg1 {\r\n              margin: 5px;\r\n              float: left;\r\n          }\r\n       #lg2 {\r\n              border-left: 1px solid black;\r\n              padding-left: 40px;\r\n              margin: 20px;\r\n              float: left;\r\n          }\r\n       #lg3 {\r\n              margin: 30px;\r\n              float: 0;\r\n          }\r\n       #searchbox {\r\n  \r\n              margin-top: 30px;\r\n              margin-left: 100px;\r\n              float: left;\r\n  \r\n          }\r\n       #searchbtn {\r\n              margin-top: 25px;\r\n              float: center;\r\n  \r\n          }\r\n       .content {\r\n              margin: 0 auto;\r\n              height: auto;\r\n              width: 700px;\r\n              margin-top : 150px;\r\n              border-left : 1px solid black; \r\n              border-right : 1px solid black; \r\n              border-top : 1px solid black; \r\n              font-family: 'Hind Madurai', sans-serif;\r\n              font-weight: bold;\r\n          }\r\n       #userimg {\r\n            border-radius: 100px;\r\n            width: 150px;\r\n            height: 150px;\r\n            border : 2px solid red;\r\n            margin : 10px;\r\n            float:left;\r\n          }\r\n       .user {\r\n             margin-top: 7%;\r\n             font-size: 50px;\r\n             float:left;\r\n          }\r\n       #userphoto {\r\n              width:100%;\r\n              align-content: center;\r\n              /* height: 300px; */\r\n          }\r\n       #instaicon {\r\n              width:100%;\r\n              /* height: 300px; */\r\n          }\r\n       .like {\r\n             margin-left : 10px;\r\n          }\r\n       .comment {\r\n              margin-left: 10px;\r\n              font-size: 13px;\r\n          }\r\n       #commentin{\r\n              border : none;\r\n              width: 85%;\r\n              height : 40px;\r\n              font-size : 15px;\r\n              margin-left : 10px;\r\n          }\r\n       #commentin::-webkit-input-placeholder {\r\n              \r\n              font-size : 15px;\r\n          }\r\n       #menuimg {\r\n            \r\n              width:50px;\r\n              height:40px;\r\n              margin-left : 10px;\r\n             \r\n          }\r\n       .comment2 {\r\n              width: 99%;\r\n              margin : 20px;\r\n              float: left;\r\n          }\r\n\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYm9hcmQvYm9hcmQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO01BQ007UUFDRSxjQUFjO1FBQ2QsaUJBQWlCO1FBQ2pCLDBCQUEwQjtRQUMxQiwwQkFBMEI7UUFDMUIsa0JBQWtCO1FBQ2xCLGlCQUFpQjtRQUNqQixZQUFZO1FBQ1osa0JBQWtCO1FBQ2xCLGdCQUFnQjtRQUNoQixtQkFBbUI7T0FDcEI7T0FDQTtRQUNDLGNBQWM7UUFDZCxpQkFBaUI7UUFDakIsMEJBQTBCO1FBQzFCLDBCQUEwQjtRQUMxQixrQkFBa0I7UUFDbEIsaUJBQWlCO1FBQ2pCLDBCQUEwQjtRQUMxQixZQUFZO1FBQ1osa0JBQWtCO1FBQ2xCLGdCQUFnQjtRQUNoQixtQkFBbUI7T0FDcEI7T0FDRDtRQUNFLGNBQWM7UUFDZCxpQkFBaUI7UUFDakIsMEJBQTBCO1FBQzFCLDBCQUEwQjtRQUMxQixrQkFBa0I7UUFDbEIscUJBQXFCO1FBQ3JCLDBCQUEwQjtRQUMxQixZQUFZO1FBQ1osa0JBQWtCO1FBQ2xCLGdCQUFnQjtRQUNoQixtQkFBbUI7T0FDcEI7T0FPRztjQUNJLGFBQWE7Y0FDYix3QkFBd0I7Y0FDeEIsbUNBQW1DO2NBQ25DLGdCQUFnQjtjQUNoQixTQUFTO2NBQ1QsVUFBVTtjQUNWLFdBQVc7Y0FDWCxpQkFBaUI7V0FDcEI7T0FFRDtjQUNJLFlBQVk7Y0FDWixZQUFZO1dBQ2Y7T0FFRDtjQUNJLDZCQUE2QjtjQUM3QixtQkFBbUI7Y0FDbkIsYUFBYTtjQUNiLFlBQVk7V0FDZjtPQUVEO2NBQ0ksYUFBYTtjQUNiLFNBQVM7V0FDWjtPQUVEOztjQUVJLGlCQUFpQjtjQUNqQixtQkFBbUI7Y0FDbkIsWUFBWTs7V0FFZjtPQUVEO2NBQ0ksaUJBQWlCO2NBQ2pCLGNBQWM7O1dBRWpCO09BRUQ7Y0FDSSxlQUFlO2NBQ2YsYUFBYTtjQUNiLGFBQWE7Y0FDYixtQkFBbUI7Y0FDbkIsOEJBQThCO2NBQzlCLCtCQUErQjtjQUMvQiw2QkFBNkI7Y0FDN0Isd0NBQXdDO2NBQ3hDLGtCQUFrQjtXQUNyQjtPQUNEO1lBQ0UscUJBQXFCO1lBQ3JCLGFBQWE7WUFDYixjQUFjO1lBQ2QsdUJBQXVCO1lBQ3ZCLGNBQWM7WUFDZCxXQUFXO1dBQ1o7T0FDRDthQUNHLGVBQWU7YUFDZixnQkFBZ0I7YUFDaEIsV0FBVztXQUNiO09BQ0Q7Y0FDSSxXQUFXO2NBQ1gsc0JBQXNCO2NBQ3RCLG9CQUFvQjtXQUN2QjtPQUNEO2NBQ0ksV0FBVztjQUNYLG9CQUFvQjtXQUN2QjtPQUNEO2FBQ0csbUJBQW1CO1dBQ3JCO09BQ0Q7Y0FDSSxrQkFBa0I7Y0FDbEIsZ0JBQWdCO1dBQ25CO09BQ0Q7Y0FDSSxjQUFjO2NBQ2QsV0FBVztjQUNYLGNBQWM7Y0FDZCxpQkFBaUI7Y0FDakIsbUJBQW1CO1dBQ3RCO09BRUQ7O2NBRUksaUJBQWlCO1dBQ3BCO09BQ0Q7O2NBRUksV0FBVztjQUNYLFlBQVk7Y0FDWixtQkFBbUI7O1dBRXRCO09BQ0Q7Y0FDSSxXQUFXO2NBQ1gsY0FBYztjQUNkLFlBQVk7V0FDZiIsImZpbGUiOiJzcmMvYXBwL2JvYXJkL2JvYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuICAgICAgLmJ0biB7XHJcbiAgICAgICAgLyp3aWR0aDogMyU7Ki9cclxuICAgICAgICAvKmhlaWdodDogMjBweDsqL1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMzODk3ZjA7XHJcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgIzM4OTdmMDtcclxuICAgICAgICBwYWRkaW5nOiA1cHggMTJweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogNXB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgICAgIH1cclxuICAgICAgIC5idG4xIHtcclxuICAgICAgICAvKndpZHRoOiAzJTsqL1xyXG4gICAgICAgIC8qaGVpZ2h0OiAyMHB4OyovXHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2E5YTlhOTtcclxuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjYTlhOWE5O1xyXG4gICAgICAgIHBhZGRpbmc6IDVweCAxMnB4O1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAzNSU7XHJcbiAgICAgICAgLyptYXJnaW4tcmlnaHQ6IDogMTAwcHg7Ki9cclxuICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogM3B4O1xyXG4gICAgICB9XHJcbiAgICAgIC5idG4yIHtcclxuICAgICAgICAvKndpZHRoOiAzJTsqL1xyXG4gICAgICAgIC8qaGVpZ2h0OiAyMHB4OyovXHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2E5YTlhOTtcclxuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjYTlhOWE5O1xyXG4gICAgICAgIHBhZGRpbmc6IDVweCAxMnB4O1xyXG4gICAgICAgIC8qbWFyZ2luLWxlZnQ6IDQ1JTsqL1xyXG4gICAgICAgIC8qbWFyZ2luLXJpZ2h0OiA6IDEwMHB4OyovXHJcbiAgICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDNweDtcclxuICAgICAgfVxyXG4gIFxyXG4gIFxyXG4gIFxyXG4gIFxyXG4gIFxyXG4gIFxyXG4gICAgICAgICAgLmhlYWRlciB7XHJcbiAgICAgICAgICAgICAgaGVpZ2h0OiA5MHB4O1xyXG4gICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBzbGF0ZWdyYXk7XHJcbiAgICAgICAgICAgICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgICAgICAgICAgIHRvcDogMHB4O1xyXG4gICAgICAgICAgICAgIGxlZnQ6IDBweDtcclxuICAgICAgICAgICAgICByaWdodDogMHB4O1xyXG4gICAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgICB9XHJcbiAgXHJcbiAgICAgICAgICAjbGcxIHtcclxuICAgICAgICAgICAgICBtYXJnaW46IDVweDtcclxuICAgICAgICAgICAgICBmbG9hdDogbGVmdDtcclxuICAgICAgICAgIH1cclxuICBcclxuICAgICAgICAgICNsZzIge1xyXG4gICAgICAgICAgICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgYmxhY2s7XHJcbiAgICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiA0MHB4O1xyXG4gICAgICAgICAgICAgIG1hcmdpbjogMjBweDtcclxuICAgICAgICAgICAgICBmbG9hdDogbGVmdDtcclxuICAgICAgICAgIH1cclxuICBcclxuICAgICAgICAgICNsZzMge1xyXG4gICAgICAgICAgICAgIG1hcmdpbjogMzBweDtcclxuICAgICAgICAgICAgICBmbG9hdDogMDtcclxuICAgICAgICAgIH1cclxuICBcclxuICAgICAgICAgICNzZWFyY2hib3gge1xyXG4gIFxyXG4gICAgICAgICAgICAgIG1hcmdpbi10b3A6IDMwcHg7XHJcbiAgICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IDEwMHB4O1xyXG4gICAgICAgICAgICAgIGZsb2F0OiBsZWZ0O1xyXG4gIFxyXG4gICAgICAgICAgfVxyXG4gIFxyXG4gICAgICAgICAgI3NlYXJjaGJ0biB7XHJcbiAgICAgICAgICAgICAgbWFyZ2luLXRvcDogMjVweDtcclxuICAgICAgICAgICAgICBmbG9hdDogY2VudGVyO1xyXG4gIFxyXG4gICAgICAgICAgfVxyXG4gIFxyXG4gICAgICAgICAgLmNvbnRlbnQge1xyXG4gICAgICAgICAgICAgIG1hcmdpbjogMCBhdXRvO1xyXG4gICAgICAgICAgICAgIGhlaWdodDogYXV0bztcclxuICAgICAgICAgICAgICB3aWR0aDogNzAwcHg7XHJcbiAgICAgICAgICAgICAgbWFyZ2luLXRvcCA6IDE1MHB4O1xyXG4gICAgICAgICAgICAgIGJvcmRlci1sZWZ0IDogMXB4IHNvbGlkIGJsYWNrOyBcclxuICAgICAgICAgICAgICBib3JkZXItcmlnaHQgOiAxcHggc29saWQgYmxhY2s7IFxyXG4gICAgICAgICAgICAgIGJvcmRlci10b3AgOiAxcHggc29saWQgYmxhY2s7IFxyXG4gICAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnSGluZCBNYWR1cmFpJywgc2Fucy1zZXJpZjtcclxuICAgICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICAgIH1cclxuICAgICAgICAgICN1c2VyaW1nIHtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTAwcHg7XHJcbiAgICAgICAgICAgIHdpZHRoOiAxNTBweDtcclxuICAgICAgICAgICAgaGVpZ2h0OiAxNTBweDtcclxuICAgICAgICAgICAgYm9yZGVyIDogMnB4IHNvbGlkIHJlZDtcclxuICAgICAgICAgICAgbWFyZ2luIDogMTBweDtcclxuICAgICAgICAgICAgZmxvYXQ6bGVmdDtcclxuICAgICAgICAgIH1cclxuICAgICAgICAgIC51c2VyIHtcclxuICAgICAgICAgICAgIG1hcmdpbi10b3A6IDclO1xyXG4gICAgICAgICAgICAgZm9udC1zaXplOiA1MHB4O1xyXG4gICAgICAgICAgICAgZmxvYXQ6bGVmdDtcclxuICAgICAgICAgIH1cclxuICAgICAgICAgICN1c2VycGhvdG8ge1xyXG4gICAgICAgICAgICAgIHdpZHRoOjEwMCU7XHJcbiAgICAgICAgICAgICAgYWxpZ24tY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICAgIC8qIGhlaWdodDogMzAwcHg7ICovXHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICAjaW5zdGFpY29uIHtcclxuICAgICAgICAgICAgICB3aWR0aDoxMDAlO1xyXG4gICAgICAgICAgICAgIC8qIGhlaWdodDogMzAwcHg7ICovXHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICAubGlrZSB7XHJcbiAgICAgICAgICAgICBtYXJnaW4tbGVmdCA6IDEwcHg7XHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICAuY29tbWVudCB7XHJcbiAgICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICAgICAgICAgICAgZm9udC1zaXplOiAxM3B4O1xyXG4gICAgICAgICAgfVxyXG4gICAgICAgICAgI2NvbW1lbnRpbntcclxuICAgICAgICAgICAgICBib3JkZXIgOiBub25lO1xyXG4gICAgICAgICAgICAgIHdpZHRoOiA4NSU7XHJcbiAgICAgICAgICAgICAgaGVpZ2h0IDogNDBweDtcclxuICAgICAgICAgICAgICBmb250LXNpemUgOiAxNXB4O1xyXG4gICAgICAgICAgICAgIG1hcmdpbi1sZWZ0IDogMTBweDtcclxuICAgICAgICAgIH1cclxuICAgICAgICBcclxuICAgICAgICAgICNjb21tZW50aW46Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIge1xyXG4gICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgIGZvbnQtc2l6ZSA6IDE1cHg7XHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICAjbWVudWltZyB7XHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgIHdpZHRoOjUwcHg7XHJcbiAgICAgICAgICAgICAgaGVpZ2h0OjQwcHg7XHJcbiAgICAgICAgICAgICAgbWFyZ2luLWxlZnQgOiAxMHB4O1xyXG4gICAgICAgICAgICAgXHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICAuY29tbWVudDIge1xyXG4gICAgICAgICAgICAgIHdpZHRoOiA5OSU7XHJcbiAgICAgICAgICAgICAgbWFyZ2luIDogMjBweDtcclxuICAgICAgICAgICAgICBmbG9hdDogbGVmdDtcclxuICAgICAgICAgIH1cclxuXHJcblxyXG4iXX0= */"
 
 /***/ }),
 
@@ -250,7 +250,7 @@ module.exports = "/* html, body {\r\n    position: absolute;\r\n     height: 100
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"header\">\r\n\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\r\n  <div id=\"searchbox\">\r\n      <input type=\"search\" placeholder=\"\">\r\n  </div>\r\n  <div id=\"searchbtn\">\r\n      <button type=\"submit\" class=\"btn\" (click)=\"Searchbtn()\">검색</button>\r\n      <a routerLink=\"/profile\" class=\"btn1\"> Profile </a>\r\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\r\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\r\n  </div>\r\n\r\n</div> -->\r\n\r\n<div class=\"content\">\r\n\r\n  <form #uploadForm=\"ngForm\">\r\n    <!-- (ngSubmit)=\"onSubmit(uploadForm)\"> -->\r\n    <div class=\"row\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12\">\r\n          <table>\r\n            <thead>\r\n              <th>id</th>\r\n              <th>text</th>\r\n              <th>time</th>\r\n              \r\n            </thead>\r\n            <tr *ngFor=\"let upload of uploadService.upload\">\r\n              <td>{{upload.username}}</td>\r\n              <td>{{upload.text}}</td>\r\n              <td>{{upload.time}}</td>\r\n            </tr>\r\n          </table>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>"
+module.exports = "<!-- <div class=\"header\">\r\n\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\r\n  <div id=\"searchbox\">\r\n      <input type=\"search\" placeholder=\"\">\r\n  </div>\r\n  <div id=\"searchbtn\">\r\n      <button type=\"submit\" class=\"btn\" (click)=\"Searchbtn()\">검색</button>\r\n      <a routerLink=\"/profile\" class=\"btn1\"> Profile </a>\r\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\r\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\r\n  </div>\r\n\r\n</div> -->\r\n\r\n<!-- <div class=\"content\">\r\n\r\n  <form #uploadForm=\"ngForm\"> -->\r\n<!-- (ngSubmit)=\"onSubmit(uploadForm)\"> -->\r\n<!-- <div class=\"row\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12\">\r\n          <table>\r\n            <thead>\r\n              <th>id</th>\r\n              <th>text</th>\r\n              <th>time</th>\r\n              \r\n            </thead>\r\n            <tr *ngFor=\"let upload of uploadService.upload\">\r\n              <td>{{upload.username}}</td>\r\n              <td>{{upload.text}}</td>\r\n              <td>{{upload.time}}</td>\r\n            </tr>\r\n          </table>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div> -->\r\n\r\n<!-- <tr *ngFor=\"let post of Post\">\r\n  <div class=\"content\">\r\n\r\n    <img id=\"userimg\" src=\"assets/img/camera.jpg\">\r\n    <p class=\"user\"> seulgiredvelvet </p>\r\n    <img id=\"userphoto\" src=\"assets/img/camera.jpg\">\r\n    <img id=\"instaicon\" src=\"assets/img/camera.jpg\">\r\n    <p class=\"like\">좋아요 293개</p>\r\n    <div class=\"comment\">\r\n      <p>seulgiredvelvet 제목 내용 </p>\r\n      <p style=\"font-size:10px; color:slategray\">13시간 전 </p>\r\n    </div>\r\n    <div class=\"searchbox\">\r\n      <input id=\"commentin\" type=\"text\" placeholder=\"  댓글을 입력해주세요.. \">\r\n      <input type=\"submit\" value=\"확인\" class=\"btn\">\r\n    </div>\r\n\r\n  </div>\r\n</tr> -->\r\n<div class=\"content\">\r\n\r\n  <table *ngFor=\"let posts of post\" style=\"width:100%\">\r\n    <tr class=\"font-2\" >\r\n        <img id=\"userimg\" src=\"assets/img/camera.jpg\">\r\n        <!-- <img id=\"userimg\" src=\"{{posts.image}}\">  -->\r\n        <p class=\"user\"> {{posts.username}} </p>\r\n    </tr>\r\n    <tr>\r\n        <img id=\"userphoto\" src=\"assets/img/camera.jpg\">\r\n    </tr>\r\n    <tr>\r\n      <br>\r\n        <p class=\"like\">좋아요 {{posts.likes.length}}개</p>\r\n        <div class=\"comment\">\r\n          <p style=\"font-size:125%\">{{posts.username}} </p>\r\n          <p style=\"font-size:100%\">{{posts.text}} </p>\r\n          \r\n        </div>\r\n        <div class=\"searchbox\">\r\n            <input id=\"commentin\" type=\"text\" placeholder=\"  댓글을 입력해주세요.. \"> \r\n            <input type=\"submit\" value=\"게시\" class=\"btn\">\r\n          </div>\r\n          <br>\r\n          <p style=\"font-size:15px; color:slategray\">{{posts.time}} </p>\r\n    </tr>\r\n      <!-- <td>\r\n        <br><img id=\"userphoto\" src=\"assets/img/camera.jpg\">\r\n      </td> -->\r\n      <!-- <td>{{posts.username}}</td>\r\n          <td>{{posts.follower.length}}</td>\r\n          <td>{{posts.following.length}}</td> -->\r\n\r\n      <hr style=\"border : 1px solid black;\">\r\n  </table>\r\n</div>"
 
 /***/ }),
 
@@ -265,9 +265,8 @@ module.exports = "<!-- <div class=\"header\">\r\n\r\n  <img id=\"lg1\" src=\"ass
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BoardComponent", function() { return BoardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_upload_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/upload.service */ "./src/app/shared/upload.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -280,63 +279,41 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var BoardComponent = /** @class */ (function () {
-    function BoardComponent(router, http, uploadService) {
+    function BoardComponent(router, http) {
         this.router = router;
         this.http = http;
-        this.uploadService = uploadService;
-        this.baseUrls = 'http://localhost:3000/posts/info';
-        this.records = [
-            {
-                name: 'aaa',
-                online: true
-            },
-            {
-                name: 'aaa',
-                online: true
-            },
-            {
-                name: 'aaa',
-                online: true
-            }
-        ];
+        this.baseUrls = 'http://localhost:3000/boards/follow';
     }
     BoardComponent.prototype.ngOnInit = function () {
         this.refreshPostList();
-        // this.views();
     };
     BoardComponent.prototype.getPostList = function () {
-        return this.http.get(this.baseUrls);
+        return this.http.get(this.baseUrls, {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            })
+        });
     };
     BoardComponent.prototype.refreshPostList = function () {
         var _this = this;
         this.getPostList().subscribe(function (res) {
-            // 모든 정보들을 받아서 User의 모든 정보를 받아 users에 저장시켜줌
-            _this.uploadService.upload = res;
-            var num = "0";
-            var i = parseInt(num);
-            for (i; i < _this.uploadService.upload.length; i++) {
-                // if (localStorage.getItem("token") == this.user[i].jsonWebToken) {
-                console.log(_this.uploadService.upload.length);
-                var uid = _this.uploadService.upload[i].username;
-                var utext = _this.uploadService.upload[i].text;
-                var uimg = _this.uploadService.upload[i].time;
-                console.log(uid + utext + uimg);
-                // }
-            }
+            _this.post = res.data;
         });
+        if (localStorage.getItem('token') == null) {
+            console.log("not logined");
+            this.router.navigate(['/login']);
+        }
     };
     BoardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-board',
             template: __webpack_require__(/*! ./board.component.html */ "./src/app/board/board.component.html"),
             styles: [__webpack_require__(/*! ./board.component.css */ "./src/app/board/board.component.css")],
-            providers: [_shared_upload_service__WEBPACK_IMPORTED_MODULE_1__["UploadService"]]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"],
-            _shared_upload_service__WEBPACK_IMPORTED_MODULE_1__["UploadService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], BoardComponent);
     return BoardComponent;
 }());
@@ -404,6 +381,10 @@ var GooglemapComponent = /** @class */ (function () {
         this.locationChosen = false;
     }
     GooglemapComponent.prototype.ngOnInit = function () {
+        if (localStorage.getItem('token') == null) {
+            console.log("not logined");
+            this.router.navigate(['/login']);
+        }
     };
     //googlemap 이벤트
     GooglemapComponent.prototype.onChoseLocation = function (event) {
@@ -414,7 +395,6 @@ var GooglemapComponent = /** @class */ (function () {
         // 이부분 그대로 사용하면 이미지 가져오기 가능 ?
     };
     GooglemapComponent.prototype.restInform = function (restinfo) {
-        console.log("test");
         return this.http.post('http://localhost:3000/restaurant', restinfo);
     };
     GooglemapComponent.prototype.SearchRestaurant = function (form) {
@@ -424,7 +404,6 @@ var GooglemapComponent = /** @class */ (function () {
             _this.restinfo = res.data;
             if (res != null) {
                 localStorage.setItem('resname', "test");
-                console.log("test" + JSON.stringify(_this.restinfo));
                 _this.router.navigate(['/rt']);
                 //조건 다시 수정
                 if (_this.restinfo.telephone != null) {
@@ -467,7 +446,7 @@ module.exports = "#lg1 {\r\n    margin: 15px;\r\n    float: left;\r\n}\r\n\r\n#l
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-light bg-white\">\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:70px;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70px;\">\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExample04\" aria-controls=\"navbarsExample04\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <form #searchForm=\"ngForm\" (ngSubmit)=\"searchForm.valid && Search(searchForm)\">\r\n    <!-- model은 ts 파일에 정의한 model -->\r\n\r\n    <!-- <input type=\"search\" class=\"search\" placeholder=\"사용자 검색\"> -->\r\n    <input type=\"text\" autocomplete=\"off\" #username=\"ngModel\" [(ngModel)]=\"model.SearchUser\" name=\"username\" placeholder=\"사용자 검색\" \r\n    [ngClass]=\"{ 'invalid-textbox' : searchForm.submitted && !username.valid}\">\r\n    <input type=\"submit\" class=\"btns\" value=\"검색\">\r\n  </form>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExample04\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n    </ul>\r\n\r\n\r\n\r\n    <ul class=\"navbar-nav navbar-right color-gray\">\r\n      <!-- *ngIf=\"localStorage.getItem('token')!=null\" -->\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/board']\">Main</a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\r\n      </li>\r\n      <!-- <li  class=\"nav-item\" [routerLinkActive]=\"['inactive']\">\r\n        <a class=\"nav-link\" class=\"menu\" [routerLink]=\"['/signup']\">Register</a>\r\n      </li> -->\r\n\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/other']\">Other</a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/googlemap']\">Map</a>\r\n      </li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/upload']\">Upload</a>\r\n      </li>\r\n\r\n      <li class=\"menu\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\">Logout</a>\r\n      </li>\r\n      \r\n    </ul>\r\n  </div>\r\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-light bg-white\">\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:70px;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70px;\">\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExample04\" aria-controls=\"navbarsExample04\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <form #searchForm=\"ngForm\" (ngSubmit)=\"searchForm.valid && Search(searchForm)\">\r\n    <!-- model은 ts 파일에 정의한 model -->\r\n\r\n    <!-- <input type=\"search\" class=\"search\" placeholder=\"사용자 검색\"> -->\r\n    <input type=\"text\" autocomplete=\"off\" #username=\"ngModel\" [(ngModel)]=\"model.SearchUser\" name=\"username\" placeholder=\"사용자 검색\" \r\n    [ngClass]=\"{ 'invalid-textbox' : searchForm.submitted && !username.valid}\">\r\n    <input type=\"submit\" class=\"btns\" value=\"검색\">\r\n  </form>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExample04\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n    </ul>\r\n    <ul class=\"navbar-nav navbar-right color-gray\">\r\n      <!-- *ngIf=\"localStorage.getItem('token')!=null\" -->\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/board']\">Main</a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\r\n      </li>\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/googlemap']\">Map</a>\r\n      </li>\r\n      <li class=\"menu\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\">Logout</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -633,11 +612,8 @@ var OtherprofileComponent = /** @class */ (function () {
         var httpParamss = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
             .append("followuser", localStorage.getItem('username'))
             .append("state", "On");
-        console.log(httpParamss);
         var followuser = localStorage.getItem('othername');
         var state = "On";
-        console.log(followuser + state);
-        console.log('http://localhost:3000/member/addfollowing');
         return this.http.post('http://localhost:3000/member/addfollowing', {
             "followuser": followuser,
             "state": state
@@ -722,7 +698,6 @@ var RestaurantComponent = /** @class */ (function () {
         var name = localStorage.getItem('resname');
         var httpParams = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]()
             .append("restID", name);
-        console.log(httpParams);
         this.http.post('http://localhost:3000/restaurant', httpParams).subscribe(function (res) {
             _this.restinfo = res.data;
             _this.name = _this.restinfo.restaurant;
@@ -1369,7 +1344,7 @@ var SignInComponent = /** @class */ (function () {
                     if (_this.user[i].password == form.value.password) {
                         localStorage.setItem('token', _this.user[i].jsonWebToken);
                         localStorage.setItem('profile', _this.user[i]._id);
-                        _this.router.navigateByUrl('/profile');
+                        _this.router.navigateByUrl('/board');
                     }
                 }
             }
@@ -1582,7 +1557,7 @@ module.exports = ":root {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn-1 {\r\n    wi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"header\">\r\n\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\r\n  <div id=\"searchbox\">\r\n    <input type=\"search\" placeholder=\"\">\r\n  </div>\r\n  <div id=\"searchbtn\">\r\n    <button type=\"submit\" class=\"btns\" (click)=\"Searchbtn()\">검색</button>\r\n    <a routerLink=\"/board\" class=\"btn1\"> Main </a>\r\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\r\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\r\n  </div>\r\n</div> -->\r\n\r\n<br><br><br><br>\r\n<div style=\"overflow:scroll; width:100%; height:auto;\">\r\n  <div class=\"container\">\r\n\r\n    <!-- <div class=\"profile\"></div> -->\r\n\r\n    <div class=\"profile-image\">\r\n\r\n      <img src=\"assets/img/mains.jpg\" alt=\"\">\r\n\r\n    </div>\r\n\r\n    <div class=\"profile-user-settings\">\r\n\r\n      <h1 class=\"profile-user-name\">{{this.id}}</h1>\r\n\r\n      <button class=\"btn profile-edit-btn\" (click)=\"editprofile()\"> Edit Profile </button>\r\n\r\n      <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\r\n\r\n    \r\n    \r\n\r\n  </div>\r\n    <div class=\"profile-stats\">\r\n      <ul>\r\n        <li> 게시물 <span class=\"profile-stat-count\">{{this.posts}}</span></li>\r\n        <li> 팔로워 <span class=\"profile-stat-count\">{{this.follower}}</span></li>\r\n        <li> 팔로잉<span class=\"profile-stat-count\">{{this.following}}</span></li>\r\n      </ul>\r\n    </div>\r\n    <div class=\"profile-bio\">\r\n\r\n      <p><span class=\"profile-real-name\">{{this.username}}</span> </p>\r\n\r\n      <!-- <table>\r\n        <thead>\r\n          <th>post</th>\r\n          <th>follower</th>\r\n          <th>follower</th>\r\n        </thead>\r\n        <tr>\r\n          <td>{{this.proinfo[0].posts.length}}</td>\r\n          <td>{{this.proinfo[0].follower.length}}</td>\r\n          <td>{{this.proinfo[0].following.length}}</td>\r\n        </tr>\r\n      </table> -->\r\n\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n<div class=\"container\">\r\n\r\n  <div class=\"gallery\">\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            56</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 2</li>\r\n        </ul>\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            89</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 5</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            42</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 1</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Video</span><i class=\"fas fa-video\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            38</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 0</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            47</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 1</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            94</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 3</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <!-- <div class=\"gallery-item\" tabindex=\"0\">7\r\n\r\n        <img src=\"https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n          alt=\"\">\r\n\r\n        <div class=\"gallery-item-type\">\r\n\r\n          <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\r\n\r\n        </div>\r\n\r\n        <div class=\"gallery-item-info\">\r\n\r\n          <ul>\r\n            <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\"\r\n                aria-hidden=\"true\"></i> 52</li>\r\n            <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n                aria-hidden=\"true\"></i> 4</li>\r\n          </ul>\r\n\r\n        </div>\r\n\r\n      </div>  -->\r\n\r\n    <!-- <div class=\"gallery-item\" tabindex=\"0\">8\r\n\r\n        <img src=\"https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n          alt=\"\">\r\n\r\n        <div class=\"gallery-item-info\">\r\n\r\n          <ul>\r\n            <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\"\r\n                aria-hidden=\"true\"></i> 66</li>\r\n            <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n                aria-hidden=\"true\"></i> 2</li>\r\n          </ul>\r\n\r\n        </div>\r\n\r\n      </div> \r\n\r\n\r\n\r\n\r\n\r\n\r\n    </div>\r\n    \r\n   <div class=\"loader\"></div> -->\r\n\r\n  </div>\r\n</div>"
+module.exports = "<!-- <div class=\"header\">\r\n\r\n  <img id=\"lg1\" src=\"assets/img/camera.jpg\" style=\"width:7%; height:80%;\">\r\n  <img id=\"lg2\" src=\"assets/img/logom.png\" style=\"width: 12%; height:70%;\">\r\n  <div id=\"searchbox\">\r\n    <input type=\"search\" placeholder=\"\">\r\n  </div>\r\n  <div id=\"searchbtn\">\r\n    <button type=\"submit\" class=\"btns\" (click)=\"Searchbtn()\">검색</button>\r\n    <a routerLink=\"/board\" class=\"btn1\"> Main </a>\r\n    <a routerLink=\"/upload\" class=\"btn2\"> Upload </a>\r\n    <a routerLink=\"/login\" class=\"btn2\"> Logout </a>\r\n  </div>\r\n</div> -->\r\n\r\n<br><br><br><br>\r\n<div style=\"overflow:scroll; width:100%; height:auto;\">\r\n  <div class=\"container\">\r\n\r\n    <!-- <div class=\"profile\"></div> -->\r\n\r\n    <div class=\"profile-image\">\r\n\r\n      <img src=\"assets/img/mains.jpg\" alt=\"\">\r\n\r\n    </div>\r\n\r\n    <div class=\"profile-user-settings\">\r\n\r\n      <h1 class=\"profile-user-name\">{{this.id}}</h1>\r\n\r\n      <button class=\"btn profile-edit-btn\" (click)=\"editprofile()\"> Edit Profile </button>\r\n\r\n      <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\r\n\r\n    \r\n    \r\n\r\n  </div>\r\n    <div class=\"profile-stats\">\r\n      <ul>\r\n        <li> 게시물 <span class=\"profile-stat-count\">{{this.posts}}</span></li>\r\n        <li> 팔로워 <span class=\"profile-stat-count\">{{this.follower}}</span></li>\r\n        <li> 팔로잉<span class=\"profile-stat-count\">{{this.following}}</span></li>\r\n      </ul>\r\n\r\n      <!-- <table *ngFor=\"let users of proinfo\">\r\n          <ul>\r\n              <li> 게시물 <span class=\"profile-stat-count\">{{users.posts}}</span></li>\r\n              <li> 팔로워 <span class=\"profile-stat-count\">{{users.follower}}</span></li>\r\n              <li> 팔로잉<span class=\"profile-stat-count\">{{users.following}}</span></li>\r\n            </ul>\r\n      </table> -->\r\n    </div>\r\n\r\n    <div class=\"profile-bio\">\r\n\r\n      <p><span class=\"profile-real-name\">{{this.username}}</span> </p>\r\n\r\n      <!-- <table>\r\n        <thead>\r\n          <th>post</th>\r\n          <th>follower</th>\r\n          <th>follower</th>\r\n        </thead>\r\n        <tr>\r\n          <td>{{this.proinfo[0].posts.length}}</td>\r\n          <td>{{this.proinfo[0].follower.length}}</td>\r\n          <td>{{this.proinfo[0].following.length}}</td>\r\n        </tr>\r\n      </table> -->\r\n\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n<div class=\"container\">\r\n\r\n  <div class=\"gallery\">\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            56</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 2</li>\r\n        </ul>\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            89</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 5</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            42</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 1</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Video</span><i class=\"fas fa-video\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            38</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 0</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-type\">\r\n\r\n        <span class=\"visually-hidden\">Gallery</span><i class=\"fas fa-clone\" aria-hidden=\"true\"></i>\r\n\r\n      </div>\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            47</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 1</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n        alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n\r\n        <ul>\r\n          <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\" aria-hidden=\"true\"></i>\r\n            94</li>\r\n          <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n              aria-hidden=\"true\"></i> 3</li>\r\n        </ul>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n   \r\n\r\n    <!-- <div class=\"gallery-item\" tabindex=\"0\">8\r\n\r\n        <img src=\"https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop\" class=\"gallery-image\"\r\n          alt=\"\">\r\n\r\n        <div class=\"gallery-item-info\">\r\n\r\n          <ul>\r\n            <li class=\"gallery-item-likes\"><span class=\"visually-hidden\">Likes:</span><i class=\"fas fa-heart\"\r\n                aria-hidden=\"true\"></i> 66</li>\r\n            <li class=\"gallery-item-comments\"><span class=\"visually-hidden\">Comments:</span><i class=\"fas fa-comment\"\r\n                aria-hidden=\"true\"></i> 2</li>\r\n          </ul>\r\n\r\n        </div>\r\n\r\n      </div>  -->\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1623,36 +1598,7 @@ var UserprofileComponent = /** @class */ (function () {
         this.baseUrls = 'http://localhost:3000/member/info';
     }
     UserprofileComponent.prototype.ngOnInit = function () {
-        //this.refreshUserList();
-        this.profile1();
-    };
-    /*   getUserList() {
-        return this.http.get(this.baseUrls);
-      }
-    
-      refreshUserList() {
-        this.getUserList().subscribe((res) => {
-          // this.user = res as User[];
-          // var num = "0";
-          // var i = parseInt(num);
-          // for (i; i < this.user.length; i++) {
-          //   if (localStorage.getItem("token") == this.user[i].jsonWebToken) {
-              
-          //     var uname = this.user[i].id;
-          //     var ufollower = this.user[i].follower.length;
-          //     var ufollowing = this.user[i].following.length;
-          //     var uposts= this.user[i].posts.length;
-          //     console.log(uname + ufollower + ufollowing + uposts)
-          //   }
-          // }
-    
-          //모든 정보들을 받아서 users에 저장시켜줌
-          this.userService.user = res as User[];
-          console.log("aaaaaaa"+this.userService.user[0].id + this.userService.user.length);
-        });
-      } */
-    UserprofileComponent.prototype.Searchbtn = function () {
-        this.router.navigateByUrl('/googlemap');
+        this.profilevalue();
     };
     UserprofileComponent.prototype.profilereturn = function () {
         return this.http.get('http://localhost:3000/me', {
@@ -1662,41 +1608,38 @@ var UserprofileComponent = /** @class */ (function () {
             })
         });
     };
-    // profile() {
-    //   this.profilereturn().subscribe((res)=> {
-    //     console.log("test" + JSON.stringify(res));
-    //     this.proinfo = [res];
-    // console.log("tqtqtqtqtqqt:"+ this.proinfo[0].posts.length);
-    //   })
-    // }
-    UserprofileComponent.prototype.profile1 = function () {
+    UserprofileComponent.prototype.profilevalue = function () {
         var _this = this;
-        var check = localStorage.getItem('profile');
-        // console.log( this.baseUrls + "/pro" + `/${check}`);
-        this.http.get(this.baseUrls + "/pro" + ("/" + check)).subscribe(function (res) {
-            // console.log( JSON.stringify(res));
-            _this.proinfo = res;
+        if (localStorage.getItem('token') == null) {
+            console.log("not logined");
+            this.router.navigate(['/login']);
+        }
+        this.profilereturn().subscribe(function (res) {
+            _this.proinfo = res.data;
+            // console.log(JSON.stringify(this.proinfo));
+            _this.id = _this.proinfo.id;
+            _this.posts = _this.proinfo.posts.length;
             _this.follower = _this.proinfo.follower.length;
             _this.following = _this.proinfo.following.length;
-            _this.posts = _this.proinfo.posts.length;
-            _this.id = _this.proinfo.id;
             _this.username = _this.proinfo.username;
-            _this.tok = _this.proinfo.jsonWebToken;
-            // console.log(this.follower + this.following + this.posts + this.id + this.username);
         });
-        // this.profilereturn().subscribe((res: any) => {
-        //   console.log('gkgkgkgkgkgk' + JSON.stringify(res));
-        //   this.proinfo = res as pro[];
-        //   console.log("tqtqtqtqtqqt:"+this.proinfo[0].posts);
+    };
+    UserprofileComponent.prototype.profile1 = function () {
+        // var check = localStorage.getItem('profile')
+        // // console.log( this.baseUrls + "/pro" + `/${check}`);
+        // this.http.get(this.baseUrls + "/pro" + `/${check}`).subscribe((res: any) => {
+        //   // console.log( JSON.stringify(res));
+        //   this.proinfo = res;
+        //   this.follower = this.proinfo.follower.length;
+        //   this.following = this.proinfo.following.length;
+        //   this.posts = this.proinfo.posts.length;
+        //   this.id = this.proinfo.id;
+        //   this.username = this.proinfo.username;
+        //   this.tok = this.proinfo.jsonWebToken;
         // })
     };
-    UserprofileComponent.prototype.Clickfollower = function () {
-    };
-    UserprofileComponent.prototype.Clickfollowing = function () {
-    };
     UserprofileComponent.prototype.editprofile = function () {
-        console.log(localStorage.getItem('token') + " vs " + this.tok);
-        if (localStorage.getItem('token') == this.tok) {
+        if (localStorage.getItem('token') == this.proinfo.jsonWebToken) {
             this.router.navigate(['/change']);
         }
     };
@@ -1778,31 +1721,12 @@ var UserlistComponent = /** @class */ (function () {
     UserlistComponent.prototype.ngOnInit = function () {
         this.userInform();
     };
-    // userInfo() {
-    //   let httpParams = new HttpParams()
-    //     .append("username", localStorage.getItem('username'))
-    //     console.log(httpParams);
-    //   this.http.post('http://localhost:3000/boards/search/user', httpParams).subscribe((res: any) => {
-    //    this.information = res;
-    //   });
-    // }
-    // getUserList() {
-    //   return this.http.get(this.baseUrls);
-    // }
-    // refreshUserList() {
-    //   this.getUserList().subscribe((res) => {
-    //     this.information = res as proin;
-    //     // console.log("refresh"+this.user.indexOf);  
-    //   });
-    // }
     UserlistComponent.prototype.userInform = function () {
         var _this = this;
         var httpParams = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
             .append("username", localStorage.getItem('username'));
-        console.log(httpParams);
         this.http.post(this.baseUrls, httpParams).subscribe(function (res) {
             _this.information = res.data;
-            console.log(JSON.stringify(_this.information));
         });
     };
     UserlistComponent.prototype.onEdit = function (user) {

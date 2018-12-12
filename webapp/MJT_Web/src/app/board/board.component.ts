@@ -21,7 +21,6 @@ export class BoardComponent implements OnInit {
   post: Post;
 
   ngOnInit() {
-
     this.refreshPostList();
   }
 
@@ -39,6 +38,10 @@ export class BoardComponent implements OnInit {
     this.getPostList().subscribe((res: any) => {
       this.post = res.data;    
     });
+    if (localStorage.getItem('token') == null) {
+      console.log("not logined");
+      this.router.navigate(['/login']);
+    }
   }
 }
 

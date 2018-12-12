@@ -18,7 +18,10 @@ export class GooglemapComponent implements OnInit {
 
 
   ngOnInit() {
-
+    if (localStorage.getItem('token') == null) {
+      console.log("not logined");
+      this.router.navigate(['/login']);
+    }
   }
 
   model = {

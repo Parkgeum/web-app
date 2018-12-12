@@ -18,9 +18,6 @@
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
     </ul>
-
-
-
     <ul class="navbar-nav navbar-right color-gray">
       <!-- *ngIf="localStorage.getItem('token')!=null" -->
       <li class="nav-item" [routerLinkActive]="['active']">
@@ -30,19 +27,12 @@
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/profile']">Profile</a>
       </li>
-
-
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/googlemap']">Map</a>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/upload']">Upload</a>
-      </li>
-
       <li class="menu">
         <a class="nav-link" (click)="onLogoutClick()">Logout</a>
       </li>
-      
     </ul>
   </div>
 </nav>
