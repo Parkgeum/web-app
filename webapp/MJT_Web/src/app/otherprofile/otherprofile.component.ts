@@ -37,41 +37,40 @@ export class OtherprofileComponent implements OnInit {
 
 
   otherInfo() {
-    localStorage.setItem('othername', 'sutest');
+    localStorage.setItem('othername', 'jaeminwoo');
 
     let httpParams = new HttpParams()
-      .append("username", localStorage.getItem('othername'))
+      .append("id", localStorage.getItem('users'))
 
       console.log(httpParams);
 
-    this.http.post('http://localhost:3000/member/userinfo', httpParams).subscribe((res: any) => {
+    this.http.post('http://localhost:3000/member/userbyid', httpParams).subscribe((res: any) => {
       this.information = res.data;
       this.follower = this.information.follower.length;
       this.followings = this.information.following.length;
       this.posts = this.information.posts.length;
       this.id = this.information.id;
       this.username = this.information.username;
+      console.log(this.information);
     });
   }
 
-  otherInfos() {
-    localStorage.setItem('othername', 'sutest');
-
+  userfollowing() {
     let httpParamss = new HttpParams()
-      .append("followuser", localStorage.getItem('othername'))
+      .append("followuser", localStorage.getItem('username'))
       .append("state", "On");
 
       console.log(httpParamss);
 
-    var follower = localStorage.getItem('othername');
+    var followuser = localStorage.getItem('othername');
     var state = "On";
 
-    console.log(follower + state);
-
-    return this.http.post('http://localhost:3000//member/addfollowing', 
+    console.log(followuser + state);
+    console.log('http://localhost:3000/member/addfollowing')
+    return this.http.post('http://localhost:3000/member/addfollowing', 
     {
-      follower,
-      state
+      "followuser":followuser,
+      "state":state
     },
      {
       headers: new HttpHeaders({

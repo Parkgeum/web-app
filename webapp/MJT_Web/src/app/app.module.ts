@@ -26,6 +26,7 @@ import { UploadService } from './shared/upload.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OtherprofileComponent } from './otherprofile/otherprofile.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { UserlistComponent } from './userlist/userlist.component';
 // import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
@@ -44,7 +45,8 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
     NavbarComponent,
     ChangeprofileComponent,
     OtherprofileComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    UserlistComponent
   ],
   imports: [ 
     BrowserModule,
@@ -53,7 +55,7 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyApX1bT78XX5t8JYZOkMMYUOo8vxfZtObQ'
+      apiKey: 'AIzaSyDLPpUYp-RdW9_j1ijvhN-f28QnVuBH_fQ'
     }),
     NgFlashMessagesModule
   ],

@@ -351,6 +351,34 @@ router.post('/member/userinfo', function (req, res) {
   })
 });
 
+//해당 username의 전체 유저
+router.post('/member/findbyusername', function (req, res) {
+  var username = req.body.username;
+  console.log(username);
+
+  User.find({ username: username }, function (err, user) {
+    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+    else {
+      // console.log("userinfo: " + user);
+      res.send({ success: true, data: user });
+    }
+  })
+});
+
+//id로 받아오기
+router.post('/member/userbyid', function (req, res) {
+  var id = req.body.id;
+  console.log(id);
+
+  User.findOne({ id: id }, function (err, user) {
+    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+    else {
+      // console.log("userinfo: " + user);
+      res.send({ success: true, data: user });
+    }
+  })
+});
+
 //사용자정보 UPDATE 함수
 function localUpdate(User, next) {
   User.save(function (err, updateuser) {

@@ -43,10 +43,8 @@ export class RestaurantComponent implements OnInit {
       this.breake_time = this.restinfo.breake_time;
     });
   }
-
-
-
 }
+
 
 interface restaurant {
   restaurant: string;

@@ -11,6 +11,7 @@ import { BoardComponent } from './board/board.component';
 import { ChangeprofileComponent } from './user/changeprofile/changeprofile.component';
 import { OtherprofileComponent } from './otherprofile/otherprofile.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { UserlistComponent } from './userlist/userlist.component';
 // import { AuthGuard } from './auth/auth.guard';
 
 export const appRoutes: Routes = [
@@ -42,6 +43,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'rt', component: RestaurantComponent
+    },
+    {
+        path: 'userlist', component: UserlistComponent
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'
