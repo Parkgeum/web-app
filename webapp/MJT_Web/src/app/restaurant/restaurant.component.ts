@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 
 @Component({
@@ -32,7 +32,7 @@ export class RestaurantComponent implements OnInit {
     let httpParams = new HttpParams()
       .append("restID", name)
 
-    this.http.post('http://localhost:3000/restaurant', httpParams).subscribe((res: any) => {
+    this.http.post(environment.apiBaseUrl+'/restaurant', httpParams).subscribe((res: any) => {
       this.restinfo = res.data;
       this.name = this.restinfo.restaurant;
       this.address = this.restinfo.address
@@ -40,6 +40,11 @@ export class RestaurantComponent implements OnInit {
       this.business_hours = this.restinfo.business_hours
       this.breake_time = this.restinfo.breake_time;
     });
+    this.name = '혜화시장';
+      this.address = '혜화역 3번 출구'
+      this.telephone = '010-8340-6627'
+      this.business_hours = 'this.restinfo.business_hours'
+      this.breake_time = 'this.restinfo.breake_time';
   }
 }
 

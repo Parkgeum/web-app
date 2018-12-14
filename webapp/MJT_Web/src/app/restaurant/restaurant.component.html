@@ -1,23 +1,7 @@
-<!-- <div class="header">
 
-  <img id="lg1" src="assets/img/camera.jpg" style="width:7%; height:80%;">
-  <img id="lg2" src="assets/img/logom.png" style="width: 12%; height:70%;">
-  <div id="searchbox">
-    <input type="search" placeholder="">
-  </div>
-  <div id="searchbtn">
-    <button type="submit" class="btns" (click)="Searchbtn()">검색</button>
-    <a routerLink="/board" class="btn1"> Main </a>
-    <a routerLink="/upload" class="btn2"> Upload </a>
-    <a routerLink="/login" class="btn2"> Logout </a>
-  </div>
-</div> -->
-
-<br><br><br><br>
-<div style="overflow:scroll; width:100%; height:auto;">
   <div class="container">
 
-    <!-- <div class="profile"></div> -->
+    <div class="profile">
 
     <div class="profile-image">
 
@@ -28,30 +12,20 @@
     <div class="profile-user-settings">
 
       <!-- 맛집 이름 -->
-      <h2 class="profile-user-name">레스토랑 테스트{{this.name}}</h2>
+      <h2 class="profile-user-name">{{this.name}}</h2>
 
       <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
     </div>
 
-    <!-- 식당 소개
-    <div class="profile-stats">
-      <ul>
-        주소, 전화번호, 영업시간, 브레이크타임
-        <li> 주소 <span class="profile-stat-count">{{this.posts}}</span></li>
-        <li> 전화번호 <span class="profile-stat-count">{{this.follower}}</span></li>
-        <li> 전화번호 <span class="profile-stat-count">{{this.follower}}</span></li>
-        <li> 브레이크 타임 <span class="profile-stat-count">{{this.following}}</span></li>
-      </ul>
-    </div> -->
-
     <div class="profile-bio">
 
-      <p> address : <span class="profile-real-name"> ㅁㅁ{{this.address}}</span></p>
-      <p> telephone : <span class="profile-real-name"> ㅁㅁ{{this.telephone}}</span></p>
-      <p> business_hours : <span class="profile-real-name"> ㅁㅁ{{this.business_hours}}</span></p>
-      <p> breake_time : <span class="profile-real-name"> ㅁㅁ{{this.breake_time}}</span></p>
+      <p style="font-size:110%"> address : <span class="profile-real-name"> {{this.address}}</span></p>
+      <p style="font-size:110%"> telephone : <span class="profile-real-name">{{this.telephone}}</span></p>
+      <p style="font-size:110%"> business_hours : <span class="profile-real-name"> {{this.business_hours}}</span></p>
+      <p style="font-size:110%"> breake_time : <span class="profile-real-name"> {{this.breake_time}}</span></p>
     </div>
   </div>
+  <hr style="border : 3px solid white;">
 </div>
 
 
@@ -59,6 +33,8 @@
 
 
 <div class="container">
+
+  
 
   <div class="gallery">
 
@@ -189,6 +165,6 @@
 
     </div>
     
-   <div class="loader"></div> -->
+   <div class="loader"></div>
 
   </div>

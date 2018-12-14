@@ -1,9 +1,10 @@
 import { Component, OnInit, Directive, Input } from '@angular/core';
 import { User, usermodels } from '../../shared/user.model';
 import { UserService } from '../../shared/user.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Router, ActivatedRoute } from "@angular/router"
 import { headersToString } from 'selenium-webdriver/http';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class UserprofileComponent implements OnInit {
   posts
   follower;
   following;
-  username
+  username;
+  uimage;
 
   constructor(private router: Router,
     private http: HttpClient,
@@ -32,6 +34,7 @@ export class UserprofileComponent implements OnInit {
 
   public proinfo: pro;
   selectedUser: User;
+  post: Post;
 
 
 
@@ -39,15 +42,13 @@ export class UserprofileComponent implements OnInit {
   //value를 전달하기 위해 usermodels를 새로 정의하고 refreshUserList에서 사용
   @Input('userinfo') userObj: usermodels;
 
-  readonly baseUrls = 'http://localhost:3000/member/info';
-
   ngOnInit() {
-
+    this.postvalue();
     this.profilevalue();
   }
 
   profilereturn() {
-    return this.http.get('http://localhost:3000/me', {
+    return this.http.get(environment.apiBaseUrl+'/me', {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('token')
@@ -68,28 +69,27 @@ export class UserprofileComponent implements OnInit {
       this.follower = this.proinfo.follower.length;
       this.following = this.proinfo.following.length;
       this.username = this.proinfo.username;
+      localStorage.setItem('pr', this.username);
+      this.uimage = this.proinfo.image;
     })
-
+    this.postvalue();
   }
 
-  profile1() {
-    // var check = localStorage.getItem('profile')
-    // // console.log( this.baseUrls + "/pro" + `/${check}`);
-    // this.http.get(this.baseUrls + "/pro" + `/${check}`).subscribe((res: any) => {
-    //   // console.log( JSON.stringify(res));
-    //   this.proinfo = res;
-    //   this.follower = this.proinfo.follower.length;
-    //   this.following = this.proinfo.following.length;
-    //   this.posts = this.proinfo.posts.length;
-    //   this.id = this.proinfo.id;
-    //   this.username = this.proinfo.username;
-    //   this.tok = this.proinfo.jsonWebToken;
+  postreturn() {
 
-
-    // })
+    let httpParams = new HttpParams()
+      .append("username", localStorage.getItem('pr'))
+      console.log(httpParams)
+    return this.http.post(environment.apiBaseUrl+'/boards/myposts',httpParams)
   }
 
+  postvalue() {
+    this.postreturn().subscribe((res: any) => {
+      this.post = res.data;
+      console.log(JSON.stringify(this.post))
 
+    })
+  }
 
   editprofile() {
     if (localStorage.getItem('token') == this.proinfo.jsonWebToken) {
@@ -112,4 +112,13 @@ interface pro {
   posts: string[];
   image: string;
   jsonWebToken: string;
+}
+
+
+interface Post {
+  username: string;
+  image: string;
+  text: string;
+  time: Date;
+  likes: [string];
 }

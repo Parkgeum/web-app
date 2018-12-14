@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 
 @Component({
@@ -11,7 +12,6 @@ export class UserlistComponent implements OnInit {
 
   information: proin;
   
-  readonly baseUrls = 'http://localhost:3000/member/findbyusername';
 
   constructor(private router: Router,
     private http: HttpClient
@@ -24,10 +24,10 @@ export class UserlistComponent implements OnInit {
 
   userInform() {
     let httpParams = new HttpParams()
-      .append("username", localStorage.getItem('username'))
+      .append("username", localStorage.getItem('userlist'))
 
 
-    this.http.post(this.baseUrls, httpParams).subscribe((res: any) => {
+    this.http.post(environment.apiBaseUrl+'/member/findbyusername', httpParams).subscribe((res: any) => {
       this.information = res.data;
     });
   }
@@ -41,10 +41,8 @@ export class UserlistComponent implements OnInit {
     }
     else if(this.information.jsonWebToken != localStorage.getItem('token'))
     {
-      this.router.navigate(['/other']);
+      this.router.navigate(['/user']);
     }
-
-    // local
   }
 
 }

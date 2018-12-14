@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from "@angular/router"
 import { User } from '../../shared/user.model';
 import { UserService } from '../../shared/user.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,8 +15,6 @@ export class SignInComponent implements OnInit {
 
   selectedUser: User;
   user: User[];
-
-  readonly baseUrls = 'http://localhost:3000/member/info';
 
   //생성자 왜 만들어줌? part2 19:00
   constructor(
@@ -40,7 +39,7 @@ export class SignInComponent implements OnInit {
 
 
   getUserList() {
-    return this.http.get(this.baseUrls);
+    return this.http.get(environment.apiBaseUrl+'/member/info');
   }
 
   refreshUserList() {

@@ -74,16 +74,17 @@
       <br>
         <p class="like">좋아요 {{posts.likes.length}}개</p>
         <div class="comment">
-          <p style="font-size:125%">{{posts.username}} </p>
-          <p style="font-size:100%">{{posts.text}} </p>
-          
+          <span style="font-size:150%"> {{posts.username}}</span><span style="font-size:120%"> {{posts.text}}</span>
+          <br>
+          <br>
         </div>
         <div class="searchbox">
             <input id="commentin" type="text" placeholder="  댓글을 입력해주세요.. "> 
             <input type="submit" value="게시" class="btn">
           </div>
           <br>
-          <p style="font-size:15px; color:slategray">{{posts.time}} </p>
+          <p style="font-size:15px; color:slategray"> {{posts.time}} </p>
+          <hr style="border : 1px solid black;" >
     </tr>
       <!-- <td>
         <br><img id="userphoto" src="assets/img/camera.jpg">
@@ -91,7 +92,5 @@
       <!-- <td>{{posts.username}}</td>
           <td>{{posts.follower.length}}</td>
           <td>{{posts.following.length}}</td> -->
-
-      <hr style="border : 1px solid black;">
   </table>
 </div>

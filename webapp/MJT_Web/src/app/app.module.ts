@@ -5,6 +5,7 @@ import { FormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule} from '@agm/core';
+import { GeocodeService } from './shared/geocode.service';
 
 //component
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OtherprofileComponent } from './otherprofile/otherprofile.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { UserlistComponent } from './userlist/userlist.component';
+import { SearchuserComponent } from './user/searchuser/searchuser.component';
 // import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
@@ -46,7 +48,8 @@ import { UserlistComponent } from './userlist/userlist.component';
     ChangeprofileComponent,
     OtherprofileComponent,
     RestaurantComponent,
-    UserlistComponent
+    UserlistComponent,
+    SearchuserComponent,
   ],
   imports: [ 
     BrowserModule,
@@ -55,12 +58,11 @@ import { UserlistComponent } from './userlist/userlist.component';
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDLPpUYp-RdW9_j1ijvhN-f28QnVuBH_fQ'
+      apiKey: 'AIzaSyBCxVmg4QfGSZoqbjbM67Ru8DexXl_FZF8'
     }),
-    NgFlashMessagesModule
   ],
   
-  providers: [UserService, UploadService],
+  providers: [UserService, UploadService, GeocodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

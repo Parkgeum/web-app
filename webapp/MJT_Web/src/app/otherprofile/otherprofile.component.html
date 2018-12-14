@@ -1,46 +1,43 @@
-<!-- <div class="header">
+<div class="container">
 
-  <img id="lg1" src="assets/img/camera.jpg" style="width:7%; height:80%;">
-  <img id="lg2" src="assets/img/logom.png" style="width: 12%; height:70%;">
-  <div id="searchbox">
-    <input type="search" placeholder="">
-  </div>
-  <div id="searchbtn">
-    <button type="submit" class="btns" (click)="Searchbtn()">검색</button>
-    <a routerLink="/board" class="btn1"> Main </a>
-    <a routerLink="/upload" class="btn2"> Upload </a>
-    <a routerLink="/login" class="btn2"> Logout </a>
-  </div>
-</div> -->
-
-<br><br><br><br>
-<div style="overflow:scroll; width:100%; height:auto;">
-  <div class="container">
-
-    <!-- <div class="profile"></div> -->
+  <div class="profile">
 
     <div class="profile-image">
 
       <img src="assets/img/mains.jpg" alt="">
+      <!-- src="{{this.uimage}}" -->
 
     </div>
 
-    <div class="profile-user-settings">
+    <form #followform="ngForm" (ngSubmit)="followform.valid && check(followform)">
 
-      <h1 class="profile-user-name">{{this.id}}</h1>
+      <div class="profile-user-settings">
 
-      <button class="btn profile-edit-btn" (click)="userfollowing()"> 팔로잉 </button>
+        <h2 class="profile-user-name">{{this.id}}</h2>
 
-      <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
 
-    
-    
 
-  </div>
+        <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+
+
+        <input type="text" autocomplete="off" #followuser="ngModel" [(ngModel)]="model.followuser" name="followuser" value="{{this.username}}"
+           class="input-1" required [ngClass]="{ 'invalid-textbox' : followform.submitted && !followuser.valid}">
+  
+          <input type="text" autocomplete="off" #state="ngModel" [(ngModel)]="model.state" name="state" value="On"
+             class="input-1" required [ngClass]="{ 'invalid-textbox' : followform.submitted && !state.valid}">
+          <input type="submit" class="btn profile-edit-btn" value="팔로잉">
+
+      </div>
+    </form>
+
+
+
+
+
     <div class="profile-stats">
       <ul>
         <li>게시물 <span class="profile-stat-count">{{this.posts}}</span> </li>
-        <li>팔로워 <span class="profile-stat-count" >{{this.follower}}</span> </li>
+        <li>팔로워 <span class="profile-stat-count">{{this.follower}}</span> </li>
         <li>팔로잉 <span class="profile-stat-count">{{this.followings}}</span> </li>
       </ul>
     </div>
@@ -52,190 +49,32 @@
 
   </div>
 
-
+  <hr style="border : 3px solid white;">
 </div>
+
 
 
 
 
 <div class="container">
 
-  <div class="gallery">
-
-    <div class="gallery-item" tabindex="0">
-
-      <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image"
-        alt="">
-
-      <div class="gallery-item-info">
-        <ul>
-          <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>
-            56</li>
-          <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
-              aria-hidden="true"></i> 2</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="gallery-item" tabindex="0">
-
-      <img src="https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop" class="gallery-image"
-        alt="">
-
-      <div class="gallery-item-info">
-
-        <ul>
-          <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>
-            89</li>
-          <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
-              aria-hidden="true"></i> 5</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="gallery-item" tabindex="0">
-
-      <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop" class="gallery-image"
-        alt="">
-
-      <div class="gallery-item-type">
-
-        <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
-
-      </div>
-
-      <div class="gallery-item-info">
-
-        <ul>
-          <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>
-            42</li>
-          <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
-              aria-hidden="true"></i> 1</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="gallery-item" tabindex="0">
-
-      <img src="https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop" class="gallery-image"
-        alt="">
-
-      <div class="gallery-item-type">
-
-        <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
-
-      </div>
-
-      <div class="gallery-item-info">
-
-        <ul>
-          <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>
-            38</li>
-          <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
-              aria-hidden="true"></i> 0</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="gallery-item" tabindex="0">
-
-      <img src="https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop" class="gallery-image"
-        alt="">
-
-      <div class="gallery-item-type">
-
-        <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
-
-      </div>
-
-      <div class="gallery-item-info">
-
-        <ul>
-          <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>
-            47</li>
-          <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
-              aria-hidden="true"></i> 1</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="gallery-item" tabindex="0">
-
-      <img src="https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop" class="gallery-image"
-        alt="">
-
-      <div class="gallery-item-info">
-
-        <ul>
-          <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>
-            94</li>
-          <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
-              aria-hidden="true"></i> 3</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <!-- <div class="gallery-item" tabindex="0">7
-
-        <img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&h=500&fit=crop" class="gallery-image"
-          alt="">
-
-        <div class="gallery-item-type">
-
-          <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
-
-        </div>
-
+    <div class="gallery">
+  
+  
+      <div *ngFor="let posts of post" class="gallery-item" tabindex="0" >
+        
+          <img src="assets/img/camera.jpg" class="gallery-image" alt="">
+          <!-- <img id="userimg" src="{{posts.image}}">  -->
+  
         <div class="gallery-item-info">
-
           <ul>
-            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
-                aria-hidden="true"></i> 52</li>
-            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
-                aria-hidden="true"></i> 4</li>
-          </ul>
-
-        </div>
-
-      </div>  -->
-
-    <!-- <div class="gallery-item" tabindex="0">8
-
-        <img src="https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop" class="gallery-image"
-          alt="">
-
-        <div class="gallery-item-info">
-
-          <ul>
-            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
-                aria-hidden="true"></i> 66</li>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>
+              56</li>
             <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
                 aria-hidden="true"></i> 2</li>
           </ul>
-
         </div>
-
-      </div> 
-
-
-
-
-
-
+      </div>
     </div>
-    
-   <div class="loader"></div> -->
-
+    <div class="loader"></div>
   </div>
-</div>

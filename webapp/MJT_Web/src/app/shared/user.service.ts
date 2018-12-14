@@ -67,11 +67,11 @@ export class UserService {
 
 
   getUserList() {
-    return this.http.get('http://localhost:3000/member/info');
+    return this.http.get(environment.apiBaseUrl+'/member/info');
   }
 
   profile() {
-    return this.http.get('http://localhost:3000/me', {
+    return this.http.get(environment.apiBaseUrl+'/me', {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('token')

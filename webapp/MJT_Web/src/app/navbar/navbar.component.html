@@ -6,19 +6,19 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <form #searchForm="ngForm" (ngSubmit)="searchForm.valid && Search(searchForm)">
+  <form *ngIf="logincheck" #searchForm="ngForm" (ngSubmit)="searchForm.valid && Search(searchForm)">
     <!-- model은 ts 파일에 정의한 model -->
 
     <!-- <input type="search" class="search" placeholder="사용자 검색"> -->
     <input type="text" autocomplete="off" #username="ngModel" [(ngModel)]="model.SearchUser" name="username" placeholder="사용자 검색" 
-    [ngClass]="{ 'invalid-textbox' : searchForm.submitted && !username.valid}">
+    [ngClass]="{ 'invalid-textbox' : searchForm.submitted && !username.valid}" >
     <input type="submit" class="btns" value="검색">
   </form>
 
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
     </ul>
-    <ul class="navbar-nav navbar-right color-gray">
+    <ul *ngIf="logincheck" class="navbar-nav navbar-right color-gray">
       <!-- *ngIf="localStorage.getItem('token')!=null" -->
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/board']">Main</a>

@@ -3,6 +3,8 @@ import { Upload } from '../shared/upload.model';
 import { UploadService } from '../shared/upload.service'
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router, ActivatedRoute } from "@angular/router"
+import { environment } from '../../environments/environment';
+import { reduce } from 'rxjs-compat/operator/reduce';
 
 @Component({
   selector: 'app-board',
@@ -14,18 +16,17 @@ export class BoardComponent implements OnInit {
   constructor(
     private router: Router,
     private http: HttpClient,
-    ) { }
-
-  readonly baseUrls = 'http://localhost:3000/boards/follow';
+    ) {}
 
   post: Post;
+  checkpost = false;
 
   ngOnInit() {
     this.refreshPostList();
   }
 
   getPostList() {
-    return this.http.get(this.baseUrls, {
+    return this.http.get(environment.apiBaseUrl+'/boards/follow', {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('token')
@@ -36,7 +37,8 @@ export class BoardComponent implements OnInit {
 
   refreshPostList() {
     this.getPostList().subscribe((res: any) => {
-      this.post = res.data;    
+      this.post = res.data;
+
     });
     if (localStorage.getItem('token') == null) {
       console.log("not logined");

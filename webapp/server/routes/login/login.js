@@ -70,36 +70,22 @@ router.post('/member/signup', function (req, res) {
     } else if (user) {
       res.send({
         success: false,
-        data: "ID",
+        data: "ID already exists",
         type: "signup"
       });
     } else if (!user) {
-      
-            User.findOne({username: signup.username}).exec(function (err, user2) {
-              if(user2){
-                res.send({
-                  success: false,
-                  data: "USERNAME",
-                  type: "signup"
-                })
-              }
-              else{
-                localSignUp(signup, function (err, savedUser) {
-                  if (err) {
-                    res.send({ success: false, data: "Error Occured" + err });
-                  } else {
-                    res.send({
-                      success: true,
-                      data: savedUser,
-                      type: "signup",
-                      token: savedUser.jsonWebToken
-                    });
-                  }
-                });
-              }
-            
-            })
-
+      localSignUp(signup, function (err, savedUser) {
+        if (err) {
+          res.send({ success: false, data: "Error Occured" + err });
+        } else {
+          res.send({
+            success: true,
+            data: savedUser,
+            type: "signup",
+            token: savedUser.jsonWebToken
+          });
+        }
+      });
     }
   });
 });
@@ -125,8 +111,8 @@ router.post('/member/login', function (req, res) {
     id: local_id,
     password: local_password
   }
-  console.log(local_id);
-  console.log(local_password);
+  // console.log(local_id);
+  // console.log(local_password);
 
   User.findOne(findConditionLocalUser).exec(function (err, user) {
 
@@ -351,10 +337,11 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
   })
 });
 
+
 //다른 유저 정보 받아오기
 router.post('/member/userinfo', function (req, res) {
   var username = req.body.username;
-  console.log(username);
+  // console.log(username);
 
   User.findOne({ username: username }, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
@@ -368,7 +355,7 @@ router.post('/member/userinfo', function (req, res) {
 //해당 username의 전체 유저
 router.post('/member/findbyusername', function (req, res) {
   var username = req.body.username;
-  console.log(username);
+  // console.log(username);
 
   User.find({ username: username }, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
@@ -382,7 +369,7 @@ router.post('/member/findbyusername', function (req, res) {
 //id로 받아오기
 router.post('/member/userbyid', function (req, res) {
   var id = req.body.id;
-  console.log(id);
+  // console.log(id);
 
   User.findOne({ id: id }, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }

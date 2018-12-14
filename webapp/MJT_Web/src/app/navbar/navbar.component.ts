@@ -5,7 +5,8 @@ import { NgForm } from '@angular/forms'
 import { Router } from '@angular/router';
 import { UserService } from '../shared/user.service';
 import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
-import { observable } from 'rxjs';
+import { Observable } from 'rxjs/Rx';
+import { environment } from '../../environments/environment';
 
 
 
@@ -26,26 +27,39 @@ export class NavbarComponent implements OnInit {
   model = {
     SearchUser: ''
   };
-
-
+  
   public token: Token[];
   information: proin;
+
+  public logincheck = false;
  
 
   ngOnInit() {
-    // this.token[0].tok = localStorage.getItem('token');
-    // console.log("aaaa" + this.token[0].tok);
+    let secondTick = Observable.timer(1000,1000); 
+    secondTick.subscribe((tick)=>{ this.checkToken();});
+    this.checkToken();
+    console.log(this.logincheck);
+  }
+
+  
+
+  checkToken() {
+    if(localStorage.getItem('token')!=null)
+    {
+      this.logincheck = true;
+    }
   }
 
   onLogoutClick() {
     localStorage.clear();
+    this.logincheck = false;
     this.router.navigate(['/login']);
     // M.toast({ html: 'LogOut Successfully', classes: 'rounded' });
     // console.log(M);
   }
 
   otherInfo(information: proin) {
-    return this.http.post('http://localhost:3000/boards/search/user', information);
+    return this.http.post(environment.apiBaseUrl+'/boards/search/user', information);
   }
 
 
@@ -54,14 +68,23 @@ export class NavbarComponent implements OnInit {
     this.otherInfo(form.value).subscribe((res: any) => {
       //response로 받은 것들 information에 저장
       this.information = res;
-      if ( localStorage.getItem('token') != null) {
-        console.log("bbbbb" + this.information[0].username);
-        this.router.navigate(['/userlist'])
+      console.log(JSON.stringify(this.information))
+      localStorage.setItem('userlist', this.information.username);
+      if ( localStorage.getItem('userlist') != null) {
+        // console.log("bbbbb" + this.information[0].username);
         // console.log(JSON.stringify(this.information));
-        localStorage.setItem('username', this.information[0].username);
+        localStorage.setItem('userlist', this.information[0].username);
+        this.router.navigate(['/userlist'])
       }
+      else
+      {
+        localStorage.setItem('userlist', null);
+        this.router.navigate(['/userlist'])
+      }
+      
     })
   }
+  
 }
 
 interface Token {
