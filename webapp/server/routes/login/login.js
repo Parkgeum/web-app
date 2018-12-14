@@ -70,22 +70,36 @@ router.post('/member/signup', function (req, res) {
     } else if (user) {
       res.send({
         success: false,
-        data: "ID already exists",
+        data: "ID",
         type: "signup"
       });
     } else if (!user) {
-      localSignUp(signup, function (err, savedUser) {
-        if (err) {
-          res.send({ success: false, data: "Error Occured" + err });
-        } else {
-          res.send({
-            success: true,
-            data: savedUser,
-            type: "signup",
-            token: savedUser.jsonWebToken
-          });
-        }
-      });
+      
+            User.findOne({username: signup.username}).exec(function (err, user2) {
+              if(user2){
+                res.send({
+                  success: false,
+                  data: "USERNAME",
+                  type: "signup"
+                })
+              }
+              else{
+                localSignUp(signup, function (err, savedUser) {
+                  if (err) {
+                    res.send({ success: false, data: "Error Occured" + err });
+                  } else {
+                    res.send({
+                      success: true,
+                      data: savedUser,
+                      type: "signup",
+                      token: savedUser.jsonWebToken
+                    });
+                  }
+                });
+              }
+            
+            })
+
     }
   });
 });
