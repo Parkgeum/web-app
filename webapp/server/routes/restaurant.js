@@ -10,12 +10,30 @@ mongoose.connect('mongodb://localhost:27017/member', { useNewUrlParser: true });
 //맛집 정보
 router.post('/restaurant', function (req, res, next) {
 
-  var restID = req.body.restID
+  var restaurant = req.body.restaurant
   //맛집 데이터의 _id값 받아서 정보 출력
-  Restaurant.findOne({"_id":restID}, function(err, restaurant){
+  Restaurant.findOne({"restaurant":restaurant}, function(err, restaurant){
       if(err) {res.send({success:false, type:"Error Occured"+err});}
       else {
-        res.send({success: true, data: restaurant}); 
+        if(restaurant==null){
+          res.send({success: false, data: restaurant}); 
+        } else{
+          console.log(restaurant)
+          res.send({success: true, data: restaurant}); 
+        }
+      }
+    })
+});
+
+//모든 맛집 리스트
+router.post('/restaurant/list', function (req, res, next) {
+
+  //모든맛집리스트불러옴
+  Restaurant.find( function(err, restaurant){
+      if(err) {res.send({success:false, type:"Error Occured"+err});}
+      else {
+        console.log(restaurant)
+        res.send(restaurant);
       }
     })
 });
@@ -27,6 +45,7 @@ router.post('/addrestaurant', function (req, res) {
   add.address = req.body.address.split(' ');
   add.telephone = req.body.telephone;
   add.business_hours = req.body.business_hours;
+  add.image = req.body.image;
 
   //맛집 이름이랑 주소 같으면
   var findConditionResturant = {
