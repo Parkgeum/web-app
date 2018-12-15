@@ -10,6 +10,9 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
+var con = require('./con');
+var mongo=con.mongo;
+
 
 var loginRouter = require('./routes/login/login');
 var usersRouter = require('./routes/users');
@@ -17,7 +20,7 @@ var postsRouter = require('./routes/posts');
 var boardsRouter = require('./routes/boards');
 var resturantRouter = require('./routes/restaurant');
 
-mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true}, (err) => {
+mongoose.connect(mongo, {useNewUrlParser: true}, (err) => {
   if(!err) { console.log('MongoDB connection succeeded'); }
   else { console.log('MongoDB connection is error'+ JSON.stringify(err, undefined, 2)); }
 });
@@ -34,7 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors( { origin: 'http://localhost:4200' }));
+app.use(cors( { origin: 'http://localhost:4200' }));  //바꿔줘야함
 
 app.use('/', loginRouter);
 app.use('/', resturantRouter);

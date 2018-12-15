@@ -3,9 +3,11 @@ var router = express.Router();
 var Restaurant = require('./..//models/restaurant')
 var mongoose = require('mongoose');
 var User = require('./../models/user')
+var con = require('./../con');
+var mongo=con.mongo;
 
 
-mongoose.connect('mongodb://localhost:27017/member', { useNewUrlParser: true });
+mongoose.connect(mongo, { useNewUrlParser: true });
 
 //맛집 정보
 router.post('/restaurant', function (req, res, next) {

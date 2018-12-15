@@ -1,0 +1,4 @@
+서버
+config/config.json의 MONGODB_URI 수정해야댐
+app.js 에서 app.use(cors( { origin: 'http://localhost:4200' })); url 변경해줘야함
+con.js 에서 server , mongo url 변경해줘야함

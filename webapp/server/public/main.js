@@ -1,3 +1,7 @@
+var con = require('./../../con');
+var mongo=con.mongo;
+var server=con.server;
+
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
 /***/ "./src/$$_lazy_route_resource lazy recursive":
@@ -283,7 +287,7 @@ var BoardComponent = /** @class */ (function () {
     function BoardComponent(router, http) {
         this.router = router;
         this.http = http;
-        this.baseUrls = 'http://localhost:3000/boards/follow';
+        this.baseUrls = server+'/boards/follow';
     }
     BoardComponent.prototype.ngOnInit = function () {
         this.refreshPostList();
@@ -395,7 +399,7 @@ var GooglemapComponent = /** @class */ (function () {
         // 이부분 그대로 사용하면 이미지 가져오기 가능 ?
     };
     GooglemapComponent.prototype.restInform = function (restinfo) {
-        return this.http.post('http://localhost:3000/restaurant', restinfo);
+        return this.http.post( server+'/restaurant', restinfo);
     };
     GooglemapComponent.prototype.SearchRestaurant = function (form) {
         var _this = this;
@@ -501,7 +505,7 @@ var NavbarComponent = /** @class */ (function () {
         // console.log(M);
     };
     NavbarComponent.prototype.otherInfo = function (information) {
-        return this.http.post('http://localhost:3000/boards/search/user', information);
+        return this.http.post( server+'/boards/search/user', information);
     };
     NavbarComponent.prototype.Search = function (form) {
         var _this = this;
@@ -598,7 +602,7 @@ var OtherprofileComponent = /** @class */ (function () {
         var httpParams = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpParams"]()
             .append("id", localStorage.getItem('users'));
         console.log(httpParams);
-        this.http.post('http://localhost:3000/member/userbyid', httpParams).subscribe(function (res) {
+        this.http.post( server+'/member/userbyid', httpParams).subscribe(function (res) {
             _this.information = res.data;
             _this.follower = _this.information.follower.length;
             _this.followings = _this.information.following.length;
@@ -614,7 +618,7 @@ var OtherprofileComponent = /** @class */ (function () {
             .append("state", "On");
         var followuser = localStorage.getItem('othername');
         var state = "On";
-        return this.http.post('http://localhost:3000/member/addfollowing', {
+        return this.http.post( server+'/member/addfollowing', {
             "followuser": followuser,
             "state": state
         }, {
@@ -698,7 +702,7 @@ var RestaurantComponent = /** @class */ (function () {
         var name = localStorage.getItem('resname');
         var httpParams = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]()
             .append("restID", name);
-        this.http.post('http://localhost:3000/restaurant', httpParams).subscribe(function (res) {
+        this.http.post( server+'/restaurant', httpParams).subscribe(function (res) {
             _this.restinfo = res.data;
             _this.name = _this.restinfo.restaurant;
             _this.address = _this.restinfo.address;
@@ -837,7 +841,7 @@ var UploadService = /** @class */ (function () {
     function UploadService(http) {
         this.http = http;
         //보내줄 base주소 설정해줌
-        this.baseURL = 'http://localhost:3000/posts/upload';
+        this.baseURL =  server+'/posts/upload';
     }
     // this.getUser
     UploadService.prototype.postUpload = function (uld) {
@@ -969,10 +973,10 @@ var UserService = /** @class */ (function () {
         return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiBaseUrl + '/member/userinfo', user);
     };
     UserService.prototype.getUserList = function () {
-        return this.http.get('http://localhost:3000/member/info');
+        return this.http.get( server+'/member/info');
     };
     UserService.prototype.profile = function () {
-        return this.http.get('http://localhost:3000/me', {
+        return this.http.get( server+'/me', {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
@@ -1311,7 +1315,7 @@ var SignInComponent = /** @class */ (function () {
         this.userService = userService;
         this.router = router;
         this._route = _route;
-        this.baseUrls = 'http://localhost:3000/member/info';
+        this.baseUrls =  server+'/member/info';
         this.model = {
             id: '',
             password: ''
@@ -1595,13 +1599,13 @@ var UserprofileComponent = /** @class */ (function () {
         this.router = router;
         this.http = http;
         this.userService = userService;
-        this.baseUrls = 'http://localhost:3000/member/info';
+        this.baseUrls = server+'/member/info';
     }
     UserprofileComponent.prototype.ngOnInit = function () {
         this.profilevalue();
     };
     UserprofileComponent.prototype.profilereturn = function () {
-        return this.http.get('http://localhost:3000/me', {
+        return this.http.get( server+'/me', {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
@@ -1716,7 +1720,7 @@ var UserlistComponent = /** @class */ (function () {
     function UserlistComponent(router, http) {
         this.router = router;
         this.http = http;
-        this.baseUrls = 'http://localhost:3000/member/findbyusername';
+        this.baseUrls =  server+'/member/findbyusername';
     }
     UserlistComponent.prototype.ngOnInit = function () {
         this.userInform();
@@ -1771,7 +1775,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    apiBaseUrl: 'http://localhost:3000'
+    apiBaseUrl: server
 };
 /*
  * For easier debugging in development mode, you can import the following file

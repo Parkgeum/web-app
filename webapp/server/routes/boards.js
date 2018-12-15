@@ -4,8 +4,10 @@ var Post = require('./../models/post')
 var mongoose = require('mongoose');
 var User = require('./../models/user')
 var Restaurant = require('./../models/restaurant')
+var con = require('./../con');
+var mongo=con.mongo;
 
-mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
+mongoose.connect(mongo, {useNewUrlParser: true});
 
 //following기준 게시글 불러오기
 router.get('/follow', ensureAuthorized, function (req, res, next) {

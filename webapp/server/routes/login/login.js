@@ -9,8 +9,10 @@ var ObjectId = require('mongoose').Types.ObjectId;
 var crypto = require('crypto');
 var userid;
 
+var con = require('./../../con');
+var mongo=con.mongo;
 
-mongoose.connect('mongodb://localhost:27017/member', { useNewUrlParser: true });
+mongoose.connect(mongo, { useNewUrlParser: true });
 
 /* GET home page. */
 //http//localhost:3000

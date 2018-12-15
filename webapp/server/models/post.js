@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true});
+var con = require('./../con');
+var mongo=con.mongo;
+
+mongoose.connect(mongo, {useNewUrlParser: true});
 
 var commentSchema = new mongoose.Schema({
     username: String,
