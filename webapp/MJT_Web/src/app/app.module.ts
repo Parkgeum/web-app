@@ -29,6 +29,7 @@ import { OtherprofileComponent } from './otherprofile/otherprofile.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { SearchuserComponent } from './user/searchuser/searchuser.component';
+import { RestaurantlistComponent } from './restaurantlist/restaurantlist.component';
 // import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
@@ -50,6 +51,7 @@ import { SearchuserComponent } from './user/searchuser/searchuser.component';
     RestaurantComponent,
     UserlistComponent,
     SearchuserComponent,
+    RestaurantlistComponent,
   ],
   imports: [ 
     BrowserModule,

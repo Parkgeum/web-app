@@ -62,13 +62,14 @@
 <div class="content">
 
   <table *ngFor="let posts of post" style="width:100%">
-    <tr class="font-2" >
-        <img id="userimg" src="assets/img/camera.jpg">
+    <!-- <tr class="font-2" > -->
+        <!-- <img id="userimg" src="assets/img/camera.jpg"> -->
         <!-- <img id="userimg" src="{{posts.image}}">  -->
-        <p class="user"> {{posts.username}} </p>
-    </tr>
+        <!-- <p class="user"> {{posts.username}} </p> -->
+    <!-- </tr> -->
     <tr>
-        <img id="userphoto" src="assets/img/camera.jpg">
+        <img src="{{posts.image}}" width="100%" height="100%"  >
+        <!-- id="userphoto -->
     </tr>
     <tr>
       <br>

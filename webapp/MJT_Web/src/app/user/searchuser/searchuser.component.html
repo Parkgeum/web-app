@@ -4,48 +4,26 @@
   
       <div class="profile-image">
   
-        <img src="assets/img/mains.jpg" alt="">
-        <!-- src="{{this.uimage}}" -->
+        <img src="{{this.uimage}}" width="80%" height="80%" alt="">
+
   
       </div>
   
       <form #followform="ngForm" (ngSubmit)="followform.valid && check(followform)">
-        <div class="profile-user-settings">
-          <h2 class="profile-user-name">{{this.id}}</h2>
+
 
           <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
-          <!-- <button class="btn profile-edit-btn" (click)="userfollowing()"> 팔로잉 </button> -->
+
 
           <input type="hidden" autocomplete="off" #followuser="ngModel" [(ngModel)]="model.followuser" name="followuser" value="tests"
               class="input-1" >
            <input type="hidden" autocomplete="off" #state="ngModel" [(ngModel)]="model.state" name="state" value="On"
               class="input-1" >
-            <!-- <input type="submit" class="btn profile-edit-btn" value="팔로잉"> -->
-            <!-- <button class="btn profile-edit-btn"> 팔로잉 </button> -->
+
             <input type="submit" value="팔로잉" class="btn profile-edit-btn">
-        </div>
+
       </form>
 
-      <!-- <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
-         
-          <input type="text" autocomplete="off" #id="ngModel" [(ngModel)]="model.id" name="id" placeholder="id" class="input-1"
-            required [ngClass]="{ 'invalid-textbox' : signInForm.submitted && !id.valid}">
-  
-          <div *ngIf="signInForm.submitted && id.errors?.minlength">
-            <label class="validation-message"> Minimum 2 characters. </label>
-          </div>
-  
-  
-          <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Password"
-            required minlength="4" class="input-1" [ngClass]="{'invalid-textbox' : signInForm.submitted && !password.valid }">
-  
-          <div *ngIf="signInForm.submitted && password.errors?.minlength">
-            <label class="validation-message"> Minimum 4 characters. </label>
-          </div>
-  
-          <input type="submit" value="Sign In" class="btn">
-        </form> -->
-  
   
   
   
@@ -79,15 +57,12 @@
     
         <div *ngFor="let posts of post" class="gallery-item" tabindex="0" >
           
-            <img src="assets/img/camera.jpg" class="gallery-image" alt="">
+            <img src="{{posts.image}}" class="gallery-image" alt="">
             <!-- <img id="userimg" src="{{posts.image}}">  -->
     
           <div class="gallery-item-info">
             <ul>
-              <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>
-                56</li>
-              <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
-                  aria-hidden="true"></i> 2</li>
+
             </ul>
           </div>
         </div>

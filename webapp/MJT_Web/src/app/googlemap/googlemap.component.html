@@ -1,27 +1,8 @@
 <html>
 
 <head>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLPpUYp-RdW9_j1ijvhN-f28QnVuBH_fQ&libraries=places" async defer> -->
-
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCxVmg4QfGSZoqbjbM67Ru8DexXl_FZF8&callback=initMap"
     type="text/javascript">
-      // var placeSearch, autocomplete;
-      // function initAutocomplete() {
-      //   // Create the autocomplete object, restricting the search to geographical
-      //   // location types.
-      //   autocomplete = new google.maps.places.Autocomplete(
-      //     (document.getElementById('autocomplete')), { types: ['geocode'] });
-      //   // When the user selects an address from the dropdown, populate the address
-      //   // fields in the form.
-      //   autocomplete.addListener('place_changed', fillInAddress);
-      // }
-      // function fillInAddress() {
-      //   // Get the place details from the autocomplete object.
-      //   var place = autocomplete.getPlace();
-      //   document.getElementById("lat").value = place.geometry.location.lat();
-      //   document.getElementById("lng").value = place.geometry.location.lng();
-      // }
-
     </script>
 </head>
 
@@ -34,7 +15,7 @@
       <input type="text" style="margin-left:50%; width: 40%" autocomplete="off" [(ngModel)]="address"  required [ngModelOptions]="{standalone: true}" placeholder="맛집 검색">
     <input type="submit" class="btns" value="검색">
   </form>
-  <agm-map [latitude]="locations?.lat" [longitude]="locations?.lng" [zoom]="16" [disableDefaultUI]="false" [zoomControl]="false" *ngIf = "addcheck" >
+  <agm-map [latitude]="locations?.lat" [longitude]="locations?.lng" [zoom]="16" [disableDefaultUI]="false" [zoomControl]="false"  >
     <agm-marker *ngIf = "addcheck" [latitude]="locations?.lat" [longitude]="locations?.lng">
         <agm-info-window>
           <span style="color: black" *ngIf="state"> 맛집 보기 => <a style="color:tomato" [routerLink]="['/rt']" > {{this.name}} </a></span>

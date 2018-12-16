@@ -28,7 +28,7 @@ export class GooglemapComponent implements OnInit {
 
   restinfo: restaurant[]
 
-  
+
   model = {
     restID: ''
   };
@@ -47,66 +47,46 @@ export class GooglemapComponent implements OnInit {
   restlocations: { lat: number, lng: number };
   loading: boolean;
 
-  lat : number;
-   37.5536067;
-  lng : number;
-   126.96961950000002;
+  lat: number;
+  lng: number;
+  cnt;
+
 
 
 
   ngOnInit() {
+    this.cnt=parseInt('0')
     this.showLocation();
     if (localStorage.getItem('token') == null) {
       console.log("not logined");
       this.router.navigate(['/login']);
     }
-    
-    // const autocomplete = new google.maps.places.Autocomplete(this.element);
   }
 
 
 
-
-  //googlemap 이벤트
-  onChoseLocation(event) {
-    // console.log(event);
-    this.latitude = event.coords.lat;
-    this.longitude = event.coords.lng;
-  }
-
-
-
-  // onClickMarker(geo: restaurant) {
-  //   this.restinfo = geo;
-  //   localStorage.setItem('resname', this.restinfo.restaurant);
-  //   this.router.navigate(['/rt']);
-  // }
 
   restInform(restinfo: restaurant) {
-    return this.http.post(environment.apiBaseUrl+'/restaurant', restinfo);
+    return this.http.post(environment.apiBaseUrl + '/restaurant', restinfo);
   }
 
 
   SearchRestaurant(form: NgForm) {
     this.restInform(form.value).subscribe((res: any) => {
-      //response로 받은 것들 information에 저장
+
       this.restinfo = res.data;
 
       if (res != null) {
         localStorage.setItem('resname', "test");
         this.router.navigate(['/rt']);
-
-        // //조건 다시 수정
-        // if (this.restinfo.telephone != null) {
-        //   this.router.navigate(['/rt']);
-        // }
       }
     })
   }
 
 
   showLocation() {
-    
+  
+
     this.addressToCoordinates();
 
 
@@ -114,76 +94,108 @@ export class GooglemapComponent implements OnInit {
 
   addressToCoordinates() {
 
+
     this.loading = true;
 
-    this.geocodeService.geocodeAddress(this.address)
+    this.http.post(environment.apiBaseUrl + '/restaurant/list', this.address).subscribe((res) => {
+      this.restinfo = res as restaurant[];
+      this.cnt++;
+      
+
+      var num = parseInt('0');
+      var add;
+
+      for (num = parseInt('0'); num < this.restinfo.length; num++) {
+
+        console.log("log1    num is " + num + " resadd " + this.restinfo[num].address + " resname" + this.restinfo[num].restaurant + " add " + add);
+        if (this.restinfo[num].restaurant == this.address) {
+
+
+          this.name = this.restinfo[num].restaurant;
+          localStorage.setItem('resname', this.restinfo[num].restaurant)
+
+          console.log("찾았다");
+          
+
+          this.name = this.restinfo[num].restaurant;
+          this.restinfo[num].address;
+          add = this.restinfo[num].address
+          localStorage.setItem('resadd', add);
+          this.state = true;
+          this.addcheck = true;
+          console.log(this.name +" 뒤에는 주소" + add);
+          break;
+
+
+        }
+
+        else {
+          this.name = '일치하는 맛집이 없습니다.'
+          this.state = false;
+          this.addcheck = true;
+        }
+
+      }
+    });
+
+    console.log(this.cnt)
+    if(this.cnt == parseInt('0')){
+    this.locations.lat = 37.5817849
+    this.locations.lng = 127.01036899999997
+  }
+    else {
+
+    var resadd = localStorage.getItem('resadd')
+
+    this.geocodeService.geocodeAddress(resadd)
       .subscribe(
 
 
-        location => {
-          this.locations = location;
-
-          console.log(this.locations.lat + " abc " + this.locations.lng)
-
+        locations => {
+          this.locations = locations;
           this.loading = false;
+          console.log(this.locations.lat +"aaa" + this.locations.lng)
+          this.locations.lat = locations.lat;
+          this.locations.lng = locations.lng;
+          localStorage.setItem('lat', this.locations.lat.toString())
+          localStorage.setItem('lng', this.locations.lng.toString())
 
-          // this.ref.detectChanges();
-
-          this.http.post(environment.apiBaseUrl+'/restaurant/list', this.address).subscribe((res) => {
-            this.restinfo = res as restaurant[];
-
-            var num = parseInt('0');
-            var lat = 37.5536067;
-            var lng = 126.96961950000002
-            for (num; num < this.restinfo.length+1; num++) {
-
-              // this.geocodeService.geocodeAddress(this.restinfo[num].address[num])
-              // .subscribe(
-        
-        
-              //   restlocation => {
-              //     this.restlocations = restlocation;
-              //     this.loading = false;
-
-                  if (
-                    // this.restinfo[num].restaurant 
-                    '서울역' == this.address) {
-    
-                    // 있으면 addcheck true로 바꿔주고 resname으로 로컬스토리지에 저장
-                    //여기에 맛집 이름 줘서 마커에 띄워주기
-
-
-                    // this.name = this.restinfo[num].restaurant
-                    // localStorage.setItem('resname', this.restinfo[num].restaurant)
-                    this.name = '서울역';
-                    this.state = true;
-                    this.addcheck = true;
-                    console.log(this.addcheck)
-                  }
-
-                  //else if(this.locations.lat == this.restlocations.lat && this.locations.lng == this.restlocations.lng)
-                  else if(lat == this.locations.lat && lng == this.locations.lng){
-                    
-                    // 위도, 경도가 일치하면 restname으로 저장, name 다시 설정
-                    // localStorage.setItem('resname', this.restinfo[num].restaurant)
-                    // this.name = this.restinfo[num].restaurant
-
-                    this.state = true;
-                    this.addcheck = true;
-                  }
-
-                  else{
-                    this.name='일치하는 맛집이 없습니다.'
-                    this.state = false;
-                    this.addcheck = true;
-                  }
-            }
-          });
         }
       );
 
 
   }
+}
+
+                // this.geocodeService.geocodeAddress(add)
+              //   .subscribe(
+
+              //     restlocations => {
+              //       this.restlocations = restlocations;
+              //       this.loading = false;
+              //       console.log("log2    num is " +num + " resadd "+ this.restinfo[num].address + " resname" + this.restinfo[num].restaurant + " add " + add);
+
+              //       if (this.restinfo[num].restaurant == this.address) {
+
+              //         // 있으면 addcheck true로 바꿔주고 resname으로 로컬스토리지에 저장
+              //         //여기에 맛집 이름 줘서 마커에 띄워주기
+
+              //         this.name = this.restinfo[num].restaurant;
+              //         localStorage.setItem('resname', this.restinfo[num].restaurant)
+              //         this.locations.lat = this.restlocations.lat;
+              //         console.log("aaa" + this.locations.lat);
+              //         this.locations.lng = this.restlocations.lng;
+              //         console.log("bbb" + this.locations.lng);
+              //         this.state = true;
+              //         this.addcheck = true;
+              //       }
+
+              //       else {
+              //         this.name = '일치하는 맛집이 없습니다.'
+              //         this.state = false;
+              //         this.addcheck = true;
+              //       }
+              //     })
 
 
 

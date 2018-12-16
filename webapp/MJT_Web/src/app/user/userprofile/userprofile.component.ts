@@ -43,8 +43,12 @@ export class UserprofileComponent implements OnInit {
   @Input('userinfo') userObj: usermodels;
 
   ngOnInit() {
-    this.postvalue();
+    this.startfile();
+  }
+
+  startfile() {
     this.profilevalue();
+    this.postvalue();
   }
 
   profilereturn() {
@@ -61,6 +65,7 @@ export class UserprofileComponent implements OnInit {
       console.log("not logined");
       this.router.navigate(['/login']);
     }
+    
     this.profilereturn().subscribe((res: any) => {
       this.proinfo = res.data;
       // console.log(JSON.stringify(this.proinfo));
@@ -70,25 +75,32 @@ export class UserprofileComponent implements OnInit {
       this.following = this.proinfo.following.length;
       this.username = this.proinfo.username;
       localStorage.setItem('pr', this.username);
-      this.uimage = this.proinfo.image;
+      console.log("프로필" + this.proinfo.image)
+      if(this.proinfo.image == "null")
+      this.uimage = 'assets/img/camera.jpg'
+      else if(this.proinfo.image != "null")
+      {
+        this.uimage = this.proinfo.image;
+      }
     })
-    this.postvalue();
+    
+    
   }
 
-  postreturn() {
-
-    let httpParams = new HttpParams()
-      .append("username", localStorage.getItem('pr'))
-      console.log(httpParams)
-    return this.http.post(environment.apiBaseUrl+'/boards/myposts',httpParams)
-  }
 
   postvalue() {
     this.postreturn().subscribe((res: any) => {
       this.post = res.data;
       console.log(JSON.stringify(this.post))
-
     })
+  }
+
+  
+  postreturn() {
+    let httpParams = new HttpParams()
+      .append("username", localStorage.getItem('pr'))
+      // console.log(httpParams)
+    return this.http.post(environment.apiBaseUrl+'/boards/myposts',httpParams)
   }
 
   editprofile() {

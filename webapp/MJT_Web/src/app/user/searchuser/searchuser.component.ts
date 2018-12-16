@@ -69,6 +69,12 @@ export class SearchuserComponent implements OnInit {
       this.posts = this.information.posts.length;
       this.id = this.information.id;
       this.username = this.information.username;
+      if(this.information.image == "null")
+      this.uimage = 'assets/img/camera.jpg'
+      else if(this.information.image != "null")
+      {
+        this.uimage = this.information.image;
+      }
       this.uimage = this.information.image;
       // console.log(this.information);
 
