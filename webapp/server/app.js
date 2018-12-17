@@ -37,7 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors( { origin: 'http://localhost:4200' }));  //바꿔줘야함
+app.use(cors( { origin: 'http://54.249.169.162:4200' }));  //바꿔줘야함
 
 app.use('/', loginRouter);
 app.use('/', resturantRouter);
