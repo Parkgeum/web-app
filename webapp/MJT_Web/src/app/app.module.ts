@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule} from '@agm/core';
 import { GeocodeService } from './shared/geocode.service';
+import { HashLocationStrategy, LocationStrategy, Location } from '@angular/common'
 
 //component
 import { AppRoutingModule } from './app-routing.module';
@@ -64,7 +65,8 @@ import { RestaurantlistComponent } from './restaurantlist/restaurantlist.compone
     }),
   ],
   
-  providers: [UserService, UploadService, GeocodeService],
-  bootstrap: [AppComponent]
+  providers: [UserService, UploadService, GeocodeService, {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
+   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -135,25 +135,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
 /* harmony import */ var _shared_geocode_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/geocode.service */ "./src/app/shared/geocode.service.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _user_user_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./user/user.component */ "./src/app/user/user.component.ts");
-/* harmony import */ var _user_sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user/sign-up/sign-up.component */ "./src/app/user/sign-up/sign-up.component.ts");
-/* harmony import */ var _user_changeprofile_changeprofile_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user/changeprofile/changeprofile.component */ "./src/app/user/changeprofile/changeprofile.component.ts");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
-/* harmony import */ var _user_userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./user/userprofile/userprofile.component */ "./src/app/user/userprofile/userprofile.component.ts");
-/* harmony import */ var _user_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./user/sign-in/sign-in.component */ "./src/app/user/sign-in/sign-in.component.ts");
-/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./shared/user.service */ "./src/app/shared/user.service.ts");
-/* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/upload/upload.component.ts");
-/* harmony import */ var _googlemap_googlemap_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./googlemap/googlemap.component */ "./src/app/googlemap/googlemap.component.ts");
-/* harmony import */ var _board_board_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./board/board.component */ "./src/app/board/board.component.ts");
-/* harmony import */ var _shared_upload_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./shared/upload.service */ "./src/app/shared/upload.service.ts");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _otherprofile_otherprofile_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./otherprofile/otherprofile.component */ "./src/app/otherprofile/otherprofile.component.ts");
-/* harmony import */ var _restaurant_restaurant_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./restaurant/restaurant.component */ "./src/app/restaurant/restaurant.component.ts");
-/* harmony import */ var _userlist_userlist_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./userlist/userlist.component */ "./src/app/userlist/userlist.component.ts");
-/* harmony import */ var _user_searchuser_searchuser_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./user/searchuser/searchuser.component */ "./src/app/user/searchuser/searchuser.component.ts");
-/* harmony import */ var _restaurantlist_restaurantlist_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./restaurantlist/restaurantlist.component */ "./src/app/restaurantlist/restaurantlist.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _user_user_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user/user.component */ "./src/app/user/user.component.ts");
+/* harmony import */ var _user_sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user/sign-up/sign-up.component */ "./src/app/user/sign-up/sign-up.component.ts");
+/* harmony import */ var _user_changeprofile_changeprofile_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user/changeprofile/changeprofile.component */ "./src/app/user/changeprofile/changeprofile.component.ts");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
+/* harmony import */ var _user_userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./user/userprofile/userprofile.component */ "./src/app/user/userprofile/userprofile.component.ts");
+/* harmony import */ var _user_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./user/sign-in/sign-in.component */ "./src/app/user/sign-in/sign-in.component.ts");
+/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./shared/user.service */ "./src/app/shared/user.service.ts");
+/* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/upload/upload.component.ts");
+/* harmony import */ var _googlemap_googlemap_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./googlemap/googlemap.component */ "./src/app/googlemap/googlemap.component.ts");
+/* harmony import */ var _board_board_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./board/board.component */ "./src/app/board/board.component.ts");
+/* harmony import */ var _shared_upload_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./shared/upload.service */ "./src/app/shared/upload.service.ts");
+/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _otherprofile_otherprofile_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./otherprofile/otherprofile.component */ "./src/app/otherprofile/otherprofile.component.ts");
+/* harmony import */ var _restaurant_restaurant_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./restaurant/restaurant.component */ "./src/app/restaurant/restaurant.component.ts");
+/* harmony import */ var _userlist_userlist_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./userlist/userlist.component */ "./src/app/userlist/userlist.component.ts");
+/* harmony import */ var _user_searchuser_searchuser_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./user/searchuser/searchuser.component */ "./src/app/user/searchuser/searchuser.component.ts");
+/* harmony import */ var _restaurantlist_restaurantlist_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./restaurantlist/restaurantlist.component */ "./src/app/restaurantlist/restaurantlist.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -161,6 +162,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 //built-in
+
 
 
 
@@ -198,35 +200,36 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
-                _user_user_component__WEBPACK_IMPORTED_MODULE_9__["UserComponent"],
-                _user_sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_10__["SignUpComponent"],
-                _user_userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_13__["UserprofileComponent"],
-                _user_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_14__["SignInComponent"],
-                _upload_upload_component__WEBPACK_IMPORTED_MODULE_16__["UploadComponent"],
-                _googlemap_googlemap_component__WEBPACK_IMPORTED_MODULE_17__["GooglemapComponent"],
-                _board_board_component__WEBPACK_IMPORTED_MODULE_18__["BoardComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
+                _user_user_component__WEBPACK_IMPORTED_MODULE_10__["UserComponent"],
+                _user_sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_11__["SignUpComponent"],
+                _user_userprofile_userprofile_component__WEBPACK_IMPORTED_MODULE_14__["UserprofileComponent"],
+                _user_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_15__["SignInComponent"],
+                _upload_upload_component__WEBPACK_IMPORTED_MODULE_17__["UploadComponent"],
+                _googlemap_googlemap_component__WEBPACK_IMPORTED_MODULE_18__["GooglemapComponent"],
+                _board_board_component__WEBPACK_IMPORTED_MODULE_19__["BoardComponent"],
                 // Observable
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_20__["NavbarComponent"],
-                _user_changeprofile_changeprofile_component__WEBPACK_IMPORTED_MODULE_11__["ChangeprofileComponent"],
-                _otherprofile_otherprofile_component__WEBPACK_IMPORTED_MODULE_21__["OtherprofileComponent"],
-                _restaurant_restaurant_component__WEBPACK_IMPORTED_MODULE_22__["RestaurantComponent"],
-                _userlist_userlist_component__WEBPACK_IMPORTED_MODULE_23__["UserlistComponent"],
-                _user_searchuser_searchuser_component__WEBPACK_IMPORTED_MODULE_24__["SearchuserComponent"],
-                _restaurantlist_restaurantlist_component__WEBPACK_IMPORTED_MODULE_25__["RestaurantlistComponent"],
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_21__["NavbarComponent"],
+                _user_changeprofile_changeprofile_component__WEBPACK_IMPORTED_MODULE_12__["ChangeprofileComponent"],
+                _otherprofile_otherprofile_component__WEBPACK_IMPORTED_MODULE_22__["OtherprofileComponent"],
+                _restaurant_restaurant_component__WEBPACK_IMPORTED_MODULE_23__["RestaurantComponent"],
+                _userlist_userlist_component__WEBPACK_IMPORTED_MODULE_24__["UserlistComponent"],
+                _user_searchuser_searchuser_component__WEBPACK_IMPORTED_MODULE_25__["SearchuserComponent"],
+                _restaurantlist_restaurantlist_component__WEBPACK_IMPORTED_MODULE_26__["RestaurantlistComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_12__["appRoutes"]),
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_13__["appRoutes"]),
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
                 _agm_core__WEBPACK_IMPORTED_MODULE_5__["AgmCoreModule"].forRoot({
-                    apiKey: 'AIzaSyBCxVmg4QfGSZoqbjbM67Ru8DexXl_FZF8'
+                // apiKey: 'input your apikey'
                 }),
             ],
-            providers: [_shared_user_service__WEBPACK_IMPORTED_MODULE_15__["UserService"], _shared_upload_service__WEBPACK_IMPORTED_MODULE_19__["UploadService"], _shared_geocode_service__WEBPACK_IMPORTED_MODULE_6__["GeocodeService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+            providers: [_shared_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"], _shared_upload_service__WEBPACK_IMPORTED_MODULE_20__["UploadService"], _shared_geocode_service__WEBPACK_IMPORTED_MODULE_6__["GeocodeService"], { provide: _angular_common__WEBPACK_IMPORTED_MODULE_7__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_7__["HashLocationStrategy"] }
+            ],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -771,7 +774,7 @@ module.exports = ":root {\r\n    font-size: 10px;\r\n}\r\n\r\n\r\n\r\n  .btns {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n\n<head>\n  <script async defer src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBCxVmg4QfGSZoqbjbM67Ru8DexXl_FZF8&callback=initMap\"\n    type=\"text/javascript\">\n    </script>\n</head>\n\n\n<div class=\"container\">\n\n  <div class=\"profile\">\n\n    <div class=\"profile-image\">\n\n      <img src=\"{{this.image}}\" width=\"80%\" height=\"80%\" alt=\"\">\n\n    </div>\n\n    <div class=\"profile-user-settings\">\n\n      <!-- 맛집 이름 -->\n      <h2 class=\"profile-user-name\">{{this.name}}</h2>\n\n      <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\n    </div>\n\n    <div class=\"profile-bio\">\n\n      <p style=\"font-size:110%\"> address : <span class=\"profile-real-name\"> {{this.address}}</span></p>\n      <p style=\"font-size:110%\"> telephone : <span class=\"profile-real-name\">{{this.telephone}}</span></p>\n      <p style=\"font-size:110%\"> business_hours : <span class=\"profile-real-name\"> {{this.business_hours}}</span></p>\n      <p style=\"font-size:110%\"> breake_time : <span class=\"profile-real-name\"> {{this.breake_time}}</span></p>\n    </div>\n  </div>\n  <hr style=\"border : 3px solid white;\">\n</div>\n\n\n<!-- ngfor문으로 사진 출력 -->\n\n\n\n<div class=\"content\">\n\n\n        <br>\n          <h2 style=\"text-align: center\"> 한 줄 평 </h2>\n          <div class=\"comment\">\n            <span style=\"font-size:150%\"> </span><span style=\"font-size:120%\"> {{posts.text}}</span>\n            <br>\n            <br>\n          </div>\n          <div class=\"searchbox\">\n              <input id=\"commentin\" type=\"text\" placeholder=\"  한 줄 평을 입력해주세요.. \"> \n              <input type=\"submit\"  class=\"btns\" value=\"게시\">\n            </div>\n            <br>\n            <p style=\"font-size:15px; color:slategray\"> {{posts.time}} </p>\n            <hr style=\"border : 1px solid black;\" >\n\n  </div>\n\n</html>"
+module.exports = "<html>\n\n<head>\n  <script async defer src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBCxVmg4QfGSZoqbjbM67Ru8DexXl_FZF8&callback=initMap\"\n    type=\"text/javascript\">\n    </script>\n</head>\n\n\n<div class=\"container\">\n\n  <div class=\"profile\">\n\n    <div class=\"profile-image\">\n\n      <img src=\"{{this.image}}\" width=\"40%\" height=\"40%\" alt=\"\">\n\n    </div>\n\n    <div class=\"profile-user-settings\">\n\n      <!-- 맛집 이름 -->\n      <h3 class=\"profile-user-name\">{{this.name}}</h3>\n\n      <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\n    </div>\n\n    <div class=\"profile-bio\">\n\n      <p style=\"font-size:110%\"> address : <span class=\"profile-real-name\"> {{this.address}}</span></p>\n      <p style=\"font-size:110%\"> telephone : <span class=\"profile-real-name\">{{this.telephone}}</span></p>\n      <p style=\"font-size:110%\"> business_hours : <span class=\"profile-real-name\"> {{this.business_hours}}</span></p>\n      <p style=\"font-size:110%\"> breake_time : <span class=\"profile-real-name\"> {{this.breake_time}}</span></p>\n    </div>\n  </div>\n  <hr style=\"border : 3px solid white;\">\n</div>\n\n\n<!-- ngfor문으로 사진 출력 -->\n\n\n\n<div class=\"content\">\n\n\n        <br>\n          <h2 style=\"text-align: center\"> 한 줄 평 </h2>\n          <div class=\"comment\">\n            <span style=\"font-size:150%\"> </span><span style=\"font-size:120%\"> {{posts.text}}</span>\n            <br>\n            <br>\n          </div>\n          <div class=\"searchbox\">\n              <input id=\"commentin\" type=\"text\" placeholder=\"  한 줄 평을 입력해주세요.. \"> \n              <input type=\"submit\"  class=\"btns\" value=\"게시\">\n            </div>\n            <br>\n            <p style=\"font-size:15px; color:slategray\"> {{posts.time}} </p>\n            <hr style=\"border : 1px solid black;\" >\n\n  </div>\n\n</html>"
 
 /***/ }),
 
@@ -1539,7 +1542,7 @@ module.exports = ":root {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn-1 {\r\n    wi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n    <div class=\"profile\">\n  \n      <div class=\"profile-image\">\n  \n        <img src=\"{{this.uimage}}\" width=\"80%\" height=\"80%\" alt=\"\">\n\n  \n      </div>\n  \n      <form #followform=\"ngForm\" (ngSubmit)=\"followform.valid && check(followform)\">\n\n\n          <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\n\n\n          <input type=\"hidden\" autocomplete=\"off\" #followuser=\"ngModel\" [(ngModel)]=\"model.followuser\" name=\"followuser\" value=\"tests\"\n              class=\"input-1\" >\n           <input type=\"hidden\" autocomplete=\"off\" #state=\"ngModel\" [(ngModel)]=\"model.state\" name=\"state\" value=\"On\"\n              class=\"input-1\" >\n\n            <input type=\"submit\" value=\"팔로잉\" class=\"btn profile-edit-btn\">\n\n      </form>\n\n  \n  \n  \n  \n      <div class=\"profile-stats\">\n        <ul>\n          <li>게시물 <span class=\"profile-stat-count\">{{this.posts}}</span> </li>\n          <li>팔로워 <span class=\"profile-stat-count\">{{this.follower}}</span> </li>\n          <li>팔로잉 <span class=\"profile-stat-count\">{{this.followings}}</span> </li>\n        </ul>\n      </div>\n      <div class=\"profile-bio\">\n  \n        <p><span class=\"profile-real-name\">{{this.username}}</span> </p>\n  \n      </div>\n  \n    </div>\n  \n    <hr style=\"border : 3px solid white;\">\n  </div>\n  \n  \n  \n  \n  \n  <div class=\"container\">\n  \n      <div class=\"gallery\">\n    \n    \n        <div *ngFor=\"let posts of post\" class=\"gallery-item\" tabindex=\"0\" >\n          \n            <img src=\"{{posts.image}}\" class=\"gallery-image\" alt=\"\">\n            <!-- <img id=\"userimg\" src=\"{{posts.image}}\">  -->\n    \n          <div class=\"gallery-item-info\">\n            <ul>\n\n            </ul>\n          </div>\n        </div>\n      </div>\n      <div class=\"loader\"></div>\n    </div>"
+module.exports = "<div class=\"container\">\n\n    <div class=\"profile\">\n  \n      <div class=\"profile-image\">\n  \n        <img src=\"{{this.uimage}}\" width=\"40%\" height=\"40%\" alt=\"\">\n\n  \n      </div>\n  \n      <form #followform=\"ngForm\" (ngSubmit)=\"followform.valid && check(followform)\">\n\n\n          <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\n\n\n          <input type=\"hidden\" autocomplete=\"off\" #followuser=\"ngModel\" [(ngModel)]=\"model.followuser\" name=\"followuser\" value=\"tests\"\n              class=\"input-1\" >\n           <input type=\"hidden\" autocomplete=\"off\" #state=\"ngModel\" [(ngModel)]=\"model.state\" name=\"state\" value=\"On\"\n              class=\"input-1\" >\n\n            <input type=\"submit\" value=\"팔로잉\" class=\"btn profile-edit-btn\">\n\n      </form>\n\n  \n  \n  \n  \n      <div class=\"profile-stats\">\n        <ul>\n          <li>게시물 <span class=\"profile-stat-count\">{{this.posts}}</span> </li>\n          <li>팔로워 <span class=\"profile-stat-count\">{{this.follower}}</span> </li>\n          <li>팔로잉 <span class=\"profile-stat-count\">{{this.followings}}</span> </li>\n        </ul>\n      </div>\n      <div class=\"profile-bio\">\n  \n        <p><span class=\"profile-real-name\">{{this.username}}</span> </p>\n  \n      </div>\n  \n    </div>\n  \n    <hr style=\"border : 3px solid white;\">\n  </div>\n  \n  \n  \n  \n  \n  <div class=\"container\">\n  \n      <div class=\"gallery\">\n    \n    \n        <div *ngFor=\"let posts of post\" class=\"gallery-item\" tabindex=\"0\" >\n          \n            <img src=\"{{posts.image}}\" class=\"gallery-image\" alt=\"\">\n            <!-- <img id=\"userimg\" src=\"{{posts.image}}\">  -->\n    \n          <div class=\"gallery-item-info\">\n            <ul>\n\n            </ul>\n          </div>\n        </div>\n      </div>\n      <div class=\"loader\"></div>\n    </div>"
 
 /***/ }),
 
@@ -1996,7 +1999,7 @@ module.exports = ":root {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn-1 {\r\n    wi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\r\n  <div class=\"profile\">\r\n\r\n    <div class=\"profile-image\">\r\n\r\n      <img src=\"{{this.uimage}}\" width=\"80%\" height=\"80%\" alt=\"\">\r\n\r\n    </div>\r\n\r\n    <div class=\"profile-user-settings\">\r\n\r\n      <h1 class=\"profile-user-name\">{{this.id}}</h1>\r\n\r\n      <button class=\"btn profile-edit-btn\" (click)=\"editprofile()\"> Edit Profile </button>\r\n\r\n      <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\r\n    </div>\r\n\r\n    <div class=\"profile-stats\">\r\n      <ul>\r\n        <li> 게시물 <span class=\"profile-stat-count\">{{this.posts}}</span></li>\r\n        <li> 팔로워 <span class=\"profile-stat-count\">{{this.follower}}</span></li>\r\n        <li> 팔로잉 <span class=\"profile-stat-count\">{{this.following}}</span></li>\r\n      </ul>\r\n\r\n    </div>\r\n\r\n    <div class=\"profile-bio\">\r\n\r\n      <p><span class=\"profile-real-name\">{{this.username}}</span> </p>\r\n    </div>\r\n  </div>\r\n  <hr style=\"border : 3px solid white;\">\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div class=\"container\">\r\n\r\n  <div class=\"gallery\">\r\n\r\n\r\n    <div *ngFor=\"let posts of post\" class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"{{posts.image}}\" class=\"gallery-image\"  alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n        <ul>\r\n         \r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"loader\"></div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n\r\n  <div class=\"profile\">\r\n\r\n    <div class=\"profile-image\">\r\n\r\n      <img src=\"{{this.uimage}}\" width=\"40%\" height=\"40%\" alt=\"\">\r\n\r\n    </div>\r\n\r\n    <div class=\"profile-user-settings\">\r\n\r\n      <h1 class=\"profile-user-name\">{{this.id}}</h1>\r\n\r\n      <button class=\"btn profile-edit-btn\" (click)=\"editprofile()\"> Edit Profile </button>\r\n\r\n      <button class=\"btn profile-settings-btn\" aria-label=\"profile settings\"><i class=\"fas fa-cog\" aria-hidden=\"true\"></i></button>\r\n    </div>\r\n\r\n    <div class=\"profile-stats\">\r\n      <ul>\r\n        <li> 게시물 <span class=\"profile-stat-count\">{{this.posts}}</span></li>\r\n        <li> 팔로워 <span class=\"profile-stat-count\">{{this.follower}}</span></li>\r\n        <li> 팔로잉 <span class=\"profile-stat-count\">{{this.following}}</span></li>\r\n      </ul>\r\n\r\n    </div>\r\n\r\n    <div class=\"profile-bio\">\r\n\r\n      <p><span class=\"profile-real-name\">{{this.username}}</span> </p>\r\n    </div>\r\n  </div>\r\n  <hr style=\"border : 3px solid white;\">\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div class=\"container\">\r\n\r\n  <div class=\"gallery\">\r\n\r\n\r\n    <div *ngFor=\"let posts of post\" class=\"gallery-item\" tabindex=\"0\">\r\n\r\n      <img src=\"{{posts.image}}\" class=\"gallery-image\"  alt=\"\">\r\n\r\n      <div class=\"gallery-item-info\">\r\n        <ul>\r\n         \r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"loader\"></div>\r\n</div>"
 
 /***/ }),
 
@@ -2221,8 +2224,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    // apiBaseUrl: 'http://54.249.169.162:3000'
-    apiBaseUrl: 'http://localhost:3000'
+    apiBaseUrl: 'http://54.249.169.162:3000'
+    // apiBaseUrl: 'http://localhost:3000'
 };
 /*
  * For easier debugging in development mode, you can import the following file
