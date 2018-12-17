@@ -60,7 +60,6 @@ import { RestaurantlistComponent } from './restaurantlist/restaurantlist.compone
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     AgmCoreModule.forRoot({
-      //input your apikey
       // apiKey: 'input your apikey'
     }),
   ],
