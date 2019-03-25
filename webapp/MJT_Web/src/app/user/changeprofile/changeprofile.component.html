@@ -32,12 +32,12 @@
 
 
     </div>
-    <br>
+    <!-- <br>
     <hr style="border: solid 1px red;">
     <br>
     <div class="l-part">
       <form #changeInForm="ngForm" (ngSubmit)="changeInForm.valid && onInSubmit(changeInForm)">
-        <!-- model은 ts 파일에 정의한 model -->
+      
         <input type="text" autocomplete="off" #id="ngModel" [(ngModel)]="model_.id" name="id" placeholder="id" class="input-1"
           required [ngClass]="{ 'invalid-textbox' : changeInForm.submitted && !id.valid}">
 
@@ -54,7 +54,7 @@
 
         <input type="text" autocomplete="off" #email="ngModel" [(ngModel)]="model_.email" name="email" placeholder="Email"
           class="input-1" required [pattern]="emailRegex" [ngClass]="{ 'invalid-textbox' : changeInForm.submitted && !email.valid}">
-        <!-- 위에서 email 검증 후에 검증되지 않으면 아래에서 에러 문구 발생 -->
+       
         <div *ngIf="changeInForm.submitted && email.errors">
           <label *ngIf="email.errors.pattern" class="validation-message">Invaild email address. </label>
         </div>
@@ -62,7 +62,7 @@
         <input type="submit" value="Change Inform" class="btn">
       </form>
     </div>
-    <br>
+    <br> -->
 
 
 

@@ -1,8 +1,10 @@
 var mongoose = require('mongoose');
 // const bcrypt = require('bcryptjs');
 // const jwt = require('jsonwebtoken');
+var con = require('./../con');
+var mongo=con.mongo;
 
-mongoose.connect('mongodb://localhost:27017/member', {useNewUrlParser: true} );
+mongoose.connect(mongo, {useNewUrlParser: true} );
 
 var postSchema = new mongoose.Schema({
 

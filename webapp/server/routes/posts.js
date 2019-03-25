@@ -5,7 +5,11 @@ var mongoose = require('mongoose');
 var User = require('./../models/user')
 var Comment = require('./../models/comments')
 
-mongoose.connect('mongodb://localhost:27017/member', { useNewUrlParser: true });
+var con = require('./../con');
+var mongo=con.mongo;
+
+
+mongoose.connect(mongo, { useNewUrlParser: true });
 
 /* GET home page. */
 //http://localhost:3000/posts

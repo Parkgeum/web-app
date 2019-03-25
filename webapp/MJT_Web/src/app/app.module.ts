@@ -5,6 +5,8 @@ import { FormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule} from '@agm/core';
+import { GeocodeService } from './shared/geocode.service';
+import { HashLocationStrategy, LocationStrategy, Location } from '@angular/common'
 
 //component
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +27,10 @@ import { NgFlashMessagesModule } from 'ng-flash-messages';
 import { UploadService } from './shared/upload.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OtherprofileComponent } from './otherprofile/otherprofile.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
+import { UserlistComponent } from './userlist/userlist.component';
+import { SearchuserComponent } from './user/searchuser/searchuser.component';
+import { RestaurantlistComponent } from './restaurantlist/restaurantlist.component';
 // import { Observable } from 'rxjs/Observable';
 //other
 // import { AuthGuard } from './auth/auth.guard';
@@ -42,7 +48,11 @@ import { OtherprofileComponent } from './otherprofile/otherprofile.component';
     // Observable
     NavbarComponent,
     ChangeprofileComponent,
-    OtherprofileComponent
+    OtherprofileComponent,
+    RestaurantComponent,
+    UserlistComponent,
+    SearchuserComponent,
+    RestaurantlistComponent,
   ],
   imports: [ 
     BrowserModule,
@@ -51,12 +61,12 @@ import { OtherprofileComponent } from './otherprofile/otherprofile.component';
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyApX1bT78XX5t8JYZOkMMYUOo8vxfZtObQ'
+      // apiKey: 'input your apikey'
     }),
-    NgFlashMessagesModule
   ],
   
-  providers: [UserService, UploadService],
-  bootstrap: [AppComponent]
+  providers: [UserService, UploadService, GeocodeService, {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
+   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-
 import { environment } from '../../environments/environment';
 import { User, Change } from './user.model';
 import { Observable } from 'rxjs/Observable';
@@ -28,6 +27,10 @@ export class UserService {
     return this.http.post(environment.apiBaseUrl +'/member/login', user);
   }
 
+  Searcn(user: User){
+    return this.http.post(environment.apiBaseUrl+'/boards/search/user', user);
+  }
+
   changepass(change: Change){
     return this.http.post(environment.apiBaseUrl +'/member/updatePass', change, {
       headers: new HttpHeaders({
@@ -46,17 +49,29 @@ export class UserService {
     });
   }
 
+  checkuser(){
+    const token = true;
+    if(localStorage.getItem('token')==null)
+    {
+      return false;
+    }
+    else if(localStorage.getItem('token')!=null)
+    {
+      return token;
+    }
+  }
+
   otherInfo(user: User){
     return this.http.post(environment.apiBaseUrl +'/member/userinfo', user);
   }
 
 
   getUserList() {
-    return this.http.get('http://localhost:3000/member/info');
+    return this.http.get(environment.apiBaseUrl+'/member/info');
   }
 
   profile() {
-    return this.http.get('http://localhost:3000/me', {
+    return this.http.get(environment.apiBaseUrl+'/me', {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('token')

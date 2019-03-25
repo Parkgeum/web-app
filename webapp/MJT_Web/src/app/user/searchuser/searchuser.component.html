@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="profile">
+  
+      <div class="profile-image">
+  
+        <img src="{{this.uimage}}" width="40%" height="40%" alt="">
+
+  
+      </div>
+  
+      <form #followform="ngForm" (ngSubmit)="followform.valid && check(followform)">
+
+
+          <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+
+
+          <input type="hidden" autocomplete="off" #followuser="ngModel" [(ngModel)]="model.followuser" name="followuser" value="tests"
+              class="input-1" >
+           <input type="hidden" autocomplete="off" #state="ngModel" [(ngModel)]="model.state" name="state" value="On"
+              class="input-1" >
+
+            <input type="submit" value="팔로잉" class="btn profile-edit-btn">
+
+      </form>
+
+  
+  
+  
+  
+      <div class="profile-stats">
+        <ul>
+          <li>게시물 <span class="profile-stat-count">{{this.posts}}</span> </li>
+          <li>팔로워 <span class="profile-stat-count">{{this.follower}}</span> </li>
+          <li>팔로잉 <span class="profile-stat-count">{{this.followings}}</span> </li>
+        </ul>
+      </div>
+      <div class="profile-bio">
+  
+        <p><span class="profile-real-name">{{this.username}}</span> </p>
+  
+      </div>
+  
+    </div>
+  
+    <hr style="border : 3px solid white;">
+  </div>
+  
+  
+  
+  
+  
+  <div class="container">
+  
+      <div class="gallery">
+    
+    
+        <div *ngFor="let posts of post" class="gallery-item" tabindex="0" >
+          
+            <img src="{{posts.image}}" class="gallery-image" alt="">
+            <!-- <img id="userimg" src="{{posts.image}}">  -->
+    
+          <div class="gallery-item-info">
+            <ul>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="loader"></div>
+    </div>

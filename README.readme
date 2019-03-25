@@ -1,0 +1,23 @@
+﻿서버
+⊙ config/config.json의 MONGODB_URI 수정해야댐
+⊙ app.js 에서 app.use(cors( { origin: 'http://localhost:4200' })); localhost를 퍼블릭 DNS로 변경해줘야함
+⊙ con.js 에서 server , mongo url 변경해줘야함
+
+
+웹
+⊙ npm 설치
+project download 후 Mjt_Web 이동 후 npm install 실행
+또한 npm install -g @angular/cli을 실행시켜 통해 angular cli 설치
+
+⊙ 구글맵 API key 발급
+구글맵 API key 발급을 위해 https://cloud.google.com/maps-platform/?hl=ko 해당 페이지로 이동
+시작하기 버튼을 눌러서 Maps와 Places를 선택하고 추가하기 원하는 프로젝트를 선택해서 key 발급
+발급한 키를 MJT_Web -> src -> app -> app.module.ts에 API key 추가
+
+⊙path 지정
+- 로컬에서 사용할 경우 MJT_Web -> src -> environments에서 apiBaseUrl에 localhost로 설정
+- AWS를 사용할 경우 퍼블릭 DNS를 localhost의 자리에 입력
+
+⊙웹 실행
+MJT_Web에서 ng build를 실행하면 웹이 실행됨
+이후 서버 실행 후 localhost:3000에서 확인

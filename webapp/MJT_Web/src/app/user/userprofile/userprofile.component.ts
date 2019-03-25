@@ -1,9 +1,10 @@
 import { Component, OnInit, Directive, Input } from '@angular/core';
 import { User, usermodels } from '../../shared/user.model';
 import { UserService } from '../../shared/user.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Router, ActivatedRoute } from "@angular/router"
 import { headersToString } from 'selenium-webdriver/http';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -16,7 +17,12 @@ import { headersToString } from 'selenium-webdriver/http';
 
 export class UserprofileComponent implements OnInit {
 
-
+  id;
+  posts
+  follower;
+  following;
+  username;
+  uimage;
 
   constructor(private router: Router,
     private http: HttpClient,
@@ -26,55 +32,27 @@ export class UserprofileComponent implements OnInit {
 
 
 
-  public proinfo: pro[];
+  public proinfo: pro;
   selectedUser: User;
-  user: User[];
-  userinfo: any;
+  post: Post;
+
+
 
 
   //value를 전달하기 위해 usermodels를 새로 정의하고 refreshUserList에서 사용
   @Input('userinfo') userObj: usermodels;
 
-  readonly baseUrls = 'http://localhost:3000/member/info';
-
   ngOnInit() {
-    //this.refreshUserList();
-    this.profile1();
+    this.startfile();
   }
 
-
-  /*   getUserList() {
-      return this.http.get(this.baseUrls);
-    }
-  
-    refreshUserList() {
-      this.getUserList().subscribe((res) => {
-        // this.user = res as User[];
-        // var num = "0";
-        // var i = parseInt(num);
-        // for (i; i < this.user.length; i++) {
-        //   if (localStorage.getItem("token") == this.user[i].jsonWebToken) {
-            
-        //     var uname = this.user[i].id;
-        //     var ufollower = this.user[i].follower.length;
-        //     var ufollowing = this.user[i].following.length;
-        //     var uposts= this.user[i].posts.length;
-        //     console.log(uname + ufollower + ufollowing + uposts)
-        //   }
-        // }
-  
-        //모든 정보들을 받아서 users에 저장시켜줌
-        this.userService.user = res as User[];
-        console.log("aaaaaaa"+this.userService.user[0].id + this.userService.user.length);
-      });
-    } */
-
-  Searchbtn() {
-    this.router.navigateByUrl('/googlemap');
+  startfile() {
+    this.profilevalue();
+    this.postvalue();
   }
 
   profilereturn() {
-    return this.http.get('http://localhost:3000/me', {
+    return this.http.get(environment.apiBaseUrl+'/me', {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('token')
@@ -82,42 +60,51 @@ export class UserprofileComponent implements OnInit {
     });
   }
 
-  // profile() {
-  //   this.profilereturn().subscribe((res)=> {
-  //     console.log("test" + JSON.stringify(res));
-  //     this.proinfo = [res];
-      // console.log("tqtqtqtqtqqt:"+ this.proinfo[0].posts.length);
-  //   })
-  // }
-
-  profile1() {
-    var check = localStorage.getItem('profile')
-    // console.log( this.baseUrls + "/pro" + `/${check}`);
-    this.http.get(this.baseUrls + "/pro" + `/${check}`).subscribe((res: any) => {
-      // console.log( JSON.stringify(res));
-      this.proinfo = [res];
+  profilevalue() {
+    if (localStorage.getItem('token') == null) {
+      console.log("not logined");
+      this.router.navigate(['/login']);
+    }
+    
+    this.profilereturn().subscribe((res: any) => {
+      this.proinfo = res.data;
+      // console.log(JSON.stringify(this.proinfo));
+      this.id = this.proinfo.id;
+      this.posts = this.proinfo.posts.length;
+      this.follower = this.proinfo.follower.length;
+      this.following = this.proinfo.following.length;
+      this.username = this.proinfo.username;
+      localStorage.setItem('pr', this.username);
+      console.log("프로필" + this.proinfo.image)
+      if(this.proinfo.image == "null")
+      this.uimage = 'assets/img/camera.jpg'
+      else if(this.proinfo.image != "null")
+      {
+        this.uimage = this.proinfo.image;
+      }
     })
-
-
-    // this.profilereturn().subscribe((res: any) => {
-    //   console.log('gkgkgkgkgkgk' + JSON.stringify(res));
-    //   this.proinfo = res as pro[];
-    //   console.log("tqtqtqtqtqqt:"+this.proinfo[0].posts);
-    // })
-  }
-
-  Clickfollower() {
+    
     
   }
 
-  Clickfollowing() {
 
+  postvalue() {
+    this.postreturn().subscribe((res: any) => {
+      this.post = res.data;
+      console.log(JSON.stringify(this.post))
+    })
+  }
+
+  
+  postreturn() {
+    let httpParams = new HttpParams()
+      .append("username", localStorage.getItem('pr'))
+      // console.log(httpParams)
+    return this.http.post(environment.apiBaseUrl+'/boards/myposts',httpParams)
   }
 
   editprofile() {
-    console.log(localStorage.getItem('token') + " vs " + this.proinfo[0].jsonWebToken)
-    if(localStorage.getItem('token') == this.proinfo[0].jsonWebToken)
-    {
+    if (localStorage.getItem('token') == this.proinfo.jsonWebToken) {
       this.router.navigate(['/change'])
     }
   }
@@ -140,6 +127,10 @@ interface pro {
 }
 
 
-export interface message{
-  message: message[];
+interface Post {
+  username: string;
+  image: string;
+  text: string;
+  time: Date;
+  likes: [string];
 }

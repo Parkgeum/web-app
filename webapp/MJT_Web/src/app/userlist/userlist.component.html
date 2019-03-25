@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+  <div class="content">
+
+    <form #uploadForm="ngForm">
+      <!-- (ngSubmit)="onSubmit(uploadForm)"> -->
+      <div class="row">
+        <div class="row">
+          <div class="input-field col s7">
+            <!-- <table>
+            <thead>
+              <th>id</th>
+              <th>text</th>
+              <th>time</th>
+              
+            </thead>
+            <tr *ngFor="let upload of uploadService.upload">
+              <td>{{upload.username}}</td>
+              <td>{{upload.text}}</td>
+              <td>{{upload.time}}</td>
+            </tr>
+          </table> -->
+            <table style="width: 200%">
+              <thead>
+                <tr class="font-1">
+                  <th style="width: 20%">ID</th>
+                  <th style="width: 20%">UserName</th>
+                  <th style="width: 20%">Follower</th>
+                  <th style="width: 20%">Following</th>
+                  <th style="width: 25%">Profile</th>
+                </tr>
+              </thead>
+              <br>
+              <tr class="font-2" *ngFor="let user of information">
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.follower.length}}</td>
+                <td>{{user.following.length}}</td>
+                <td>
+                  <button class="btn-1" (click)="onEdit(user)"></button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,39 +1,36 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <img id="lg1" src="assets/img/camera.jpg" style="width:7%; height:60px;">
-  <img id="lg2" src="assets/img/logom.png" style="width: 12%; height:60px;">
+<nav class="navbar navbar-expand-md navbar-light bg-white">
+  <img id="lg1" src="assets/img/camera.jpg" style="width:7%; height:70px;">
+  <img id="lg2" src="assets/img/logom.png" style="width: 12%; height:70px;">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <form *ngIf="logincheck" #searchForm="ngForm" (ngSubmit)="searchForm.valid && Search(searchForm)">
+    <!-- model은 ts 파일에 정의한 model -->
+
+    <!-- <input type="search" class="search" placeholder="사용자 검색"> -->
+    <input type="text" autocomplete="off" #username="ngModel" [(ngModel)]="model.SearchUser" name="username" placeholder="사용자 검색" 
+    [ngClass]="{ 'invalid-textbox' : searchForm.submitted && !username.valid}" >
+    <input type="submit" class="btns" value="검색">
+  </form>
+
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
-      <!-- <li class="nav-item active" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-        <a class="nav-link" [routerLink]="['/']">Home</a>
-      </li> -->
     </ul>
-
-    <ul class="navbar-nav navbar-center">
-        <input type="search" placeholder="">
-        <!-- <button type="submit" class="nav-link" (click)="Searchbtn()">검색</button> -->
-        <a class="nav-link" (click)="Searchbtn()">검색</a>
-    </ul>
-
-    <ul class="navbar-nav navbar-right">
-        <!-- *ngIf="localStorage.getItem('token')!=null" -->
-      <li  class="nav-item" [routerLinkActive]="['inactive']">
+    <ul *ngIf="logincheck" class="navbar-nav navbar-right color-gray">
+      <!-- *ngIf="localStorage.getItem('token')!=null" -->
+      <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/board']">Main</a>
       </li>
-      <li  class="nav-item" [routerLinkActive]="['inactive']">
+
+      <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/profile']">Profile</a>
       </li>
-      <li  class="nav-item" [routerLinkActive]="['inactive']">
-        <a class="nav-link" [routerLink]="['/signup']">Register</a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/googlemap']">Map</a>
       </li>
-      <li  class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/other']">other</a>
-      </li>
-      <li class="nav-item">
+      <li class="menu">
         <a class="nav-link" (click)="onLogoutClick()">Logout</a>
       </li>
     </ul>

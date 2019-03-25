@@ -15,14 +15,24 @@
     float: 0px;
 }
 
+.menu
+{
+    color: black;
+}
+
+.us
+{
+    margin-left: 10%;
+}
+
 .btns {
     /*width: 3%;*/
     /*height: 20px;*/
-    background-color: white;
-    border: 1px solid darkblue;
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
     padding: 5px 12px;
     margin-left: 5px;
-    color: black;
+    color: white;
     font-weight: bold;
     cursor: pointer;
     border-radius: 3px;

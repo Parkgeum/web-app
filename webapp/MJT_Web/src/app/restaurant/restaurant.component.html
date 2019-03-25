@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCxVmg4QfGSZoqbjbM67Ru8DexXl_FZF8&callback=initMap"
+    type="text/javascript">
+    </script>
+</head>
+
+
+<div class="container">
+
+  <div class="profile">
+
+    <div class="profile-image">
+
+      <img src="{{this.image}}" width="40%" height="40%" alt="">
+
+    </div>
+
+    <div class="profile-user-settings">
+
+      <!-- 맛집 이름 -->
+      <h3 class="profile-user-name">{{this.name}}</h3>
+
+      <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="profile-bio">
+
+      <p style="font-size:110%"> address : <span class="profile-real-name"> {{this.address}}</span></p>
+      <p style="font-size:110%"> telephone : <span class="profile-real-name">{{this.telephone}}</span></p>
+      <p style="font-size:110%"> business_hours : <span class="profile-real-name"> {{this.business_hours}}</span></p>
+      <p style="font-size:110%"> breake_time : <span class="profile-real-name"> {{this.breake_time}}</span></p>
+    </div>
+  </div>
+  <hr style="border : 3px solid white;">
+</div>
+
+
+<!-- ngfor문으로 사진 출력 -->
+
+
+
+<div class="content">
+
+
+        <br>
+          <h2 style="text-align: center"> 한 줄 평 </h2>
+          <div class="comment">
+            <span style="font-size:150%"> </span><span style="font-size:120%"> {{posts.text}}</span>
+            <br>
+            <br>
+          </div>
+          <div class="searchbox">
+              <input id="commentin" type="text" placeholder="  한 줄 평을 입력해주세요.. "> 
+              <input type="submit"  class="btns" value="게시">
+            </div>
+            <br>
+            <p style="font-size:15px; color:slategray"> {{posts.time}} </p>
+            <hr style="border : 1px solid black;" >
+
+  </div>
+
+</html>

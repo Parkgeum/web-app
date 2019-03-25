@@ -9,8 +9,10 @@ var ObjectId = require('mongoose').Types.ObjectId;
 var crypto = require('crypto');
 var userid;
 
+var con = require('./../../con');
+var mongo=con.mongo;
 
-mongoose.connect('mongodb://localhost:27017/member', { useNewUrlParser: true });
+mongoose.connect(mongo, { useNewUrlParser: true });
 
 /* GET home page. */
 //http//localhost:3000
@@ -111,8 +113,8 @@ router.post('/member/login', function (req, res) {
     id: local_id,
     password: local_password
   }
-  console.log(local_id);
-  console.log(local_password);
+  // console.log(local_id);
+  // console.log(local_password);
 
   User.findOne(findConditionLocalUser).exec(function (err, user) {
 
@@ -337,12 +339,41 @@ router.post('/member/addfollowing', ensureAuthorized, function (req, res) {
   })
 });
 
+
 //다른 유저 정보 받아오기
 router.post('/member/userinfo', function (req, res) {
   var username = req.body.username;
-  console.log(username);
+  // console.log(username);
 
   User.findOne({ username: username }, function (err, user) {
+    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+    else {
+      // console.log("userinfo: " + user);
+      res.send({ success: true, data: user });
+    }
+  })
+});
+
+//해당 username의 전체 유저
+router.post('/member/findbyusername', function (req, res) {
+  var username = req.body.username;
+  // console.log(username);
+
+  User.find({ username: username }, function (err, user) {
+    if (err) { res.send({ success: false, type: "Error Occured" + err }); }
+    else {
+      // console.log("userinfo: " + user);
+      res.send({ success: true, data: user });
+    }
+  })
+});
+
+//id로 받아오기
+router.post('/member/userbyid', function (req, res) {
+  var id = req.body.id;
+  // console.log(id);
+
+  User.findOne({ id: id }, function (err, user) {
     if (err) { res.send({ success: false, type: "Error Occured" + err }); }
     else {
       // console.log("userinfo: " + user);

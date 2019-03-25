@@ -94,6 +94,19 @@
     height: auto;
   }
 
+  .input-container {
+    text-align: center; 
+    width: 100%;
+}
+
+.google-place-input {
+    width: 50%;
+    min-width: 280px;
+    height: 2rem; 
+    font-size: 1.5rem; 
+    padding: 0.5rem;
+    border: 1px solid #cccccc;
+}
 
 .header {
           height: 12%;
@@ -146,7 +159,7 @@
           border-right : 1px solid black; 
           border-top : 1px solid black;
           border-bottom : 1px solid black;
-          padding: 0.2%;
+          padding: 0.4%;
           font-family: 'Hind Madurai', sans-serif;
           font-weight: bold;
       }
@@ -199,6 +212,31 @@
           width: 99%;
           margin : 20px;
           float: left;
+      }
+
+      .input-1,
+      .input-2 {
+        width: 50%;
+        height: 40px;
+        margin-bottom: 5px;
+        margin-left: 20%;
+        padding: 8px 12px;
+        border: 1px solid #dbdbdb;
+        box-sizing: border-box;
+        border-radius: 3px;
+      }
+
+      .btns {
+        /*width: 3%;*/
+        /*height: 20px;*/
+        background-color: #3897f0;
+        border: 1px solid #3897f0;
+        padding: 5px 12px;
+        margin-left: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 3px;
       }
 
 

@@ -58,14 +58,10 @@ export class ChangeprofileComponent implements OnInit {
       err => {
         if (err.status == 422) {
           this.serverErrorMessages = err.error.join('<br/>');
-
-          console.log(form.value.pre_password);
-          console.log(form.value.new_password);
         }
         else
           this.serverErrorMessages = 'Something went wrong. Please contact admin';
-        console.log(form.value.pre_password);
-        console.log(form.value.new_password);
+        
       }
     );
   }
